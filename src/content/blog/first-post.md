@@ -1,16 +1,49 @@
 ---
-title: 'First post'
-description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Jul 08 2022'
+title: 'Sitio creado con astro'
+description: 'Primer post en mi nuevo sitio creado con astro'
+pubDate: 'Aug 08 2024'
 heroImage: '/blog-placeholder-3.jpg'
 ---
+## Historia
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+Desde hace mucho tiempo he tenido ganas de crear un sitio en donde pueda ir describiendo poco a poco mi progreso y donde pueda ir practicando lo aprendido
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+Para hacerlo tuve que probar muchas cosas diferentes entre ellas, aprender **[ReactJS](https://reactjs.dev)**, **[NextJS](https://nextjs.org)**, **[Python](https://python.org)** y **[Tailwind CSS](https://tailwindcss.com)** hasta que por fin llegué a la que me pareció práctica para crear el sitio la cual se llama **[Astro](https://astro.build/)**
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+## Dificultades de ser autodidacta
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+1.  Iniciar con el círculo de los tutoriales:
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+    -   Esta es una de las mayores dificultades a las que nos enfrentamos los que estamos en el proceso de aprendizaje de manera autónoma, porque siempre queremos estar aprendiendo y aprendiendo y nunca nos ponemos a hacer (al menos en mi caso eso hacía, pero nunca terminaba un proyecto, e inicié demasiados para contarlos)
+
+1.  No tener una ruta de aprendizaje:
+
+    -   Estar siempre aprendiendo y reiniciando lo aprendido y no avanzar al no tener una ruta de aprendizaje nos quedamos en un limbo en el cual estuve durante al menos 2 años sin aprendiendo mucho, pero sin avanzar realmente, durante este tiempo intenté aprender: **[GraphQL](https://graphql.org)**, **[NestJS](https://nestjs.com)**, **[Laravel](https://laravel.com)** (en este me manejo bien) entre muchos más que nunca llegué a dominar.
+
+2.  Poco tiempo para estudiar y aprender:
+
+    -   Cuando inicié todo este proceso estaba trabajando a tiempo completo en una empresa en la cual su enfoque no me emocionaba, algo de programación con Python podía usar, pero no al nivel que quería aunque aprendí mucho. No fue lo suficiente, ya que de igual manera al ser autodidacta tenía que aprenderlo todo por mi cuenta y en ese entonces no tenía buenas prácticas de implementación de código y aunque todavía no hago pruebas (testing, que es mi siguiente paso) al menos ya (creo) estar utilizando buenas prácticas de código.
+
+        Todo esto lo hacía durante mis tiempos libres que básicamente era robarle tiempo a mi pareja en las noches que llegaba a la casa o los fines de semana que teníamos para compartir cuando ella decidía dormir en las tardes yo aprovechaba para ponerme a estudiar.
+
+## Ventajas de ser autodidacta
+
+1.  Aprender a tu propio ritmo:
+
+    -   Como lo mencioné anteriormente la falta de tiempo para estudiar era un problema debido a que entre el trabajo y mi relación no tenía tiempo para estudiar, aclaro que el problema era que trabajaba muchas horas al día y quería ser equitativo con mi pareja porque quería compartir tiempo con ella, esto hacía que estudiar en la madrugada o los fines de semana fuera una ventaja también para mí.
+
+## Porque elegir Astro
+
+Astro es un framework diseñado para páginas estáticas principalmente y pensado en contenido Estático. Pero, también tiene la ventaja de que se puede utilizar para crear contenido Dinámico. Que más adelante estaré agregando a este lugar.
+
+Ahora bien siendo este mi primer post, no voy a escribir una descripción en particular, solo quiero que me describa lo que aprendí y que me parezca bueno.
+
+## Además de Astro que más utilicé
+
+Inicialmente, me dije a mí mismo que debía estilizar el HTML solo con CSS al ser mi primer proyecto, pero he utilizado tanto TailwindCSS que definitivamente con solo CSS me demoro demasiado, entonces preferí utilizarlo, ya que es lo que mejor se me da, intenté utilizar astro-icon para tener unos iconos que utilizara, pero al momento de hacer el despliegue estaba generando un inconveniente y dado que quería salir rápido a producción sin desplegar el viernes, preferí que fuera solo utilizando los SVG para los iconos, igual son solo 3 iconos que utilicé inicialmente, por lo tanto, es mejor así.
+
+## Cada cuanto voy a subir alguna historia.
+
+Lo haré cada vez que inicie o termine un proyecto o cada vez que vea alguna historia interesante en la web que quiera tener la posibilidad des escribirla, tal vez pueda ser que suba algún paseo a algún lugar, pero eso será cuando aprenda a integrar Cloudflare para subir algunas imágenes y que no ocupen espacio en el servidor gratuito que estoy usando de momento.
+
+Por cierto estas historias están escritas en archivos markdown que también tendré que estilizar poco a poco hasta que quede un sitio y haya podido elegir unos colores que me gusten de momento no tengo modo oscuro porque la idea era salir a producción luego empezaré a agregar más funciones, dado que no utilicé ninguna plantilla solo me inspiré en alguna que vi en **Figma** que también pondré los créditos de la plantilla en cuanto la vea y dentro de poco también subiré mi CV con JSON Resume, que justo hoy vi un vídeo de midudev en el cual lo usaba y me pareció chévere integrarlo y agregarlo aquí al sitio para que este disponible cuando quiera descargarlo para imprimirlo o enviar el PDF por correo electrónico, pero de nuevo, esto será poco a poco
