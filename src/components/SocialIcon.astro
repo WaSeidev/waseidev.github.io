@@ -1,10 +1,8 @@
 ---
-import { Icon } from "astro-icon/components";
 interface Props {
-  name: string;
   href: string;
 }
-const { href, name } = Astro.props;
+const { href } = Astro.props;
 ---
 
 <a
@@ -13,5 +11,5 @@ const { href, name } = Astro.props;
   target="_blank"
 >
   <span class="sr-only">Follow Astro on Mastodon</span>
-  <Icon name={`mdi:${name}`} width={32} height={32} />
+<slot />
 </a>

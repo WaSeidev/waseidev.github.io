@@ -1,9 +1,12 @@
 ---
-import SocialIcon from "./SocialIcon.astro";
+import Twitter from "@/icons/Twitter.astro";
+import SocialIcon from "@/components/SocialIcon.astro";
+import Github from "@/icons/Github.astro";
+import Linkedin from "@/icons/Linkedin.astro";
 ---
 
 <div class="flex gap-1">
-  <SocialIcon name="twitter" href="https://twitter.com/WaSeidel" />
-  <SocialIcon name="github" href="https://github.com/WaSeidel" />
-  <SocialIcon name="linkedin" href="https://linkedin.com/in/WaSeidel" />
+  <SocialIcon href="https://twitter.com/WaSeidel"><Twitter /></SocialIcon>
+  <SocialIcon href="https://github.com/WaSeidel"><Github /></SocialIcon>
+  <SocialIcon href="https://linkedin.com/in/WaSeidel"><Linkedin /></SocialIcon>
 </div>

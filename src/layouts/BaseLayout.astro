@@ -1,9 +1,8 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import BaseHead from "@/components/BaseHead.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 
 interface Props {
   title?: string;
@@ -12,12 +11,7 @@ interface Props {
   heroImage?: string;
 }
 
-const {
-  title,
-  description = SITE_DESCRIPTION,
-  pubDate,
-  heroImage,
-} = Astro.props;
+const { title, description, pubDate, heroImage } = Astro.props;
 ---
 
 <!doctype html>
