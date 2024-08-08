@@ -1,0 +1,52 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import FormattedDate from "../components/FormattedDate.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  pubDate?: Date;
+  heroImage?: string;
+}
+
+const {
+  title,
+  description = SITE_DESCRIPTION,
+  pubDate,
+  heroImage,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead {title} {description} image={heroImage} />
+  </head>
+  <body
+    class="m-auto flex min-h-screen w-full max-w-7xl flex-col justify-center"
+  >
+    <Header />
+    <main class="my-4 w-full flex-1">
+      {
+        heroImage && (
+          <figure class="m-auto mb-4 flex w-full justify-center">
+            <img class="w-full" src={heroImage} alt={title} />
+          </figure>
+        )
+      }
+      {title && <h1 class="text-4xl font-bold">{title}</h1>}
+      {
+        pubDate && (
+          <div class="mb-4 text-sm text-gray-400">
+            <FormattedDate date={pubDate} />
+          </div>
+        )
+      }
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

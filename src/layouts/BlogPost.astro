@@ -1,0 +1,83 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, pubDate, heroImage } = Astro.props;
+---
+
+<BaseLayout {title} {description} {pubDate} {heroImage}>
+  <slot />
+</BaseLayout>
+<style is:global>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+  }
+  h5 {
+    font-size: 1.25rem;
+  }
+  h6 {
+    font-size: 1rem;
+  }
+  p {
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+    text-wrap: wrap;
+    padding: 10px 0;
+  }
+  pre {
+    padding: 10px;
+  }
+  blockquote {
+    padding: 5px 10px;
+    background-color: #aaa;
+    color: #111;
+    font-style: italic;
+  }
+  ol {
+    list-style: decimal;
+    margin-left: 20px;
+    padding-left: 15px;
+  }
+  ul {
+    list-style: initial;
+    margin-left: 20px;
+    padding-left: 15px;
+  }
+  table,
+  thead,
+  tbody,
+  tr,
+  td,
+  th {
+    border: solid 1px;
+  }
+</style>
