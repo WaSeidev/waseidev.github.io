@@ -1,19 +1,19 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import BlogSection from "@/sections/BlogSection.astro";
+import HomeSection from "@/sections/HomeSection.astro";
+import IntroSection from "@/sections/IntroSection.astro";
+import ProjectsSection from "@/sections/ProjectsSection.astro";
 ---
 
 <BaseLayout description="Portafolio de Walther Seidel">
-  <section class="mt-12 flex min-h-full w-full justify-evenly">
-    <div class="flex flex-col justify-center">
-      <h1 class="text-7xl font-bold">Walther Seidel</h1>
-      <p class="text-lg">Desarrollador Web</p>
-    </div>
-    <div>
-      <img
-        class="size-96 rounded-full"
-        src="/assets/images/profile.webp"
-        alt="Walther Seidel"
-      />
-    </div>
-  </section>
+  <HomeSection>
+    <IntroSection />
+  </HomeSection>
+  <HomeSection>
+    <ProjectsSection />
+  </HomeSection>
+  <HomeSection>
+    <BlogSection />
+  </HomeSection>
 </BaseLayout>
