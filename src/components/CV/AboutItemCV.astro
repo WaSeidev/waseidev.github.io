@@ -1,9 +1,15 @@
 ---
+import { Icon } from "astro-icon/components";
+
 const { href, icon, text } = Astro.props;
-const Icon = icon;
 ---
 
-<a class="flex items-center gap-2 text-sm" href={href}>
-  <Icon width={16} height={16} />
+<a
+  class="flex items-center gap-2 text-sm"
+  rel="noopener noreferrer"
+  target="_blank"
+  href={href}
+>
+  <Icon name={icon} class="size-4" />
   <h6>{text}</h6>
 </a>

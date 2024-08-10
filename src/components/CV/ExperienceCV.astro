@@ -1,4 +1,5 @@
 ---
+import FormattedDate from "../FormattedDate.astro";
 import TitleCV from "./TitleCV.astro";
 
 const { work } = Astro.props;
@@ -9,14 +10,28 @@ const slicedWork = work.slice(0, 3);
 <ul class="space-y-4">
   {
     slicedWork.map(
-      ({ name, position, startDate, endDate, summary, highlights }) => (
+      ({
+        name,
+        position,
+        startDate,
+        endDate,
+        summary,
+        highlights,
+      }: {
+        name: string;
+        position: string;
+        startDate: Date;
+        endDate?: Date;
+        summary: string;
+        highlights: string[];
+      }) => (
         <li>
           <header class="flex justify-between text-xs font-light">
             <h4 class="text-lg">
               {position} - <span class="text-xs">{name}</span>
             </h4>
             <div class="italic">
-              {startDate} - {endDate ? endDate : "Actualidad"}
+              {startDate} -{endDate ? endDate : "Actualidad"}
             </div>
           </header>
           <p class="py-1 text-xs">{summary}</p>

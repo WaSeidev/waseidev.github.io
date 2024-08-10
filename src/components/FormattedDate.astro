@@ -1,17 +1,23 @@
 ---
 interface Props {
   date: Date;
+  showDay?: boolean;
 }
 
-const { date } = Astro.props;
+const { date, showDay } = Astro.props;
 ---
 
 <time datetime={date.toISOString()}>
   {
-    date.toLocaleDateString("en-us", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    })
+    showDay
+      ? date.toLocaleDateString("es-co", {
+          year: "numeric",
+          month: "short",
+          day: "2-digit",
+        })
+      : date.toLocaleDateString("es-co", {
+          year: "numeric",
+          month: "short",
+        })
   }
 </time>

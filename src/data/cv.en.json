@@ -1,0 +1,216 @@
+{
+  "basics": {
+    "name": "Walther A. Seidel M.",
+    "label": "JR Developer | JR Data Scientist | English C2 | JR Backend | Node Developer | JR React Developer",
+    "image": "/assets/images/profile.webp",
+    "email": "waseidev@gmail.com",
+    "phone": "+34 625 25 11 15",
+    "url": "waseidev.github.com",
+    "summary": "Hi everyone! I'm a Systems Engineer, graduated from the Cooperativa University of Colombia with a focus on web development. I have experience in technologies such as PHP, React.js, MongoDB, Laravel, Python, Pandas, and Linux. I'm a proactive, self-taught individual who loves learning new skills and technologies. During my university career, I was an active member of the free software dissemination group and contributed for several consecutive years to the Latin American Free Software Festival (FLISol). I'm passionate about development, especially FrontEnd with ReactJS and styling with TailwindCSS. I'm seeking an opportunity to apply my skills and strengthen my knowledge in the web development world. I'm committed to being a valuable asset to the company that gives me the opportunity to start my career. If you are interested in learning more about me or working together, please don't hesitate to contact me via email or WhatsApp. It would be a pleasure to meet for a coffee and discuss how I can contribute to your company..",
+    "location": {
+      "address": "Doctor Marañon 1",
+      "postalCode": "32005",
+      "city": "Ourense",
+      "countryCode": "ES",
+      "region": "Ourense"
+    },
+    "profiles": [
+      {
+        "network": "Twitter",
+        "username": "waseidel",
+        "url": "https://twitter.com/waseidel"
+      },
+      {
+        "network": "Linkedin",
+        "username": "waseidel",
+        "url": "https://linkedin.com/in/waseidel"
+      },
+      {
+        "network": "Github",
+        "username": "WaSeidev",
+        "url": "https://github.com/waseidev"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "ETM",
+      "position": "Service Scheduling Coordinator",
+      "url": "https://etm-cali.com",
+      "startDate": "2019-04-22",
+      "endDate": "2024-04-05",
+      "summary": " Route planning and scheduling for the SITM-MIO system,",
+      "highlights": ["Python", "Pandas", "Microsoft Excel", "Docker"]
+    },
+    {
+      "name": "ACAR",
+      "position": "IT Coordinator",
+      "url": "https://acarsa.com",
+      "startDate": "2018-04-22",
+      "endDate": "2019-04-21",
+      "summary": "Coordinate the day-to-day operations of the IT department and manage relationships with external technology providers.",
+      "highlights": ["Asterisk", "Database", "Firewall", "Odoo", "ClearOS"]
+    },
+    {
+      "name": "Blanco y Negro Masivo",
+      "position": "Programming Professional",
+      "url": "https://bynmasivo.com",
+      "startDate": "2016-01-16",
+      "endDate": "2018-04-21",
+      "summary": "Driver scheduling and rotation, and generation of payroll for hours worked..",
+      "highlights": ["Microsoft Excel", "Macros"]
+    },
+    {
+      "name": "Blanco y Negro Masivo",
+      "position": "Analista de operaciones - Kílometros",
+      "url": "https://bynmasivo.com",
+      "startDate": "2012-06-01",
+      "endDate": "2016-01-15",
+      "summary": "Comprehensive review, analysis, and monitoring of operations utilizing technological platforms embedded within vehicles and those supplied by the R&T company within the M.I.O. Mass Integrated Transit System. Verification of settlements based on daily route audits of all vehicles. Detailed review and analysis of SITM-MIO operational logs. In-depth analysis of QRSF (Complaints, Claims, Requests, and Compliments) submitted through the user service line, ensuring timely and appropriate responses. Verification and investigation of all reports issued by the system's managing entity to Operators (vehicle drivers), leveraging available information technology platforms.",
+      "highlights": ["Microsoft Excel", "Macros", "Atención al cliente"]
+    },
+    {
+      "name": "Union Temporal de Recaudo y Tecnología",
+      "position": "Técnico de monitorización",
+      "url": "https://utryt.com.co",
+      "startDate": "2011-06-03",
+      "endDate": "2012-05-31",
+      "summary": "Generación de reporte diario de operación para la su revisión y posterior conciliación con los concesionarios de transporte del Sistema Integrado de Transporte Masivo M.I.O. (Masivo Integrado de Occidente) Análisis de información proveniente de los logs de los vehículos por medio de consultas generadas en la base de datos Oracle utilizando scripts directamente sobre esta o usando las plataformas proporcionadas por el sistema Precidir la reunión quincenal con los 4 COT y el ente gestor del SITM-MIO.",
+      "highlights": ["Microsoft Excel", "Macros"]
+    },
+    {
+      "name": "Servientrega",
+      "position": "Auxiliar Géneral",
+      "url": "https://servientrega.com.co",
+      "startDate": "2009-06-03",
+      "endDate": "2010-06-14",
+      "summary": "Recepción de paquetes, documentos y mercancía para el despacho a nivel nacional e internacional Recepción y pago de giros a nivel nacional Fotocopias Manejo de caja.",
+      "highlights": ["Ventas", "Gestión"]
+    },
+    {
+      "name": "Hospital San Ándres E.S.E.",
+      "position": "Técnico en Sistemas",
+      "url": "https://hsandres.gov.co",
+      "startDate": "2007-03-15",
+      "endDate": "2009-01-15",
+      "summary": "Soporte en las estaciones de trabajo a los usuarios finales Instalación de aplicativos especializados Instalación de SIIGO y InfoSalud, Configuración, reinstalación y adecuación de las estaciones de trabajo, servidores y redes.",
+      "highlights": ["Sistemas Operativos", "Soporte técnico"]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Caritas España",
+      "position": "Auxiliar de Cocina",
+      "startDate": "2025-06-15",
+      "summary": "Ayudar en el fregado de ollas, sirviendo la comida en el comedor de Caritas en Ourense",
+      "highlights": ["Ciencia", "Técnología"]
+    },
+    {
+      "organization": "BarCamp Cali",
+      "position": "Registro de Asistencia",
+      "startDate": "2011-11-01",
+      "endDate": "2011-11-01",
+      "summary": "'Desconferencias' tecnologicas realizadas en la ciudad de cali, con el animo de compartir conocimientos y conocer gente nueva del medio",
+      "highlights": ["Ciencia", "Técnología"]
+    },
+    {
+      "organization": "FLISoL Cali",
+      "position": "Instalador",
+      "startDate": "2011-11-01",
+      "endDate": "2011-11-01",
+      "summary": "Ayuda en las instalaciones y difusión de software libre en la ciudad de santiago de cali",
+      "highlights": ["Ciencia", "Técnología", "Linux", "Ubuntu"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Universidad Cooperativa de Colombia",
+      "url": "https://ucc.edu.co/",
+      "area": "Ingeniero de Sistemas",
+      "studyType": "Profesional",
+      "startDate": "2009-02-02",
+      "endDate": "2015-12-15"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Bachelor's degree, Data Scientist",
+      "url": "https://correlationone.com/",
+      "issuer": "Correlation One",
+      "date": "2022-06-16"
+    },
+    {
+      "name": "Desarrollo de Software",
+      "url": "https://unal.edu.co/",
+      "issuer": "Universidad Nacional de Colombia",
+      "date": "2022-12-23"
+    },
+    {
+      "name": "Sistemas de Gesitión de Seguridad de la información ISO27001",
+      "url": "https://icontec.com.co/",
+      "issuer": "ICONTEC",
+      "date": "2015-07-25"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Web Development",
+      "level": "Junior Developer",
+      "keywords": ["HTML", "CSS", "JavaScript", "React", "Node.js", "Astro"]
+    },
+    {
+      "name": "Microsoft Excel",
+      "level": "Master",
+      "keywords": [
+        "Macros",
+        "functions",
+        "Formulas",
+        "Pivot Tables",
+        "Data Analysis",
+        "Spreadsheet"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Español",
+      "fluency": "Hablante Nativo"
+    },
+    {
+      "language": "Inglés",
+      "fluency": "Fluidez hablada y escrita"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Motocicletas",
+      "keywords": ["Trocha", "Paseo", "Viajes", "Turismo"]
+    },
+    {
+      "name": "Música",
+      "keywords": ["Guitarra", "Bateria", "Rock", "Salsa"]
+    }
+  ],
+  "references": [
+    {
+      "name": "Matthew Seidel",
+      "reference": "Pronto una publicación de la referencia",
+      "company": "Una Compañia X"
+    },
+    {
+      "name": "Andrey Lopéz",
+      "reference": "Pronto una publicación de la referencia",
+      "company": "Una Compañia Y"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Proyecto Hoja de vida en la WEB",
+      "startDate": "2024-07-31",
+      "endDate": "2024-08-09",
+      "description": "Primer proyecto llevado a la practica y ejecutado para compartirlo en la web, los que habia hecho anteriormente nunca los habia sacado del ordenador, a pesar de que estaban en github no los habia compartido ni terminado",
+      "highlights": ["CV", "Curriculum"],
+      "url": "https://waseidel.github.io/es/projects/es/proyecto-cv/"
+    }
+  ]
+}

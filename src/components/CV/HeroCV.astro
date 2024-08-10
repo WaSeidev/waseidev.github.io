@@ -1,9 +1,14 @@
 ---
-import { basics } from "@/data/cv.es.json";
-const { name, label } = basics;
+const { basics } = Astro.props;
+const { name, label, image } = basics;
 ---
 
-<div class="">
-  <h1 class="mb-2 text-5xl font-bold">{name}</h1>
-  <h2 class="text-pretty text-lg font-light">{label}</h2>
+<div class="flex items-center">
+  <div class="w-full">
+    <h1 class="mb-2 text-5xl font-bold">{name}</h1>
+    <h2 class="text-pretty text-lg font-light">{label}</h2>
+  </div>
+  <figure class="w-auto">
+<img src={image} alt="The image of {name}" class="w-36 rounded-lg"  />
+  </figure>
 </div>

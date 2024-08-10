@@ -5,16 +5,26 @@ import TitleCV from "./TitleCV.astro";
 
 <ul class="space-y-4">
   {
-    skills.map(({ name, level, keywords }) => (
-      <li>
-        <TitleCV>{name}</TitleCV>
-        <h4 class="text-xs font-bold capitalize">{level}</h4>
-        <ul class="flex flex-wrap">
-          {keywords.map((keyword) => (
-            <li class="m-0.5 rounded bg-[#f8f8ff] p-0.5">{keyword}</li>
-          ))}
-        </ul>
-      </li>
-    ))
+    skills.map(
+      ({
+        name,
+        level,
+        keywords,
+      }: {
+        name: string;
+        level: string;
+        keywords: string[];
+      }) => (
+        <li>
+          <TitleCV>{name}</TitleCV>
+          <h4 class="text-xs font-bold capitalize">{level}</h4>
+          <ul class="flex flex-wrap">
+            {keywords.map((keyword) => (
+              <li class="m-0.5 rounded bg-[#f8f8ff] p-0.5">{keyword}</li>
+            ))}
+          </ul>
+        </li>
+      ),
+    )
   }
 </ul>

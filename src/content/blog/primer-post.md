@@ -1,7 +1,8 @@
 ---
-title: 'Demosle la bienvenidoa al sitio de WaSeidel'
+title: 'Demosle la bienvenida al sitio de WaSeidel'
 description: 'Primer post en mi nuevo sitio creado con astro'
 pubDate: 'Aug 08 2024'
+lang: es
 heroImage: '/blog-placeholder-3.jpg'
 ---
 ## Historia

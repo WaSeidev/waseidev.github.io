@@ -1,6 +1,6 @@
 ---
-import Quote from "@/icons/Quote.astro";
 import TitleCV from "./TitleCV.astro";
+import { Icon } from "astro-icon/components";
 
 const { references } = Astro.props;
 ---
@@ -20,7 +20,7 @@ const { references } = Astro.props;
       }) => (
         <li class="my-5 ">
           <div class="float-left">
-            <Quote width="24" height="24" />
+            <Icon name="quote" class="size-6" />
           </div>
           <blockquote class="ml-8 font-normal italic">{reference}</blockquote>
           <h5 class="float-right font-light">

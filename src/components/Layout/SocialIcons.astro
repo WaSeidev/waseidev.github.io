@@ -1,12 +1,27 @@
 ---
-import Twitter from "@/icons/Twitter.astro";
-import Github from "@/icons/Github.astro";
-import Linkedin from "@/icons/Linkedin.astro";
-import SocialIcon from "./SocialIcon.astro";
+import { getLangFromUrl } from "@/i18n/utils";
+import { basics as es } from "@/data/cv.es.json";
+import { basics as en } from "@/data/cv.en.json";
+import { Icon } from "astro-icon/components";
+
+const lang = getLangFromUrl(Astro.url);
+const { profiles } = lang === "es" ? es : en;
 ---
 
-<div class="flex gap-1">
-  <SocialIcon href="https://twitter.com/WaSeidel"><Twitter /></SocialIcon>
-  <SocialIcon href="https://github.com/WaSeidel"><Github /></SocialIcon>
-  <SocialIcon href="https://linkedin.com/in/WaSeidel"><Linkedin /></SocialIcon>
-</div>
+<ul class="flex gap-3">
+  {
+    profiles.map((profile) => {
+      return (
+        <li class="rounded-lg p-0.5 transition-all duration-300 ease-in-out hover:bg-gray-300 hover:shadow-lg">
+          <a
+            href={profile.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name={profile.network.toLowerCase()} class="h-5 w-5" />
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>

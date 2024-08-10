@@ -1,5 +1,21 @@
 ---
-
+const { projects } = Astro.props;
+const filteredProjects = projects.slice(0, 3);
 ---
 
-<article>Hello World from projects section</article>
+<section>
+  {
+    filteredProjects.map((project) => (
+      <a href={project.url} class="card">
+        <h3>{project.title}</h3>
+        <p>{project.description}</p>
+      </a>
+    ))
+  }
+</section>
+<style>
+  section {
+    grid: template-columns repeat(3, 1fr);
+    gap: 2rem;
+  }
+</style>

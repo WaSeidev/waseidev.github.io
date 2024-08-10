@@ -1,46 +1,29 @@
 ---
-import FormattedDate from "@/components/FormattedDate.astro";
 import BaseHead from "@/components/Layout/BaseHead.astro";
-import Footer from "@/components/Layout/Footer.astro";
 import Header from "@/components/Layout/Header.astro";
-
-interface Props {
-  title?: string;
-  description?: string;
-  pubDate?: Date;
-  heroImage?: string;
-}
-
-const { title, description, pubDate, heroImage } = Astro.props;
+import LanguagePicker from "@/components/Layout/LanguagePicker.astro";
+import SocialIcons from "@/components/Layout/SocialIcons.astro";
+import { getLangFromUrl } from "@/i18n/utils";
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead {title} {description} image={heroImage} />
-  </head>
-  <body
-    class="m-auto flex min-h-screen w-full max-w-7xl flex-col justify-center"
-  >
-    <Header />
-    <main class="my-4 w-full flex-1">
-      {
-        heroImage && (
-          <figure class="m-auto mb-4 flex w-full justify-center">
-            <img class="w-full" src={heroImage} alt={title} />
-          </figure>
-        )
-      }
-      {title && <h1 class="text-4xl font-bold">{title}</h1>}
-      {
-        pubDate && (
-          <div class="mb-4 text-sm text-gray-400">
-            <FormattedDate date={pubDate} />
-          </div>
-        )
-      }
-      <slot />
+<html lang={lang}>
+  <BaseHead />
+  <body>
+    <main class="min-h-screen w-full">
+      <section class="mx-auto flex min-h-screen w-full max-w-6xl flex-col">
+        <Header />
+        <main class="my-4 flex-1">
+          <slot />
+        </main>
+        <footer class="flex w-full rounded-t-lg bg-gray-100">
+          <nav class="mx-auto my-4 flex gap-4">
+            <SocialIcons />
+            <LanguagePicker />
+          </nav>
+        </footer>
+      </section>
     </main>
-    <Footer />
   </body>
 </html>

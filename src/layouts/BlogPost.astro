@@ -1,13 +1,17 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import FormattedDate from "@/components/FormattedDate.astro";
 import BaseLayout from "./BaseLayout.astro";
-import "@/styles/markdown.css";
-
-type Props = CollectionEntry<"blog">["data"];
-
-const { title, description, pubDate, heroImage } = Astro.props;
+const { title, description, heroImage, pubDate } = Astro.props;
 ---
 
-<BaseLayout {title} {description} {pubDate} {heroImage}>
+<BaseLayout>
+  <h1 class="text-center text-5xl">{title}</h1>
+  <figure class="my-4">
+    <img class="w-full" src={heroImage} alt={title} />
+  </figure>
+  <p class="text-lg font-semibold">{description}</p>
+  <p class="mb-4 text-sm font-light">
+    <FormattedDate showDay date={pubDate} />
+  </p>
   <slot />
 </BaseLayout>

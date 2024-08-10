@@ -1,15 +1,17 @@
 ---
-import { basics } from "@/cv.es.json";
+const { basics } = Astro.props;
 ---
 
-<div class="flex flex-col justify-center">
-  <h1 class="text-7xl font-bold">Walther Seidel</h1>
-  <p class="text-lg">Desarrollador Web</p>
-</div>
-<div class="flex flex-col justify-center">
-  <img
-    class="size-96 rounded-full"
-    src="/assets/images/profile.webp"
-    alt="Walther Seidel"
-  />
-</div>
+<article class="mx-4 flex gap-x-9">
+  <div class="flex flex-col justify-center space-y-5">
+    <h1 class="text-7xl font-bold">{basics.name}</h1>
+    <p class="text-wrap text-lg">{basics.label}</p>
+  </div>
+  <div class="flex flex-col justify-center">
+    <img
+      class="w-96 rounded-full object-cover"
+      src={basics.image}
+      alt="Walther Seidel"
+    />
+  </div>
+</article>
