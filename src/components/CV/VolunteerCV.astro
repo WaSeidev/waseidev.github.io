@@ -7,19 +7,33 @@ const { volunteer } = Astro.props;
 <TitleCV>Voluntariados</TitleCV>
 <ul class="space-y-4">
   {
-    volunteer.map(({ organization, position, startDate, endDate, summary }) => (
-      <li>
-        <header class="flex items-start justify-between">
-          <div>
-            <h3 class="text-lg font-semibold">{organization}</h3>
-            <p class="font-light">{position}</p>
-          </div>
-          <div class="text-sm font-light italic">
-            {startDate} - {endDate ? endDate : "Actualidad"}
-          </div>
-        </header>
-        <p>{summary}</p>
-      </li>
-    ))
+    volunteer.map(
+      ({
+        organization,
+        position,
+        startDate,
+        endDate,
+        summary,
+      }: {
+        organization: string;
+        position: string;
+        startDate: string;
+        endDate: string;
+        summary: string;
+      }) => (
+        <li>
+          <header class="flex items-start justify-between">
+            <div>
+              <h3 class="text-lg font-semibold">{organization}</h3>
+              <p class="font-light">{position}</p>
+            </div>
+            <div class="text-sm font-light italic">
+              {startDate} - {endDate ? endDate : "Actualidad"}
+            </div>
+          </header>
+          <p>{summary}</p>
+        </li>
+      ),
+    )
   }
 </ul>
