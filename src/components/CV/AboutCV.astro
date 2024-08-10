@@ -1,0 +1,22 @@
+---
+import Location from "@/icons/Location.astro";
+import Phone from "@/icons/Phone.astro";
+
+import TitleCV from "./TitleCV.astro";
+import AboutItemCV from "./AboutItemCV.astro";
+import Web from "@/icons/Web.astro";
+const { basics } = Astro.props;
+const { email, phone, url, location, profiles } = basics;
+---
+
+<TitleCV>Acerca</TitleCV>
+<article class="flex flex-col gap-2">
+  <AboutItemCV
+    href={`https://google.com/maps/place/${location.city}`}
+    text={`${location.city}, ${location.countryCode}`}
+    icon={Location}
+  />
+  <AboutItemCV href={`tel:${phone}`} text={phone} icon={Phone} />
+  <AboutItemCV href={`https://${url}`} text={url} icon={Web} />
+  <AboutItemCV href={`mailto:${email}`} text={email} icon={Phone} />
+</article>

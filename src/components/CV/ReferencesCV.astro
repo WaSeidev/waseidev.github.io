@@ -1,0 +1,33 @@
+---
+import Quote from "@/icons/Quote.astro";
+import TitleCV from "./TitleCV.astro";
+
+const { references } = Astro.props;
+---
+
+<TitleCV>Referencias</TitleCV>
+<ul class="space-y-5">
+  {
+    references.map(
+      ({
+        name,
+        reference,
+        company,
+      }: {
+        name: string;
+        reference: string;
+        company: string;
+      }) => (
+        <li class="my-5 ">
+          <div class="float-left">
+            <Quote width="24" height="24" />
+          </div>
+          <blockquote class="ml-8 font-normal italic">{reference}</blockquote>
+          <h5 class="float-right font-light">
+            — {name}, {company}
+          </h5>
+        </li>
+      ),
+    )
+  }
+</ul>

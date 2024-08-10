@@ -1,10 +1,49 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import AboutCV from "@/curriculum/AboutCV.astro";
+import HeroCV from "@/curriculum/HeroCV.astro";
+import InterestsCV from "@/curriculum/InterestsCV.astro";
+import LanguagesCV from "@/curriculum/LanguagesCV.astro";
+import SkillsCV from "@/curriculum/SkillsCV.astro";
+import CVLayout from "@/layouts/CVLayout.astro";
+import SummaryCV from "@/curriculum/SummaryCV.astro";
+import ExperienceCV from "@/curriculum/ExperienceCV.astro";
+import EducationCV from "@/curriculum/EducationCV.astro";
+import VolunteerCV from "@/curriculum/VolunteerCV.astro";
+import ReferencesCV from "@/curriculum/ReferencesCV.astro";
+
+import {
+  basics,
+  work,
+  skills,
+  languages,
+  interests,
+  education,
+  volunteer,
+  references,
+} from "@/data/cv.es.json";
+const { summary } = basics;
 ---
 
-<BaseLayout
-  title="Curriculum formateado"
-  description="El curriculum está pendiente de hacerse"
+<CVLayout
+  title="Hoja de Vida de WaSeidev"
+  description="Hoja de Vida de WaSeidev"
 >
-  Pendiente de hacer
-</BaseLayout>
+  <HeroCV />
+  <section class="mt-4">
+    <div>
+      <section class="float-left mr-5 w-40 space-y-4 break-words">
+        <AboutCV {basics} />
+        <SkillsCV {skills} />
+        <LanguagesCV {languages} />
+        <InterestsCV {interests} />
+      </section>
+      <section class="w-auto space-y-5 overflow-hidden">
+        <SummaryCV {summary} />
+        <ExperienceCV {work} />
+        <EducationCV {education} />
+        <VolunteerCV {volunteer} />
+        <ReferencesCV {references} />
+      </section>
+    </div>
+  </section>
+</CVLayout>

@@ -1,0 +1,26 @@
+---
+import TitleCV from "./TitleCV.astro";
+
+const { education } = Astro.props;
+---
+
+<TitleCV>Educación</TitleCV>
+<ul>
+  {
+    education.map(({ institution, area, studyType, startDate, endDate }) => (
+      <li>
+        <header class="flex items-start justify-between">
+          <div>
+            <h3 class="text-lg font-semibold">{institution}</h3>
+            <p class="text-lg">
+              {area} - <span class="font-light">{studyType}</span>
+            </p>
+          </div>
+          <div class="text-xs font-light italic">
+            {startDate} - {endDate ? endDate : "Actualidad"}
+          </div>
+        </header>
+      </li>
+    ))
+  }
+</ul>

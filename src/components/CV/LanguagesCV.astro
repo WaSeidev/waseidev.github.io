@@ -1,0 +1,17 @@
+---
+const { languages } = Astro.props;
+import TitleCV from "./TitleCV.astro";
+---
+
+<TitleCV>Idiomas</TitleCV>
+<ul>
+  {
+    languages.map(({ language, fluency }) => (
+      <li>
+        <p class="text-sm font-semibold">
+          {language} <span class="font-light">({fluency})</span>
+        </p>
+      </li>
+    ))
+  }
+</ul>

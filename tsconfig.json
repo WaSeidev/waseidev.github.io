@@ -4,7 +4,11 @@
     "strictNullChecks": true,
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
+      "@/sections/*": ["src/components/Home/*"],
+      "@/curriculum/*": ["src/components/CV/*"],
+      "@/*": ["src/*"],
+      "@/cv.es.json": ["data/cv.es.json"],
+      "@/cv.en.json": ["data/cv.en.json"]
     }
   }
 }

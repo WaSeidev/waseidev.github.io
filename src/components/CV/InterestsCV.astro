@@ -1,0 +1,20 @@
+---
+const { interests } = Astro.props;
+import TitleCV from "./TitleCV.astro";
+---
+
+<TitleCV>Intereses</TitleCV>
+<ul class="space-y-3">
+  {
+    interests.map(({ name, keywords }) => (
+      <li>
+        <p class="mb-2 text-sm font-semibold">{name}</p>
+        <ul>
+          {keywords.map((keyword) => (
+            <li class="font-light">{keyword}</li>
+          ))}
+        </ul>
+      </li>
+    ))
+  }
+</ul>
