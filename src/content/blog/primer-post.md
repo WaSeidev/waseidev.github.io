@@ -1,10 +1,11 @@
 ---
-title: 'Demosle la bienvenida al sitio de WaSeidel'
-description: 'Primer post en mi nuevo sitio creado con astro'
-pubDate: 'Aug 08 2024'
+title: "Demosle la bienvenida al sitio de WaSeidel"
+description: "Primer post en mi nuevo sitio creado con astro"
+pubDate: "Aug 08 2024"
 lang: es
-heroImage: '/blog-placeholder-3.jpg'
+heroImage: "/assets/images/blog/blog-placeholder-1.jpg"
 ---
+
 ## Historia
 
 Desde hace mucho tiempo he tenido ganas de crear un sitio en donde pueda ir describiendo poco a poco mi progreso y donde pueda ir practicando lo aprendido
@@ -15,23 +16,23 @@ Para hacerlo tuve que probar muchas cosas diferentes entre ellas, aprender **[Re
 
 1.  Iniciar con el círculo de los tutoriales:
 
-    -   Esta es una de las mayores dificultades a las que nos enfrentamos los que estamos en el proceso de aprendizaje de manera autónoma, porque siempre queremos estar aprendiendo y aprendiendo y nunca nos ponemos a hacer (al menos en mi caso eso hacía, pero nunca terminaba un proyecto, e inicié demasiados para contarlos)
+    - Esta es una de las mayores dificultades a las que nos enfrentamos los que estamos en el proceso de aprendizaje de manera autónoma, porque siempre queremos estar aprendiendo y aprendiendo y nunca nos ponemos a hacer (al menos en mi caso eso hacía, pero nunca terminaba un proyecto, e inicié demasiados para contarlos)
 
 2.  No tener una ruta de aprendizaje:
 
-    -   Estar siempre aprendiendo y reiniciando lo aprendido y no avanzar al no tener una ruta de aprendizaje nos quedamos en un limbo en el cual estuve durante al menos 2 años sin aprendiendo mucho, pero sin avanzar realmente, durante este tiempo intenté aprender: **[GraphQL](https://graphql.org)**, **[NestJS](https://nestjs.com)**, **[Laravel](https://laravel.com)** (en este me manejo bien) entre muchos más que nunca llegué a dominar.
+    - Estar siempre aprendiendo y reiniciando lo aprendido y no avanzar al no tener una ruta de aprendizaje nos quedamos en un limbo en el cual estuve durante al menos 2 años sin aprendiendo mucho, pero sin avanzar realmente, durante este tiempo intenté aprender: **[GraphQL](https://graphql.org)**, **[NestJS](https://nestjs.com)**, **[Laravel](https://laravel.com)** (en este me manejo bien) entre muchos más que nunca llegué a dominar.
 
 3.  Poco tiempo para estudiar y aprender:
 
-    -   Cuando inicié todo este proceso estaba trabajando a tiempo completo en una empresa en la cual su enfoque no me emocionaba, algo de programación con Python podía usar, pero no al nivel que quería aunque aprendí mucho. No fue lo suficiente, ya que de igual manera al ser autodidacta tenía que aprenderlo todo por mi cuenta y en ese entonces no tenía buenas prácticas de implementación de código y aunque todavía no hago pruebas (testing, que es mi siguiente paso) al menos ya (creo) estar utilizando buenas prácticas de código.
+    - Cuando inicié todo este proceso estaba trabajando a tiempo completo en una empresa en la cual su enfoque no me emocionaba, algo de programación con Python podía usar, pero no al nivel que quería aunque aprendí mucho. No fue lo suficiente, ya que de igual manera al ser autodidacta tenía que aprenderlo todo por mi cuenta y en ese entonces no tenía buenas prácticas de implementación de código y aunque todavía no hago pruebas (testing, que es mi siguiente paso) al menos ya (creo) estar utilizando buenas prácticas de código.
 
-        Todo esto lo hacía durante mis tiempos libres que básicamente era robarle tiempo a mi pareja en las noches que llegaba a la casa o los fines de semana que teníamos para compartir cuando ella decidía dormir en las tardes yo aprovechaba para ponerme a estudiar.
+      Todo esto lo hacía durante mis tiempos libres que básicamente era robarle tiempo a mi pareja en las noches que llegaba a la casa o los fines de semana que teníamos para compartir cuando ella decidía dormir en las tardes yo aprovechaba para ponerme a estudiar.
 
 ## Ventajas de ser autodidacta
 
 1.  Aprender a tu propio ritmo:
 
-    -   Como lo mencioné anteriormente la falta de tiempo para estudiar era un problema debido a que entre el trabajo y mi relación no tenía tiempo para estudiar, aclaro que el problema era que trabajaba muchas horas al día y quería ser equitativo con mi pareja porque quería compartir tiempo con ella, esto hacía que estudiar en la madrugada o los fines de semana fuera una ventaja también para mí.
+    - Como lo mencioné anteriormente la falta de tiempo para estudiar era un problema debido a que entre el trabajo y mi relación no tenía tiempo para estudiar, aclaro que el problema era que trabajaba muchas horas al día y quería ser equitativo con mi pareja porque quería compartir tiempo con ella, esto hacía que estudiar en la madrugada o los fines de semana fuera una ventaja también para mí.
 
 ## Porque elegir Astro
 

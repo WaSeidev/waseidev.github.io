@@ -16,6 +16,7 @@ const { profiles } = lang === "es" ? es : en;
           <a
             href={profile.url}
             target="_blank"
+            aria-label={`${profile.network.toLowerCase()} - ${profile.username.toLowerCase()}`}
             rel="noopener noreferrer"
           >
             <Icon name={profile.network.toLowerCase()} class="h-5 w-5" />

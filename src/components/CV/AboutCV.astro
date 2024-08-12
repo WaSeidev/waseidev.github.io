@@ -1,11 +1,17 @@
 ---
 import TitleCV from "./TitleCV.astro";
 import AboutItemCV from "./AboutItemCV.astro";
-const { basics } = Astro.props;
+import type { Basics } from "@/cv";
+type Props = {
+  basics: Basics;
+  title: string;
+};
+
+const { basics, title } = Astro.props;
 const { email, phone, url, location, profiles } = basics;
 ---
 
-<TitleCV>Acerca</TitleCV>
+<TitleCV {title} />
 <article class="flex flex-col gap-2">
   <AboutItemCV
     href={`https://google.com/maps/place/${location.city}`}

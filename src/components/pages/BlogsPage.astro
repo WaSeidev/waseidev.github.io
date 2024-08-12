@@ -1,0 +1,28 @@
+---
+import { getLangFromUrl, useTranslatedPath } from "@/i18n/utils";
+import { getCollection } from "astro:content";
+import BlogItem from "../BlogItem.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+const posts = (
+  await getCollection("blog", ({ data }) => {
+    return data.lang === lang;
+  })
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<section>
+  <ul class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+    {
+      posts.map((post) => (
+        <BlogItem
+          href={`${translatePath("/blog")}/${post.slug}/`}
+          image={post.data.heroImage}
+          title={post.data.title}
+          date={post.data.pubDate}
+        />
+      ))
+    }
+  </ul>
+</section>

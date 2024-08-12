@@ -1,39 +1,30 @@
 ---
+import type { Volunteer } from "@/cv";
 import TitleCV from "./TitleCV.astro";
+import StartToFinish from "../StartToFinish.astro";
 
-const { volunteer } = Astro.props;
+type Props = {
+  volunteer: Volunteer[];
+  title: string;
+};
+
+const { volunteer, title } = Astro.props;
 ---
 
-<TitleCV>Voluntariados</TitleCV>
+<TitleCV {title} />
 <ul class="space-y-4">
   {
-    volunteer.map(
-      ({
-        organization,
-        position,
-        startDate,
-        endDate,
-        summary,
-      }: {
-        organization: string;
-        position: string;
-        startDate: string;
-        endDate: string;
-        summary: string;
-      }) => (
-        <li>
-          <header class="flex items-start justify-between">
-            <div>
-              <h3 class="text-lg font-semibold">{organization}</h3>
-              <p class="font-light">{position}</p>
-            </div>
-            <div class="text-sm font-light italic">
-              {startDate} - {endDate ? endDate : "Actualidad"}
-            </div>
-          </header>
-          <p>{summary}</p>
-        </li>
-      ),
-    )
+    volunteer.map(({ organization, position, startDate, endDate, summary }) => (
+      <li>
+        <header class="flex items-start justify-between">
+          <div>
+            <h3 class="text-lg font-semibold">{organization}</h3>
+            <p class="font-light">{position}</p>
+          </div>
+          <StartToFinish {startDate} {endDate} />
+        </header>
+        <p>{summary}</p>
+      </li>
+    ))
   }
 </ul>

@@ -1,6 +1,11 @@
 ---
-const { skills } = Astro.props;
+import type { Skill } from "@/cv";
 import TitleCV from "./TitleCV.astro";
+type Props = {
+  skills: Skill[];
+};
+
+const { skills } = Astro.props;
 ---
 
 <ul class="space-y-4">
@@ -16,7 +21,7 @@ import TitleCV from "./TitleCV.astro";
         keywords: string[];
       }) => (
         <li>
-          <TitleCV>{name}</TitleCV>
+          <TitleCV title={name} />
           <h4 class="text-xs font-bold capitalize">{level}</h4>
           <ul class="flex flex-wrap">
             {keywords.map((keyword) => (

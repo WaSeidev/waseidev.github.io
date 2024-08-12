@@ -1,0 +1,19 @@
+---
+import FormattedDate from "./FormattedDate.astro";
+
+const { href, image, date, title } = Astro.props;
+---
+
+<li
+  class="rounded-lg border transition-all duration-300 first:col-span-3 hover:shadow-lg"
+>
+  <a href={href}>
+    <img class="w-full rounded-t-lg" src={image} alt="" />
+    <article class="m-4">
+      <h4 class="text-3xl font-bold">{title}</h4>
+      <p class="text-sm text-gray-500">
+        <FormattedDate date={date} />
+      </p>
+    </article>
+  </a>
+</li>

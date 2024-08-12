@@ -1,11 +1,17 @@
 ---
+import type { Reference } from "@/cv";
 import TitleCV from "./TitleCV.astro";
 import { Icon } from "astro-icon/components";
 
-const { references } = Astro.props;
+type Props = {
+  references: Reference[];
+  title: string;
+};
+
+const { references, title } = Astro.props;
 ---
 
-<TitleCV>Referencias</TitleCV>
+<TitleCV {title} />
 <ul class="space-y-5">
   {
     references.map(

@@ -1,41 +1,30 @@
 ---
+import type { Work } from "@/cv";
 import TitleCV from "./TitleCV.astro";
-
-const { work } = Astro.props;
+import StartToFinish from "../StartToFinish.astro";
+type Props = {
+  work: Work[];
+  title: string;
+};
+const { work, title } = Astro.props;
 const slicedWork = work.slice(0, 3);
 ---
 
-<TitleCV>Experiencia</TitleCV>
+<TitleCV {title} />
 <ul class="space-y-4">
   {
     slicedWork.map(
-      ({
-        name,
-        position,
-        startDate,
-        endDate,
-        summary,
-        highlights,
-      }: {
-        name: string;
-        position: string;
-        startDate: Date;
-        endDate?: Date;
-        summary: string;
-        highlights: string[];
-      }) => (
+      ({ name, position, startDate, endDate, summary, highlights }) => (
         <li>
           <header class="flex justify-between text-xs font-light">
             <h4 class="text-lg">
               {position} - <span class="text-xs">{name}</span>
             </h4>
-            <div class="italic">
-              {startDate} -{endDate ? endDate : "Actualidad"}
-            </div>
+            <StartToFinish {startDate} {endDate} />
           </header>
           <p class="py-1 text-xs">{summary}</p>
           <ul class="list-disc">
-            {highlights.map((highlight: string) => (
+            {highlights.map((highlight) => (
               <li class="text-sm">{highlight}</li>
             ))}
           </ul>

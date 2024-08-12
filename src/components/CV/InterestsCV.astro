@@ -1,9 +1,15 @@
 ---
-const { interests } = Astro.props;
+import type { Interest } from "@/cv";
 import TitleCV from "./TitleCV.astro";
+
+interface Props {
+  interests: Interest[];
+  title: string;
+}
+const { interests, title } = Astro.props;
 ---
 
-<TitleCV>Intereses</TitleCV>
+<TitleCV {title} />
 <ul class="space-y-3">
   {
     interests.map(

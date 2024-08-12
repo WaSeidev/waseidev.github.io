@@ -173,22 +173,22 @@
   ],
   "languages": [
     {
-      "language": "Spanish",
-      "fluency": "Native Speacker"
+      "language": "Español",
+      "fluency": "Hablante Nativo"
     },
     {
       "language": "Inglés",
-      "fluency": "Fluency speaking and writing"
+      "fluency": "Fluidez hablada y escrita"
     }
   ],
   "interests": [
     {
-      "name": "Motorbiking",
-      "keywords": ["Trail", "Ridding", "Trip", "Tourism"]
+      "name": "Motocicletas",
+      "keywords": ["Trocha", "Paseo", "Viajes", "Turismo"]
     },
     {
-      "name": "Music",
-      "keywords": ["Guitar", "Battery", "Rock", "Salsa"]
+      "name": "Música",
+      "keywords": ["Guitarra", "Bateria", "Rock", "Salsa"]
     }
   ],
   "references": [
@@ -210,7 +210,7 @@
       "endDate": "2024-08-09",
       "description": "Primer proyecto llevado a la practica y ejecutado para compartirlo en la web, los que habia hecho anteriormente nunca los habia sacado del ordenador, a pesar de que estaban en github no los habia compartido ni terminado",
       "highlights": ["CV", "Curriculum"],
-      "url": "proyectos/es/proyecto-cv/"
+      "url": "https://waseidel.github.io/es/projects/es/proyecto-cv/"
     }
   ]
 }

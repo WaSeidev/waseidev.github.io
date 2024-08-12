@@ -1,9 +1,15 @@
 ---
-const { languages } = Astro.props;
+type Props = {
+  languages: Language[];
+  title: string;
+};
+
+const { languages, title } = Astro.props;
+import type { Language } from "@/cv";
 import TitleCV from "./TitleCV.astro";
 ---
 
-<TitleCV>Idiomas</TitleCV>
+<TitleCV {title} />
 <ul>
   {
     languages.map(

@@ -1,8 +1,12 @@
 ---
 import TitleCV from "./TitleCV.astro";
 
-const { summary } = Astro.props;
+type Props = {
+  summary: string;
+  title: string;
+};
+const { summary, title } = Astro.props;
 ---
 
-<TitleCV>Resumen</TitleCV>
+<TitleCV {title} />
 <p class="my-1 text-sm">{summary}</p>
