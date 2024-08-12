@@ -1,10 +1,10 @@
 ---
 import TitleCV from "./TitleCV.astro";
 
-type Props = {
+interface Props {
   summary: string;
   title: string;
-};
+}
 const { summary, title } = Astro.props;
 ---
 

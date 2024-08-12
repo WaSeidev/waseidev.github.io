@@ -52,38 +52,26 @@ const t = useTranslations(lang);
           {
             projects
               .slice(0, 3)
-              .map(
-                ({
-                  name,
-                  url,
-                  description,
-                  highlights,
-                }: {
-                  name: string;
-                  url: string;
-                  description: string;
-                  highlights: string[];
-                }) => (
-                  <li class="group">
-                    <article class="w-full border">
-                      <a
-                        class="flex flex-col gap-4 p-3 transition-all duration-300 ease-in-out hover:shadow-xl"
-                        href={`${href}${url}`}
-                      >
-                        <h3 class="text-lg font-semibold">{name}</h3>
-                        <p class="text-pretty">{description}</p>
-                        <ul class="flex">
-                          {highlights.map((item: string) => (
-                            <li class="m-0.5 text-pretty border bg-gray-50 p-0.5">
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </a>
-                    </article>
-                  </li>
-                ),
-              )
+              .map(({ name, url, description, highlights }) => (
+                <li class="group">
+                  <article class="w-full border">
+                    <a
+                      class="flex flex-col gap-4 p-3 transition-all duration-300 ease-in-out hover:shadow-xl"
+                      href={`${href}${url}`}
+                    >
+                      <h3 class="text-lg font-semibold">{name}</h3>
+                      <p class="text-pretty">{description}</p>
+                      <ul class="flex">
+                        {highlights.map((item: string) => (
+                          <li class="text-pretty m-0.5 border bg-gray-50 p-0.5">
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </a>
+                  </article>
+                </li>
+              ))
           }
         </ul>
       </article>

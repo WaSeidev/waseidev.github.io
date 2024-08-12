@@ -51,7 +51,7 @@ export interface Volunteer {
   organization: string;
   position: string;
   startDate: string;
-  endDate: string;
+  endDate?: string;
   summary: string;
   highlights: string[];
 }
@@ -91,6 +91,7 @@ export interface Interest {
 export interface Reference {
   name: string;
   reference: string;
+  company: string;
 }
 
 export interface Project {

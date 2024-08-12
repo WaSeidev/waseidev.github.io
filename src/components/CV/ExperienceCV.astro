@@ -1,11 +1,11 @@
 ---
-import type { Work } from "@/cv";
 import TitleCV from "./TitleCV.astro";
 import StartToFinish from "../StartToFinish.astro";
-type Props = {
+import type { Work } from "@/cv";
+interface Props {
   work: Work[];
   title: string;
-};
+}
 const { work, title } = Astro.props;
 const slicedWork = work.slice(0, 3);
 ---
@@ -24,7 +24,7 @@ const slicedWork = work.slice(0, 3);
           </header>
           <p class="py-1 text-xs">{summary}</p>
           <ul class="list-disc">
-            {highlights.map((highlight) => (
+            {highlights.map((highlight: string) => (
               <li class="text-sm">{highlight}</li>
             ))}
           </ul>

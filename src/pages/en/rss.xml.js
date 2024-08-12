@@ -1,6 +1,9 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
+import { useTranslatedPath } from "@/i18n/utils";
+const lang = "en"; // <- El idioma está quemado, hay que encontrar una función ya que Astro.url no funciona aquí
+const translatePath = useTranslatedPath(lang);
 
 export async function GET(context) {
   const posts = await getCollection("blog");
@@ -8,9 +11,11 @@ export async function GET(context) {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     site: context.site,
-    items: posts.map((post) => ({
-      ...post.data,
-      link: `/es/notas/${post.slug}/`,
-    })),
+    items: posts
+      .filter((post) => post.data.lang === lang)
+      .map((post) => ({
+        ...post.data,
+        link: `${translatePath("/blog")}/${post.slug}/`,
+      })),
   });
 }

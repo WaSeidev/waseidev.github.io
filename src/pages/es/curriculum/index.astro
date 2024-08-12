@@ -2,12 +2,11 @@
 import CVLayout from "@/layouts/CVLayout.astro";
 import cv from "@/data/cv.es.json";
 import Curriculum from "@/components/pages/Curriculum.astro";
-console.log(cv);
 ---
 
 <CVLayout
   title="Hoja de Vida de WaSeidev"
   description="Hoja de Vida de WaSeidev"
 >
-  <Curriculum {...cv} />
+  <Curriculum cv={cv} />
 </CVLayout>
