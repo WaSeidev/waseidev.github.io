@@ -9,23 +9,19 @@ import ReferencesCV from "@/curriculum/ReferencesCV.astro";
 import SkillsCV from "@/curriculum/SkillsCV.astro";
 import SummaryCV from "@/curriculum/SummaryCV.astro";
 import VolunteerCV from "@/curriculum/VolunteerCV.astro";
-import type { CV as curriculum } from "@/cv";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
-type Props = curriculum;
-
-const { CV: curriculum } = Astro.props;
-
+const { cv } = Astro.props;
 const {
   basics,
+  work,
+  volunteer,
+  education,
   skills,
   languages,
   interests,
-  work,
-  education,
-  volunteer,
   references,
-} = curriculum;
+} = cv;
 
 const { summary } = basics;
 
