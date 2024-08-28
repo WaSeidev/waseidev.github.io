@@ -1,0 +1,33 @@
+---
+import type { Work } from "@/types/cv";
+import TitleCV from "./TitleCV.astro";
+import CardCV from "./CardCV.astro";
+
+interface Props {
+  experience: Work[];
+  title: string;
+}
+
+const { experience, title } = Astro.props;
+const jobs = experience
+  .sort((a: any, b: any) => b.startDate - a.startDate)
+  .slice(0, 3);
+---
+
+<section>
+  <TitleCV>{title}</TitleCV>
+  <ul class="space-y-2">
+    {
+      jobs.map((job) => (
+        <CardCV
+          title={job.name}
+          subtitle={job.position}
+          startDate={job.startDate}
+          endDate={job.endDate}
+          summary={job.summary}
+          highlights={job.highlights}
+        />
+      ))
+    }
+  </ul>
+</section>

@@ -5,7 +5,7 @@
     "image": "/assets/images/profile.webp",
     "email": "waseidev@gmail.com",
     "phone": "+34 625 25 11 15",
-    "url": "waseidev.github.com",
+    "url": "https://waseidev.github.com",
     "summary": "Hi everyone! I'm a Systems Engineer, graduated from the Cooperativa University of Colombia with a focus on web development. I have experience in technologies such as PHP, React.js, MongoDB, Laravel, Python, Pandas, and Linux. I'm a proactive, self-taught individual who loves learning new skills and technologies. During my university career, I was an active member of the free software dissemination group and contributed for several consecutive years to the Latin American Free Software Festival (FLISol). I'm passionate about development, especially FrontEnd with ReactJS and styling with TailwindCSS. I'm seeking an opportunity to apply my skills and strengthen my knowledge in the web development world. I'm committed to being a valuable asset to the company that gives me the opportunity to start my career. If you are interested in learning more about me or working together, please don't hesitate to contact me via email or WhatsApp. It would be a pleasure to meet for a coffee and discuss how I can contribute to your company..",
     "location": {
       "address": "Doctor Marañon 1",
@@ -100,25 +100,25 @@
   "volunteer": [
     {
       "organization": "Caritas España",
-      "position": "Auxiliar de Cocina",
+      "position": "Kitchen Assistant",
       "startDate": "2025-06-15",
-      "summary": "Ayudar en el fregado de ollas, sirviendo la comida en el comedor de Caritas en Ourense",
-      "highlights": ["Ciencia", "Técnología"]
+      "summary": "Providing support in the kitchen by washing dishes and serving food to diners at the Caritas center in Ourense.",
+      "highlights": ["Caritas"]
     },
     {
       "organization": "BarCamp Cali",
-      "position": "Registro de Asistencia",
+      "position": "Attendance Clerk",
       "startDate": "2011-11-01",
       "endDate": "2011-11-01",
-      "summary": "'Desconferencias' tecnologicas realizadas en la ciudad de cali, con el animo de compartir conocimientos y conocer gente nueva del medio",
+      "summary": "Informal tech gatherings in Cali, where attendees can share knowledge and connect with peers.",
       "highlights": ["Ciencia", "Técnología"]
     },
     {
       "organization": "FLISoL Cali",
-      "position": "Instalador",
+      "position": "Installer",
       "startDate": "2011-11-01",
       "endDate": "2011-11-01",
-      "summary": "Ayuda en las instalaciones y difusión de software libre en la ciudad de santiago de cali",
+      "summary": "Contributing to the installation and dissemination of free software within the Santiago de Cali community.",
       "highlights": ["Ciencia", "Técnología", "Linux", "Ubuntu"]
     }
   ],
@@ -126,10 +126,17 @@
     {
       "institution": "Universidad Cooperativa de Colombia",
       "url": "https://ucc.edu.co/",
-      "area": "Ingeniero de Sistemas",
-      "studyType": "Professional",
+      "area": "Computer Systems Engineer",
+      "studyType": "Bachelor's Degree",
       "startDate": "2009-02-02",
       "endDate": "2015-12-15"
+    },
+    {
+      "institution": "I. E. Liceo Nacional Max Seidel",
+      "url": "https://co.institucioneducativa.info/tumaco/institucion-educativa-liceo-nacional-max-seidel-9068/",
+      "area": "Academic",
+      "studyType": "High School Diploma",
+      "endDate": "2001-06-03"
     }
   ],
   "certificates": [
@@ -140,13 +147,13 @@
       "date": "2022-06-16"
     },
     {
-      "name": "Desarrollo de Software",
+      "name": "Software Developer",
       "url": "https://unal.edu.co/",
       "issuer": "Universidad Nacional de Colombia",
-      "date": "2022-12-23"
+      "date": "2021-12-23"
     },
     {
-      "name": "Sistemas de Gesitión de Seguridad de la información ISO27001",
+      "name": "ISO 27001 Information Security Management Systems (ISMS)",
       "url": "https://icontec.com.co/",
       "issuer": "ICONTEC",
       "date": "2015-07-25"

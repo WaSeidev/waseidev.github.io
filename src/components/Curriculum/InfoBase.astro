@@ -1,0 +1,51 @@
+---
+import type { Basics } from "@/types/cv";
+import ContactItem from "./ContactItem.astro";
+import TitleCV from "./TitleCV.astro";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  info: Basics;
+  title: string;
+}
+const { info, title } = Astro.props;
+---
+
+<article>
+  <TitleCV>{title}</TitleCV>
+  <div class="flex items-center gap-4">
+    <ContactItem icon="phone" href={`tel:${info.phone}`}
+      >{info.phone}</ContactItem
+    >
+    <a
+      class="print:hidden"
+      href={`https://wa.me/${info.phone.replace("+", "").replaceAll(" ", "")}`}
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+    >
+      <Icon
+        name="whatsapp"
+        class="h-5 w-5 text-gray-950 dark:text-gray-50 print:h-4 print:w-4 print:dark:text-gray-950"
+      /></a
+    >
+  </div>
+  <ContactItem icon="location">
+    {info.location.postalCode},
+    {info.location.city},
+    {info.location.countryCode}
+  </ContactItem>
+  <ContactItem icon="email" href={`mailto:${info.email}`}
+    >{info.email}</ContactItem
+  >
+  <ContactItem icon="web" href={info.url}
+    >{info.url.split("https://")[1]}</ContactItem
+  >
+  {
+    info.profiles.map((profile) => (
+      <ContactItem icon={profile.network.toLowerCase()} href={profile.url}>
+        <p class="print:hidden">{profile.username}</p>
+        <p class="hidden print:block">{profile.url.split("https://")[1]}</p>
+      </ContactItem>
+    ))
+  }
+</article>

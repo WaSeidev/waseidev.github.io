@@ -1,14 +1,9 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "strictNullChecks": true,
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "@/sections/*": ["src/components/Home/*"],
-      "@/curriculum/*": ["src/components/CV/*"],
-      "@/*": ["src/*"],
-      "@/cv.es.json": ["data/cv.es.json"],
-      "@/cv.en.json": ["data/cv.en.json"]
+      "@/*": ["./src/*"]
     }
   }
 }

@@ -1,0 +1,28 @@
+---
+import type { Volunteer } from "@/types/cv";
+import TitleCV from "./TitleCV.astro";
+import CardCV from "./CardCV.astro";
+interface Props {
+  volunteerships: Volunteer[];
+  title: string;
+}
+const { volunteerships, title } = Astro.props;
+---
+
+<section>
+  <TitleCV>{title}</TitleCV>
+  <ul class="space-y-2">
+    {
+      volunteerships.map((volunteer) => (
+        <CardCV
+          title={volunteer.organization}
+          subtitle={volunteer.position}
+          startDate={volunteer.startDate}
+          endDate={volunteer.endDate}
+          summary={volunteer.summary}
+          higlights={volunteer.highlights}
+        />
+      ))
+    }
+  </ul>
+</section>

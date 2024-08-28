@@ -1,83 +1,18 @@
 ---
-import { getLangFromUrl, useTranslations } from "@/i18n/utils";
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import { Image } from "astro:assets";
-const { href } = Astro.url;
-const { data } = Astro.props;
-const { basics, projects } = data;
+import Basics from "@/components/Basics.astro";
+import Separator from "@/components/Separator.astro";
+import About from "@/components/About.astro";
+import Projects from "@/components/Projects.astro";
+import BlogEntries from "@/components/BlogEntries.astro";
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const { cv } = Astro.props;
+const { basics } = cv;
 ---
 
-<BaseLayout>
-  <section class="h-full w-full flex-col">
-    <article class="flex flex-1 items-center justify-between">
-      <header class="w-auto">
-        <h1 class="text-6xl font-semibold">{basics.name}</h1>
-        <h3 class="text-wrap text-lg font-thin">{basics.label}</h3>
-      </header>
-      <figure class="w-auto">
-        <Image
-          class="w-96 rounded-full"
-          width={384}
-          height={384}
-          src={basics.image}
-          alt={basics.name}
-        />
-      </figure>
-    </article>
-    <section class="mt-12 space-y-12">
-      <article class="space-y-8">
-        <header>
-          <h3 class="text-4xl font-light">{t("content.about")}</h3>
-        </header>
-        <p class="text-pretty text-xl">
-          {basics.summary}
-        </p>
-      </article>
-      <article class="space-y-8">
-        <header>
-          <h2 class="text-4xl font-light">{t("content.projects")}</h2>
-        </header>
-        <ul
-          class:list={[
-            "grid gap-4 grid-cols-1",
-            {
-              "sm:grid-cols-2 lg:grid-cols-3": projects.length >= 3,
-              "sm:grid-cols-2": projects.length === 2,
-            },
-          ]}
-        >
-          {
-            projects
-              .slice(0, 3)
-              .map(({ name, url, description, highlights }) => (
-                <li class="group">
-                  <article class="w-full border">
-                    <a
-                      class="flex flex-col gap-4 p-3 transition-all duration-300 ease-in-out hover:shadow-xl"
-                      href={`${href}${url}`}
-                    >
-                      <h3 class="text-lg font-semibold">{name}</h3>
-                      <p class="text-pretty">{description}</p>
-                      <ul class="flex">
-                        {highlights.map((item: string) => (
-                          <li class="text-pretty m-0.5 border bg-gray-50 p-0.5">
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </a>
-                  </article>
-                </li>
-              ))
-          }
-        </ul>
-      </article>
-      <article class="space-y-8">
-        <h3 class="text-4xl font-light">{t("content.blog")}</h3>
-      </article>
-    </section>
-  </section>
-</BaseLayout>
+<Basics {basics} />
+<Separator />
+<About summary={basics.summary} />
+<Separator />
+<Projects projects={cv.projects} />
+<Separator />
+<BlogEntries />

@@ -1,0 +1,14 @@
+---
+import TitleCV from "./TitleCV.astro";
+
+interface Props {
+  resume: string;
+  title: string;
+}
+const { resume, title } = Astro.props;
+---
+
+<section>
+  <TitleCV>{title}</TitleCV>
+  {resume}
+</section>

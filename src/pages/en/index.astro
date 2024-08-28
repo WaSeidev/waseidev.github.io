@@ -1,6 +1,13 @@
 ---
-import data from "@/data/cv.en.json";
 import IndexPage from "@/components/pages/IndexPage.astro";
+import cv from "@/data/cv.en.json";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
-<IndexPage {data} />
+<BaseLayout
+  title={`Portfolio | ${cv.basics.name}`}
+  description={cv.basics.label}
+  image={cv.basics.image}
+>
+  <IndexPage {cv} />
+</BaseLayout>

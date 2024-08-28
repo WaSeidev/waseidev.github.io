@@ -1,12 +1,13 @@
 ---
-import CVLayout from "@/layouts/CVLayout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 import cv from "@/data/cv.es.json";
-import Curriculum from "@/components/pages/Curriculum.astro";
+import CurriculumLayout from "@/layouts/CurriculumLayout.astro";
 ---
 
-<CVLayout
-  title="Hoja de Vida de WaSeidev"
-  description="Hoja de Vida de WaSeidev"
+<BaseLayout
+  title={`Curriculum | ${cv.basics.name}`}
+  description={cv.basics.summary}
+  image={cv.basics.image}
 >
-  <Curriculum cv={cv} />
-</CVLayout>
+  <CurriculumLayout {cv} />
+</BaseLayout>

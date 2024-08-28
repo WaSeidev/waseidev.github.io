@@ -2,7 +2,8 @@ import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
 import { useTranslatedPath } from "@/i18n/utils";
-const lang = "es"; // <- El idioma está quemado, hay que encontrar una función ya que Astro.url no funciona aquí
+const lang = "es";
+
 const translatePath = useTranslatedPath(lang);
 
 export async function GET(context) {

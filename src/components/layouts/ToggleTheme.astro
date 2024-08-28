@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<button id="theme-toggle" class="flex items-center justify-center ml-2">
+  <span
+    class="block p-1 rounded bg-gray-50 hover:shadow transition-shadow duration-300 ease-in-out dark:bg-gray-700"
+  >
+    <Icon name="sun" class="w-5 h-5 dark:hidden" />
+    <Icon name="moon" class="w-5 h-5 hidden dark:block" />
+  </span>
+</button>
+<script>
+  const isDarkThemeSet = localStorage.theme === "dark";
+  const themeSwitch = document.querySelector("#theme-toggle");
+  const isThemeStored = "theme" in localStorage;
+  const isDarkPrefered = window.matchMedia(
+    "(prefers-color-scheme: dark)",
+  ).matches;
+
+  if (isDarkThemeSet || (!isThemeStored && isDarkPrefered)) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+
+  themeSwitch.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+    localStorage.theme = localStorage.theme === "dark" ? "light" : "dark";
+  });
+</script>

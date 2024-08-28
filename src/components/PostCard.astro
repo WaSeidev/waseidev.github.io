@@ -1,0 +1,19 @@
+---
+import FormattedDate from "./FormattedDate.astro";
+
+const { post, slug } = Astro.props;
+const image = post.image || "/assets/images/blog/blog-placeholder-1.jpg";
+---
+
+<article
+  class="w-full rounded-lg bg-gray-200 first:col-span-3 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700"
+>
+  <a class="mx-auto flex w-auto flex-col" href={slug}>
+    <img class="rounded-t-lg" src={image} alt={post.title} />
+    <div class="m-4">
+      <h1 class="text-4xl">{post.title}</h1>
+      <p class="text-sm font-light"><FormattedDate date={post.pubDate} /></p>
+      <p>{post.description}</p>
+    </div>
+  </a>
+</article>

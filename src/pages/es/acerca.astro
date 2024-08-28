@@ -1,13 +1,13 @@
 ---
+import AboutPage from "@/components/pages/AboutPage.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { basics } from "@/data/cv.es.json";
+import cv from "@/data/cv.es.json";
 ---
 
-<BaseLayout>
-  <h1 class="mb-3 text-4xl">Acerca de Walther Seidel</h1>
-  <div class="flex flex-col gap-4">
-    <p class="whitespace-break-spaces">
-      {basics.summary}
-    </p>
-  </div>
+<BaseLayout
+  title={`Portfolio | ${cv.basics.name}`}
+  description={cv.basics.summary}
+  image={cv.basics.image}
+>
+  <AboutPage summary={cv.basics.summary} />
 </BaseLayout>

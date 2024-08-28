@@ -1,0 +1,14 @@
+---
+import TitleSection from "@/components/TitleSection.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+const { summary } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section>
+  <TitleSection title={t("content.about")} />
+  <p>
+    {summary}
+  </p>
+</section>

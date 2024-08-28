@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+import TitleSection from "@/components/TitleSection.astro";
+import Card from "@/components/Card.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const allPosts = await getCollection("blog");
+const posts = allPosts
+  .filter((post) => post.data.lang === lang)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+const quantity = posts.length;
+---
+
+<section>
+  <TitleSection title={t("content.blog")} />
+  <div
+    class:list={[
+      "grid grid-cols-1 gap-2",
+      { "sm:grid-cols-2": quantity === 2 },
+      { "sm:grid-cols-2 lg:grid-cols-3": quantity >= 3 },
+    ]}
+  >
+    {
+      posts.map(
+        ({ data: { title, description, pubDate, heroImage }, slug }) => (
+          <Card
+            href={`blog/${slug}`}
+            image={heroImage}
+            title={title}
+            date={pubDate}
+            description={description}
+          />
+        ),
+      )
+    }
+  </div>
+</section>

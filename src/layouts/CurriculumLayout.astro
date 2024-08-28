@@ -1,0 +1,40 @@
+---
+import Experience from "@/components/Curriculum/Experience.astro";
+import Education from "@/components/Curriculum/Education.astro";
+import HeroSection from "@/components/Curriculum/HeroSection.astro";
+import InfoBase from "@/components/Curriculum/InfoBase.astro";
+import Interests from "@/components/Curriculum/Interests.astro";
+import Languages from "@/components/Curriculum/Languages.astro";
+import Resume from "@/components/Curriculum/Resume.astro";
+import Skills from "@/components/Curriculum/Skills.astro";
+import type { CV } from "@/types/cv";
+import Volunterships from "@/components/Curriculum/Volunterships.astro";
+import Certificates from "@/components/Curriculum/Certificates.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+interface Props {
+  cv: CV;
+}
+const { cv } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section class="flex min-h-screen flex-row text-sm print:text-xs">
+  <section class="w-96 space-y-4 p-2 print:w-72">
+    <InfoBase info={cv.basics} title={t("cv.contact")} />
+    <Skills skills={cv.skills} title={t("cv.skills")} />
+    <Languages languages={cv.languages} title={t("cv.languages")} />
+    <Interests interests={cv.interests} title={t("cv.interests")} />
+  </section>
+  <section class="w-full space-y-4 p-2">
+    <HeroSection basics={cv.basics} />
+    <Resume resume={cv.basics.summary} title={t("cv.summary")} />
+    <Experience experience={cv.work} title={t("cv.experience")} />
+    <Education studies={cv.education} title={t("cv.education")} />
+    <Certificates
+      certificates={cv.certificates}
+      title={t("cv.certifications")}
+    />
+    <Volunterships volunteerships={cv.volunteer} title={t("cv.volunteers")} />
+  </section>
+</section>

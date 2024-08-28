@@ -1,27 +1,13 @@
 ---
 import { getLangFromUrl } from "@/i18n/utils";
 
-interface Props {
-  date: string;
-  showDay?: boolean;
-}
+const { date } = Astro.props;
 
-const { date, showDay } = Astro.props;
-const newDate = new Date(date);
+const dateOptions: object = {
+  year: "numeric",
+  month: "short",
+};
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<time datetime={newDate.toISOString()}>
-  {
-    showDay
-      ? newDate.toLocaleDateString(lang, {
-          year: "numeric",
-          month: "short",
-          day: "2-digit",
-        })
-      : newDate.toLocaleDateString(lang, {
-          year: "numeric",
-          month: "short",
-        })
-  }
-</time>
+<span>{new Date(date).toLocaleDateString(lang, dateOptions)}</span>

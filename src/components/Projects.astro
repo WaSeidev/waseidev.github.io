@@ -1,0 +1,40 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import Card from "@/components/Card.astro";
+import TitleSection from "@/components/TitleSection.astro";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const { projects } = Astro.props;
+const quantity = projects.length;
+---
+
+<section>
+  <TitleSection title={t("content.projects")} />
+  <div
+    class:list={[
+      "grid grid-cols-1 gap-2",
+      { "sm:grid-cols-2": quantity === 2 },
+      { "sm:grid-cols-2 lg:grid-cols-3": quantity >= 3 },
+    ]}
+  >
+    {
+      projects.map(({ url, name, startDate, description, image }) => (
+        <Card
+          href={url}
+          image={image}
+          title={name}
+          date={startDate}
+          description={description}
+        />
+      ))
+    }
+  </div>
+  {
+    quantity > 3 && (
+      <a href="/projects" class="flex justify-center">
+        view all projects
+      </a>
+    )
+  }
+</section>

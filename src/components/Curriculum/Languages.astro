@@ -1,0 +1,24 @@
+---
+import type { Language } from "@/types/cv";
+import TitleCV from "./TitleCV.astro";
+
+interface Props {
+  languages: Language[];
+  title: string;
+}
+const { languages, title } = Astro.props;
+---
+
+<section>
+  <TitleCV>{title}</TitleCV>
+  <ul>
+    {
+      languages.map(({ language, fluency }) => (
+        <li class="inline-flex items-center gap-2">
+          <h4 class="text-lg print:text-sm">{language}</h4>
+          <span class="text-sm print:text-xs">{fluency}</span>
+        </li>
+      ))
+    }
+  </ul>
+</section>

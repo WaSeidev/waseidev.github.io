@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+
+const {
+  href,
+  title,
+  date,
+  description,
+  image = "/assets/images/blog/blog-placeholder-1.jpg",
+} = Astro.props;
+---
+
+<article class="border shadow-lg bg-gray-100 rounded-lg">
+  <a
+    href={href}
+    class="block max-w-full bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+  >
+    <Image
+      width={400}
+      height={400}
+      src={image}
+      alt={title}
+      class="w-full h-fit object-cover rounded-t-lg"
+    />
+    <div class="p-5">
+      <h3
+        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        {title}
+      </h3>
+      <span class="font-light text-sm text-gray-700 dark:text-gray-400"
+        >{date}</span
+      >
+      <p class="font-normal text-gray-700 dark:text-gray-400">{description}</p>
+    </div>
+  </a>
+</article>

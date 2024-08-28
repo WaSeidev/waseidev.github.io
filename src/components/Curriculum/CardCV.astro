@@ -1,0 +1,31 @@
+---
+import FormattedDate from "@/components/FormattedDate.astro";
+import Pill from "@/components/Pill.astro";
+
+const { title, subtitle, startDate, endDate, summary, highlights } =
+  Astro.props;
+---
+
+<li>
+  <header class="flex flex-row justify-between">
+    <div class="inline-flex items-center gap-2">
+      <h3 class="text-lg print:text-sm">{title}</h3>
+      <span class="text-sm print:text-xs">{subtitle}</span>
+    </div>
+    <div>
+      {startDate && <FormattedDate date={startDate} />}
+      {startDate && endDate && " - "}
+      {endDate ? <FormattedDate date={endDate} /> : "- Present"}
+    </div>
+  </header>
+  {summary && <p class="text-sm print:text-xs">{summary}</p>}
+  {
+    highlights && (
+      <ul class="mt-2 flex gap-2">
+        {highlights.map((highlight: string) => (
+          <Pill>{highlight}</Pill>
+        ))}
+      </ul>
+    )
+  }
+</li>

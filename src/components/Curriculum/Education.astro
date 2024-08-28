@@ -1,0 +1,28 @@
+---
+import type { Education } from "@/types/cv";
+import TitleCV from "./TitleCV.astro";
+import CardCV from "./CardCV.astro";
+
+interface Props {
+  studies: Education[];
+  title: string;
+}
+
+const { studies, title } = Astro.props;
+---
+
+<section>
+  <TitleCV>{title}</TitleCV>
+  <ul>
+    {
+      studies.map((study) => (
+        <CardCV
+          title={study.institution}
+          subtitle={`${study.studyType} ${study.area}`}
+          startDate={study.startDate}
+          endDate={study.endDate}
+        />
+      ))
+    }
+  </ul>
+</section>

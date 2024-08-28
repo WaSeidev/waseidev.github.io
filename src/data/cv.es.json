@@ -5,7 +5,7 @@
     "image": "/assets/images/profile.webp",
     "email": "waseidev@gmail.com",
     "phone": "+34 625 25 11 15",
-    "url": "waseidev.github.com",
+    "url": "https://waseidev.github.com",
     "summary": "Hola a todos! Soy un ingeniero de sistemas graduado de la Universidad Cooperativa de Colombia con un enfoque en el desarrollo web. Tengo experiencia en tecnologías como PHP, React.js, MongoDB, Laravel, Python, Pandas y Linux. Soy proactivo, autodidacta y me encanta aprender nuevas habilidades y tecnologías. Durante mi carrera universitaria, fui un miembro activo del grupo de difusión del software libre y contribuí durante varios años consecutivos en el Festival Latinoamericano de Software Libre (FLISol). Me apasiona el desarrollo, especialmente el FrontEnd con ReactJS y estilos con TailwindCSS. Estoy en busca de una oportunidad para aplicar mis habilidades y fortalecer mi conocimiento en el mundo del desarrollo web. Estoy comprometido a ser un aporte valioso a la empresa que me brinde la oportunidad de iniciar mi carrera. Si estás interesado en conocer más sobre mí o en trabajar juntos, no dudes en contactarme a través de mi correo electrónico o WhatsApp. Sería un placer reunirnos para tomar un café y hablar sobre cómo puedo aportar a tu empresa.",
     "location": {
       "address": "Doctor Marañon 1",
@@ -100,17 +100,17 @@
   "volunteer": [
     {
       "organization": "Caritas España",
-      "position": "Kitchen Assistant",
+      "position": "Auxiliar de Cocina",
       "startDate": "2025-06-15",
-      "summary": "Providing support in the kitchen by washing dishes and serving food to diners at the Caritas center in Ourense.",
-      "highlights": ["Caritas"]
+      "summary": "Ayudar en el fregado de ollas, sirviendo la comida en el comedor de Caritas en Ourense",
+      "highlights": ["Ciencia", "Técnología"]
     },
     {
       "organization": "BarCamp Cali",
-      "position": "Attendance Clerk",
+      "position": "Registro de Asistencia",
       "startDate": "2011-11-01",
       "endDate": "2011-11-01",
-      "summary": "Informal tech gatherings in Cali, where attendees can share knowledge and connect with peers.",
+      "summary": "'Desconferencias' tecnologicas realizadas en la ciudad de cali, con el animo de compartir conocimientos y conocer gente nueva del medio",
       "highlights": ["Ciencia", "Técnología"]
     },
     {
@@ -118,7 +118,7 @@
       "position": "Instalador",
       "startDate": "2011-11-01",
       "endDate": "2011-11-01",
-      "summary": "Contributing to the installation and dissemination of free software within the Santiago de Cali community.",
+      "summary": "Ayuda en las instalaciones y difusión de software libre en la ciudad de santiago de cali",
       "highlights": ["Ciencia", "Técnología", "Linux", "Ubuntu"]
     }
   ],
@@ -126,27 +126,34 @@
     {
       "institution": "Universidad Cooperativa de Colombia",
       "url": "https://ucc.edu.co/",
-      "area": "Systems Engineer",
-      "studyType": "Professional",
+      "area": "Ingeniero de Sistemas",
+      "studyType": "Profesional",
       "startDate": "2009-02-02",
       "endDate": "2015-12-15"
+    },
+    {
+      "institution": "I. E. Liceo Nacional Max Seidel",
+      "url": "https://co.institucioneducativa.info/tumaco/institucion-educativa-liceo-nacional-max-seidel-9068/",
+      "area": "Academico",
+      "studyType": "Bachillerato",
+      "endDate": "2001-06-03"
     }
   ],
   "certificates": [
     {
-      "name": "Bachelor's degree, Data Scientist",
+      "name": "Cientifico de datos",
       "url": "https://correlationone.com/",
       "issuer": "Correlation One",
       "date": "2022-06-16"
     },
     {
-      "name": "Software developer",
+      "name": "Desarrollador de Software",
       "url": "https://unal.edu.co/",
       "issuer": "Universidad Nacional de Colombia",
       "date": "2022-12-23"
     },
     {
-      "name": "ISO 27001 Information Security Management Systems (ISMS)",
+      "name": "Sistemas de gestión de seguridad de la información ISO 27001",
       "url": "https://icontec.com.co/",
       "issuer": "ICONTEC",
       "date": "2015-07-25"
@@ -154,8 +161,8 @@
   ],
   "skills": [
     {
-      "name": "Web Development",
-      "level": "Junior Developer",
+      "name": "Desarrollo Web",
+      "level": "Desarrollador Junior",
       "keywords": ["HTML", "CSS", "JavaScript", "React", "Node.js", "Astro"]
     },
     {
@@ -163,11 +170,11 @@
       "level": "Master",
       "keywords": [
         "Macros",
-        "functions",
-        "Formulas",
-        "Pivot Tables",
-        "Data Analysis",
-        "Spreadsheet"
+        "funciones",
+        "Fórmulas",
+        "Tablas dinámicas",
+        "Ánalisis de datos",
+        "Hojas de cálculo"
       ]
     }
   ],
@@ -210,7 +217,7 @@
       "endDate": "2024-08-09",
       "description": "Primer proyecto llevado a la practica y ejecutado para compartirlo en la web, los que habia hecho anteriormente nunca los habia sacado del ordenador, a pesar de que estaban en github no los habia compartido ni terminado",
       "highlights": ["CV", "Curriculum"],
-      "url": "https://waseidel.github.io/es/projects/es/proyecto-cv/"
+      "url": "https://waseidel.github.io/es/projects/proyecto-cv/"
     }
   ]
 }
