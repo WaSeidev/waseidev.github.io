@@ -29,7 +29,10 @@ const { info, title } = Astro.props;
       /></a
     >
   </div>
-  <ContactItem icon="location">
+  <ContactItem
+    icon="location"
+    href={`https://www.google.com/maps/search/${info.location.postalCode}+${info.location.city}+${info.location.countryCode}`}
+  >
     {info.location.postalCode},
     {info.location.city},
     {info.location.countryCode}

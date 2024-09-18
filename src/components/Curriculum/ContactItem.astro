@@ -10,7 +10,12 @@ const { icon, href } = Astro.props;
 <section class="mt-2 flex items-center gap-2">
   {
     href ? (
-      <a class="flex items-center gap-2" href={href}>
+      <a
+        class="flex items-center gap-2"
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+      >
         <Icon
           name={icon}
           class="h-5 w-5 text-gray-950 dark:text-gray-50 print:h-4  print:w-4 print:dark:text-gray-950"
