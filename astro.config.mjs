@@ -8,6 +8,7 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: "https://waseidev.github.io",
+  base: "/",
   i18n: {
     defaultLocale: "en",
     locales: ["en", "es"],
@@ -20,4 +21,3 @@ export default defineConfig({
   },
   integrations: [mdx(), sitemap(), tailwind(), icon()],
 });
-
