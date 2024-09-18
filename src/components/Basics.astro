@@ -1,6 +1,8 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import { Image } from "astro:assets";
-
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const { basics } = Astro.props;
 ---
 
@@ -16,11 +18,11 @@ const { basics } = Astro.props;
       <div class="flex gap-4 my-2">
         <a
           class="min-w-10 rounded border bg-gray-300 px-2 py-1 dark:bg-gray-700"
-          href="/cv">Visit my CV</a
+          href="/cv">{t("content.visit_my_cv")}</a
         >
         <a
           class="min-w-10 rounded border bg-gray-300 px-2 py-1 dark:bg-gray-700"
-          href={`mailto:${basics.email}`}>Email me</a
+          href={`mailto:${basics.email}`}>{t("content.email_me")}</a
         >
       </div>
     </div>
@@ -37,11 +39,11 @@ const { basics } = Astro.props;
     <div class="flex items-center justify-center gap-4 my-2">
       <a
         class="min-w-10 rounded border bg-gray-300 px-2 py-1 dark:bg-gray-700"
-        href="/cv">Visit my CV</a
+        href="/cv">{t("content.visit_my_cv")}</a
       >
       <a
         class="min-w-10 rounded border bg-gray-300 px-2 py-1 dark:bg-gray-700"
-        href={`mailto:${basics.email}`}>Email me</a
+        href={`mailto:${basics.email}`}>{t("content.email_me")}</a
       >
     </div>
   </div>
