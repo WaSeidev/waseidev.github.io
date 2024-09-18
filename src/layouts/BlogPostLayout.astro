@@ -1,0 +1,27 @@
+---
+import "@/styles/markdown.css";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import { getCurrentTime } from "@/js/utils";
+const { post } = Astro.props;
+---
+
+<BaseLayout
+  title={post.title}
+  description={post.description}
+  image={post.heroImage}
+>
+  <h1>{post.title}</h1>
+  <Image
+    src={post.heroImage}
+    alt={post.title}
+    width={1200}
+    height={630}
+    class="rounded-lg"
+  />
+  <p class="text-lg">
+    {post.description} - <time>{getCurrentTime(post.pubDate, post.lang)}</time>
+  </p>
+  <slot />
+</BaseLayout>
+<style></style>
