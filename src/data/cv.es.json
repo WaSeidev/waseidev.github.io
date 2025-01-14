@@ -1,14 +1,14 @@
 {
   "basics": {
     "name": "Walther A. Seidel M.",
-    "label": "JR Developer | ReactJS | Astro | Node.js | PHP | Laravel | Linux | HTML | CSS | JavaScript",
-    "image": "/assets/images/profile.webp",
+    "label": "Jr Developer | Astro | JavaScript | TypeScript | PHP | HTML | CSS | Laravel | Python | Linux",
+    "image": "/assets/images/WaSeidev.webp",
     "email": "waseidev@gmail.com",
     "phone": "+34 625 25 11 15",
     "url": "https://waseidev.github.com",
-    "summary": "Hola a todos! Soy un ingeniero de sistemas graduado de la Universidad Cooperativa de Colombia con un enfoque en el desarrollo web. Tengo experiencia en tecnologías como PHP, React.js, MongoDB, Laravel, Python, Pandas y Linux. Soy proactivo, autodidacta y me encanta aprender nuevas habilidades y tecnologías. Durante mi carrera universitaria, fui un miembro activo del grupo de difusión del software libre y contribuí durante varios años consecutivos en el Festival Latinoamericano de Software Libre (FLISol). Me apasiona el desarrollo, especialmente el FrontEnd con ReactJS y estilos con TailwindCSS. Estoy en busca de una oportunidad para aplicar mis habilidades y fortalecer mi conocimiento en el mundo del desarrollo web. Estoy comprometido a ser un aporte valioso a la empresa que me brinde la oportunidad de iniciar mi carrera. Si estás interesado en conocer más sobre mí o en trabajar juntos, no dudes en contactarme a través de mi correo electrónico o WhatsApp. Sería un placer reunirnos para tomar un café y hablar sobre cómo puedo aportar a tu empresa.",
+    "summary": "Ingeniero de Sistemas graduado con conocimientos en desarrollo web (PHP, React.js, MongoDB). He desarrollado proyectos personales que me han permitido aplicar mis habilidades en laravel creando un sistema de gestión de incidencias. Estoy constantemente aprendiendo nuevas tecnologías y con deseos de poder aplicar mis conocimientos en un entorno profesional. Busco una oportunidad para crecer y contribuir a un equipo dinámico.",
     "location": {
-      "address": "Doctor Marañon 1",
+      "address": "Doctor Marañon",
       "postalCode": "32005",
       "city": "Ourense",
       "countryCode": "ES",
@@ -29,10 +29,34 @@
         "network": "Github",
         "username": "WaSeidev",
         "url": "https://github.com/waseidev"
+      },
+      {
+        "network": "Instagram",
+        "username": "waseidev",
+        "url": "https://instagram.com/waseidev"
       }
     ]
   },
   "work": [
+    {
+      "name": "Claudio Express Castadon",
+      "position": "Expendedor/Reponedor",
+      "startDate": "2024-11-18",
+      "endDate": "2024-12-23",
+      "summary": "Becario/a de Caritas España en un programa de desarrollo de habilidades para la empleabilidad. A lo largo de un mes, desempeñé funciones de atención al cliente, gestión de inventario (reposición de estanterías) y manejo de efectivo en el punto de venta del supermercado Claudio Express, además de brindar apoyo en el área de repostaje de vehículos.",
+      "highlights": [
+        "Expendedor",
+        "Reponedor",
+        "Combustible",
+        "Supermercado",
+        "Caja",
+        "Inventario",
+        "Efectivo",
+        "PoS",
+        "Caritas",
+        "TPV"
+      ]
+    },
     {
       "name": "ETM",
       "position": "Coordinador de programación de servicios",
@@ -126,7 +150,7 @@
     {
       "institution": "Universidad Cooperativa de Colombia",
       "url": "https://ucc.edu.co/",
-      "area": "Ingeniero de Sistemas",
+      "area": "Ingeniería de Sistemas",
       "studyType": "Profesional",
       "startDate": "2009-02-02",
       "endDate": "2015-12-15"
@@ -141,8 +165,14 @@
   ],
   "certificates": [
     {
+      "name": "Nest: Desarrollo backend escalable con node",
+      "url": "https://www.udemy.com/certificate/UC-8bda74c9-b412-4596-b666-3a6b67140157/",
+      "issuer": "Udemy",
+      "date": "2024-12-26"
+    },
+    {
       "name": "Cientifico de datos",
-      "url": "https://correlationone.com/",
+      "url": "https://www.credential.net/d5564cfd-d34c-4f9f-bff4-4504402c6af6",
       "issuer": "Correlation One",
       "date": "2022-06-16"
     },
@@ -161,20 +191,25 @@
   ],
   "skills": [
     {
-      "name": "Desarrollo Web",
-      "level": "Desarrollador Junior",
-      "keywords": ["HTML", "CSS", "JavaScript", "React", "Node.js", "Astro"]
+      "name": "FrontEnd",
+      "level": "Junior",
+      "keywords": ["HTML", "CSS", "JavaScript", "ReactJS", "Node.js", "Astro"]
+    },
+    {
+      "name": "Backend",
+      "level": "Junior",
+      "keywords": ["Python", "PHP", "Laravel", "NodeJS", "NestJS"]
     },
     {
       "name": "Microsoft Excel",
-      "level": "Master",
+      "level": "Senior",
       "keywords": [
         "Macros",
-        "funciones",
-        "Fórmulas",
-        "Tablas dinámicas",
-        "Ánalisis de datos",
-        "Hojas de cálculo"
+        "Funciones",
+        "Formulas",
+        "Tablas dinamicas",
+        "Analisis de datos",
+        "Hojas de calculo"
       ]
     }
   ],
@@ -219,5 +254,6 @@
       "highlights": ["CV", "Curriculum"],
       "url": "https://waseidel.github.io/es/projects/proyecto-cv/"
     }
-  ]
+  ],
+  "softSkills": ["Trabajo en equipo", "Dinamismo", "Alegria"]
 }

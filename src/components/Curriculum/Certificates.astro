@@ -1,10 +1,10 @@
 ---
-import type { Certificate } from "@/types/cv";
+import type { Certificates } from "@/types/cv";
 import TitleCV from "./TitleCV.astro";
 import FormattedDate from "../FormattedDate.astro";
 
 interface Props {
-  certificates: Certificate[];
+  certificates: Certificates[];
   title: string;
 }
 
@@ -16,15 +16,23 @@ const { certificates, title } = Astro.props;
   <ul class="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
     {
       certificates.map((certificate) => (
-        <li class="flex flex-col justify-between rounded border print:border-2 p-2">
-          <div class="flex justify-between">
-            <h3 class="text-sm font-bold print:text-xs">{certificate.name}</h3>
-            <span class="text-nowrap text-xs font-light">
-              <FormattedDate date={certificate.date} />
-            </span>
-          </div>
-          <p class="tex-sm font-light print:text-xs">{certificate.issuer}</p>
-        </li>
+        <a
+          href={certificate.url}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+        >
+          <li class="flex flex-col justify-between rounded border print:border-2 p-2">
+            <div class="flex justify-between">
+              <h3 class="text-sm font-bold print:text-xs">
+                {certificate.name}
+              </h3>
+              <span class="text-nowrap text-xs font-light">
+                <FormattedDate date={certificate.date} />
+              </span>
+            </div>
+            <p class="tex-sm font-light print:text-xs">{certificate.issuer}</p>
+          </li>
+        </a>
       ))
     }
   </ul>

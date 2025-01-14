@@ -1,16 +1,16 @@
 export interface CV {
   basics: Basics;
-  work: Work[];
-  volunteer: Volunteer[];
-  education: Education[];
-  certificates: Certificate[];
-  skills: Skill[];
-  languages: Language[];
-  interests: Interest[];
-  references: Reference[];
-  projects: Project[];
+  work?: Work[] | null;
+  volunteer?: Volunteer[] | null;
+  education?: Education[] | null;
+  certificates?: Certificates[] | null;
+  skills?: Skills[] | null;
+  languages?: Languages[] | null;
+  interests?: Interests[] | null;
+  references?: References[] | null;
+  projects?: Projects[] | null;
+  softSkills?: string[] | null;
 }
-
 export interface Basics {
   name: string;
   label: string;
@@ -20,9 +20,8 @@ export interface Basics {
   url: string;
   summary: string;
   location: Location;
-  profiles: Profile[];
+  profiles?: Profiles[] | null;
 }
-
 export interface Location {
   address: string;
   postalCode: string;
@@ -30,75 +29,65 @@ export interface Location {
   countryCode: string;
   region: string;
 }
-
-export interface Profile {
+export interface Profiles {
   network: string;
   username: string;
   url: string;
 }
-
 export interface Work {
   name: string;
   position: string;
-  url: string;
   startDate: string;
   endDate: string;
   summary: string;
-  highlights: string[];
+  highlights?: string[] | null;
+  url?: string | null;
 }
-
 export interface Volunteer {
   organization: string;
   position: string;
   startDate: string;
-  endDate?: string;
   summary: string;
-  highlights: string[];
+  highlights?: string[] | null;
+  endDate?: string | null;
 }
-
 export interface Education {
   institution: string;
   url: string;
   area: string;
   studyType: string;
-  startDate?: string;
+  startDate?: string | null;
   endDate: string;
 }
-
-export interface Certificate {
+export interface Certificates {
   name: string;
   url: string;
   issuer: string;
   date: string;
 }
-
-export interface Skill {
+export interface Skills {
   name: string;
   level: string;
-  keywords: string[];
+  keywords?: string[] | null;
 }
-
-export interface Language {
+export interface Languages {
   language: string;
   fluency: string;
 }
-
-export interface Interest {
+export interface Interests {
   name: string;
-  keywords: string[];
+  keywords?: string[] | null;
 }
-
-export interface Reference {
+export interface References {
   name: string;
   reference: string;
   company: string;
 }
-
-export interface Project {
+export interface Projects {
   name: string;
   startDate: string;
   endDate: string;
   description: string;
-  highlights: string[];
+  highlights?: string[] | null;
   url: string;
 }

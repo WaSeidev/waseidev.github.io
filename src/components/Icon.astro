@@ -1,0 +1,19 @@
+---
+import fs from "fs";
+import path from "path";
+import { Icon as AstroIcon } from "astro-icon/components";
+interface Props {
+  icon: string;
+  className?: string;
+}
+const { icon, className } = Astro.props;
+const name = icon
+  .toString()
+  .trim()
+  .toLowerCase()
+  .replaceAll(" ", "-")
+  .replaceAll(".", "");
+if (!fs.existsSync(path.join("./src/icons/", name + ".svg"))) return;
+---
+
+<AstroIcon name={name} class={className} />

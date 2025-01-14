@@ -1,10 +1,11 @@
 ---
-import type { Skill } from "@/types/cv";
+import type { Skills } from "@/types/cv";
 import TitleCV from "./TitleCV.astro";
 import Pill from "@/components/Pill.astro";
+import Icon from "../Icon.astro";
 
 interface Props {
-  skills: Skill[];
+  skills: Skills[];
   title: string;
 }
 const { skills, title } = Astro.props;
@@ -16,11 +17,18 @@ const { skills, title } = Astro.props;
     {
       skills.map((skill) => (
         <li>
-          <h3 class="text-2xl print:text-xl">{skill.name}</h3>
-          <h4 class="text-xl print:text-lg">{skill.level}</h4>
-          <ul class="flex flex-wrap gap-2">
+          <div class="flex items-baseline gap-1">
+            <h3 class="text-lg font-bold print:font-semibold print:text-lg">
+              {skill.name}
+            </h3>
+            <h4 class="text-sm font-light print:text-md">{skill.level}</h4>
+          </div>
+          <ul class="flex flex-wrap gap-2 print:text-xs">
             {skill.keywords.map((keyword) => (
-              <Pill>{keyword}</Pill>
+              <Pill>
+                <Icon icon={keyword} />
+                {keyword}
+              </Pill>
             ))}
           </ul>
         </li>

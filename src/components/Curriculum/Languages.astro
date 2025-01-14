@@ -1,9 +1,9 @@
 ---
-import type { Language } from "@/types/cv";
+import type { Languages } from "@/types/cv";
 import TitleCV from "./TitleCV.astro";
 
 interface Props {
-  languages: Language[];
+  languages: Languages[];
   title: string;
 }
 const { languages, title } = Astro.props;

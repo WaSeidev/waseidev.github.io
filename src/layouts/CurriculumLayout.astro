@@ -3,7 +3,7 @@ import Experience from "@/components/Curriculum/Experience.astro";
 import Education from "@/components/Curriculum/Education.astro";
 import HeroSection from "@/components/Curriculum/HeroSection.astro";
 import InfoBase from "@/components/Curriculum/InfoBase.astro";
-import Interests from "@/components/Curriculum/Interests.astro";
+import SoftSkills from "@/components/Curriculum/SoftSkills.astro";
 import Languages from "@/components/Curriculum/Languages.astro";
 import Resume from "@/components/Curriculum/Resume.astro";
 import Skills from "@/components/Curriculum/Skills.astro";
@@ -23,8 +23,8 @@ const t = useTranslations(lang);
   <section class="w-96 space-y-4 p-2 print:w-72">
     <InfoBase info={cv.basics} title={t("cv.contact")} />
     <Skills skills={cv.skills} title={t("cv.skills")} />
+    <SoftSkills skills={cv.softSkills} title={t("cv.soft_skills")} />
     <Languages languages={cv.languages} title={t("cv.languages")} />
-    <Interests interests={cv.interests} title={t("cv.interests")} />
   </section>
   <section class="w-full space-y-4 p-2">
     <HeroSection basics={cv.basics} />

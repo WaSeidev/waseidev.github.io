@@ -1,9 +1,15 @@
 ---
-
+interface Props {
+  classname?: string;
+}
+const { classname } = Astro.props;
 ---
 
 <li
-  class="text-nowrap flex cursor-pointer rounded border print:border-2 px-1 text-sm print:text-xs"
+  class:list={[
+    "border print:border-2 cursor-pointer rounded flex items-center px-1 gap-1",
+    { classname: classname },
+  ]}
 >
   <slot />
 </li>

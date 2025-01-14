@@ -1,0 +1,25 @@
+---
+import TitleCV from "./TitleCV.astro";
+import Pill from "@/components/Pill.astro";
+import Icon from "../Icon.astro";
+
+interface Props {
+  skills: string[];
+  title: string;
+}
+const { skills, title } = Astro.props;
+---
+
+<section>
+  <TitleCV>{title}</TitleCV>
+  <ul class="my-2 flex gap-1 flex-wrap space-y-4">
+    {
+      skills.map((keyword: string) => (
+        <Pill>
+          <Icon icon={keyword} />
+          <span class="text-nowrap">{keyword}</span>
+        </Pill>
+      ))
+    }
+  </ul>
+</section>
