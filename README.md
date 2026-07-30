@@ -73,6 +73,9 @@ Tres workflows encadenados en `.github/workflows/`:
    Sube el `dist/` como artifact.
 2. **`deploy.yml`** — solo si CI pasó: descarga ese artifact y lo envía por SCP
    al servidor. **No recompila**, así que publica exactamente lo validado.
+   El destino es `/home/waseidel/web/waseidev.net`, que es el volumen del
+   contenedor `webstatic` definido en `syfhome-config`. Si cambias esa ruta
+   allí, hay que cambiarla también aquí o el sitio dejará de actualizarse.
 3. **`pages.yml`** — copia de revisión en GitHub Pages, con
    `PUBLIC_NOINDEX=true` para no competir en buscadores con producción.
 

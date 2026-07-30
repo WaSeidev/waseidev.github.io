@@ -53,7 +53,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ vars.SSH_PORT || 22 }}
           source: "dist/*"
-          target: "/home/waseidel/Docker/sitio-web/html"
+          # Debe coincidir con el volumen del contenedor `webstatic` en
+          # ~/Docker/homeserver/docker-compose.yml del repo syfhome-config.
+          target: "/home/waseidel/web/waseidev.net"
           strip_components: 1
           # Borra en destino lo que ya no existe en el build; sin esto, las
           # páginas eliminadas seguirían sirviéndose para siempre.
