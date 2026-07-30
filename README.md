@@ -71,47 +71,45 @@ Tres workflows encadenados en `.github/workflows/`:
 
 1. **`ci.yml`** — en cada PR y push a `main`: formato, lint, tipos y build.
    Sube el `dist/` como artifact.
-2. **`deploy.yml`** — solo si CI pasó: descarga ese artifact y lo envía por SCP
-   al servidor. **No recompila**, así que publica exactamente lo validado.
-   El destino es `/home/waseidel/web/waseidev.net`, que es el volumen del
-   contenedor `webstatic` definido en `syfhome-config`. Si cambias esa ruta
-   allí, hay que cambiarla también aquí o el sitio dejará de actualizarse.
+2. **`deploy.yml`** — solo si CI pasó: descarga ese artifact y lo copia a la
+   raíz web. **No recompila**, así que publica exactamente lo validado.
+   Corre en un **runner self-hosted** dentro de SYFHome, que sale hacia fuera
+   a por los trabajos: no hace falta abrir ningún puerto ni tener IP fija.
 3. **`pages.yml`** — copia de revisión en GitHub Pages, con
    `PUBLIC_NOINDEX=true` para no competir en buscadores con producción.
 
+El destino es `/var/www/waseidev.net`, que es el volumen del contenedor
+`webstatic` definido en `syfhome-config`. Si cambias esa ruta allí, hay que
+cambiarla también en `deploy.yml` o el sitio dejará de actualizarse.
+
+Se sincroniza el **contenido** con `rsync`, nunca se reemplaza el directorio:
+es un bind mount de Docker, y un `mv` dejaría al contenedor apuntando al inodo
+viejo, sirviendo la versión anterior para siempre.
+
 ### Configuración necesaria en el repo
 
-Secretos (Settings → Secrets and variables → Actions → Secrets):
-
-- `SERVER_IP`, `SERVER_USER`, `SSH_PRIVATE_KEY`
-
-Variables opcionales:
-
-- `SSH_PORT` si SSH no escucha en el 22.
-
-Y en Settings → Pages, **Source: GitHub Actions**. Mientras esté en modo rama,
+En Settings → Pages, **Source: GitHub Actions**. Mientras esté en modo rama,
 GitHub lanza su constructor de Jekyll, que no sabe compilar Astro y falla en
 cada push.
 
-### Si el SCP falla con `unable to authenticate`
+En Settings → Actions → General, **Require approval for all outside
+collaborators**. El repo es público y el runner corre en una máquina personal:
+sin esta opción, un PR desde un fork podría ejecutar código en ella.
 
-Significa que la clave de `SSH_PRIVATE_KEY` no está autorizada en el servidor.
-Se regenera así:
+El runner se declara en `nixos/modulos/github-runner.nix` del repo
+`syfhome-config`. Ya no hacen falta los secretos `SERVER_IP`, `SERVER_USER`
+ni `SSH_PRIVATE_KEY`; se pueden borrar.
+
+### Si el deploy se queda en cola
+
+Significa que el runner no está conectado. En el servidor:
 
 ```bash
-# En tu máquina: par de claves dedicado al deploy, sin passphrase
-ssh-keygen -t ed25519 -C "github-actions-deploy" -f ~/.ssh/deploy_waseidev -N ""
-
-# Autorizar la pública en el servidor
-ssh-copy-id -i ~/.ssh/deploy_waseidev.pub USUARIO@SERVIDOR
-
-# Comprobar que entra sin pedir contraseña
-ssh -i ~/.ssh/deploy_waseidev USUARIO@SERVIDOR 'echo ok'
+systemctl status github-runner-waseidev
+journalctl -u github-runner-waseidev -n 50
 ```
 
-Luego copia el contenido **completo** de la clave privada
-(`cat ~/.ssh/deploy_waseidev`, incluidas las líneas `BEGIN`/`END`) en el
-secreto `SSH_PRIVATE_KEY`.
+Y en Settings → Actions → Runners debería aparecer como _Idle_.
 
 ## Licencia
 
