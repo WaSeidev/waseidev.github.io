@@ -27,7 +27,10 @@ jobs:
     if: >-
       github.event_name == 'workflow_dispatch' ||
       github.event.workflow_run.conclusion == 'success'
-    runs-on: ubuntu-latest
+    # Runner self-hosted en SYFHome: sale hacia fuera a por los trabajos, así
+    # que no hace falta abrir el 22 ni depender de la IP pública. La etiqueta
+    # `waseidev` la declara nixos/modulos/github-runner.nix en syfhome-config.
+    runs-on: [self-hosted, waseidev]
     environment:
       name: produccion
       url: https://waseidev.net
@@ -45,18 +48,17 @@ jobs:
       - name: Comprobar que el build no viene vacío
         run: test -f dist/index.html
 
-      - name: Enviar al servidor por SCP
-        uses: appleboy/scp-action@v1
-        with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ vars.SSH_PORT || 22 }}
-          source: "dist/*"
-          # Debe coincidir con el volumen del contenedor `webstatic` en
-          # ~/Docker/homeserver/docker-compose.yml del repo syfhome-config.
-          target: "/home/waseidel/web/waseidev.net"
-          strip_components: 1
-          # Borra en destino lo que ya no existe en el build; sin esto, las
-          # páginas eliminadas seguirían sirviéndose para siempre.
-          rm: true
+      - name: Publicar en la raíz que sirve nginx
+        env:
+          # Volumen del contenedor `webstatic` en docker/homeserver del repo
+          # syfhome-config. Si cambia allí, hay que cambiarlo aquí.
+          WEB_ROOT: /var/www/waseidev.net
+        run: |
+          set -euo pipefail
+          test -d "$WEB_ROOT"
+
+          # Se sincroniza el CONTENIDO, nunca se reemplaza el directorio: es un
+          # bind mount de Docker, y un `mv` dejaría al contenedor apuntando al
+          # inodo viejo, sirviendo la versión anterior para siempre.
+          # --delete quita lo que ya no existe en el build.
+          rsync -a --delete dist/ "$WEB_ROOT/"
