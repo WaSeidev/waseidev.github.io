@@ -19,7 +19,7 @@ const { interests, title } = Astro.props;
         <li>
           <h4 class="text-lg">{name}</h4>
           <ul class="flex flex-wrap gap-2">
-            {keywords.map((keyword) => (
+            {keywords?.map((keyword) => (
               <Pill>{keyword}</Pill>
             ))}
           </ul>
