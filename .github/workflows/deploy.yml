@@ -61,4 +61,8 @@ jobs:
           # bind mount de Docker, y un `mv` dejaría al contenedor apuntando al
           # inodo viejo, sirviendo la versión anterior para siempre.
           # --delete quita lo que ya no existe en el build.
-          rsync -a --delete dist/ "$WEB_ROOT/"
+          #
+          # --chmod es imprescindible: `-a` implica `-p`, así que rsync copiaba
+          # al destino los permisos del `dist/` del runner, que corre con umask
+          # restrictiva. La raíz web acababa en 0700 y nginx devolvía 403.
+          rsync -a --delete --chmod=D755,F644 dist/ "$WEB_ROOT/"
