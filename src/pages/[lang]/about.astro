@@ -1,0 +1,24 @@
+---
+import AboutPage from "@/components/pages/AboutPage.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { cvByLang } from "@/data/cv";
+import { getLocalePaths, useTranslations, type Lang } from "@/i18n/utils";
+
+export const getStaticPaths = getLocalePaths;
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const cv = cvByLang[lang];
+---
+
+<BaseLayout
+  title={`${t("content.about")} | ${cv.basics.name}`}
+  description={cv.basics.summary}
+  image={cv.basics.image}
+>
+  <AboutPage summary={cv.basics.summary} />
+</BaseLayout>

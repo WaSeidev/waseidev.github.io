@@ -1,21 +1,132 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
 
-html {
-  font-family: "Raleway", sans-serif;
+/* El tema se conmuta con la clase .dark en <html> (ver ToggleTheme.astro). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * La paleta se declara una sola vez con light-dark(): el valor efectivo lo
+ * elige `color-scheme`, que se fija más abajo según la clase .dark. Así no hay
+ * que mantener dos juegos de tokens en paralelo.
+ */
+@theme {
+  --font-sans: var(--font-raleway), ui-sans-serif, system-ui, sans-serif;
+
+  --color-canvas: light-dark(oklch(99% 0.003 250), oklch(17% 0.012 260));
+  --color-surface: light-dark(oklch(97% 0.005 250), oklch(21% 0.015 260));
+  --color-line: light-dark(oklch(90% 0.008 250), oklch(28% 0.018 260));
+  --color-ink: light-dark(oklch(25% 0.015 260), oklch(95% 0.006 250));
+  --color-muted: light-dark(oklch(50% 0.015 260), oklch(70% 0.012 255));
+  --color-brand: light-dark(oklch(52% 0.19 264), oklch(74% 0.15 264));
+  --color-brand-ink: light-dark(oklch(99% 0 0), oklch(17% 0.012 260));
+
+  --radius-card: 0.75rem;
 }
 
-body {
-  margin: 0 auto;
-  width: 100;
+:root {
+  color-scheme: light;
 }
 
-* {
-  box-sizing: border-box;
+:root.dark {
+  color-scheme: dark;
 }
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 800;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/*
+ * Impresión: el currículum debe caber en UNA hoja A4.
+ *
+ * La escala se controla con una sola variable en :root, para poder ajustar
+ * la densidad sin tocar cada componente. El resto son reglas de ahorro de
+ * espacio y de tinta: fondo blanco, sin sombras, sin elementos de navegación.
+ */
 @media print {
   @page {
-    size: 210mm 297mm;
-    margin: 5mm 0mm 5mm 0mm;
+    size: A4 portrait;
+    margin: 8mm 10mm;
+  }
+
+  :root {
+    /* Bajar este valor comprime todo el documento proporcionalmente. Si
+       añades experiencia y se desborda a una segunda hoja, redúcelo antes de
+       tocar nada más. */
+    --print-scale: 0.86;
+    color-scheme: light !important;
+  }
+
+  html {
+    font-size: calc(16px * var(--print-scale));
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  /* Forzar el tema claro aunque el visitante navegue en oscuro. */
+  :root.dark {
+    color-scheme: light !important;
+  }
+
+  /* Evitar que una sección se parta entre páginas si llega a haber una
+     segunda hoja. */
+  section,
+  article,
+  li {
+    break-inside: avoid;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: #000 !important;
+  }
+
+  /* Las sombras y los fondos gastan tinta y no aportan nada en papel. */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
   }
 }

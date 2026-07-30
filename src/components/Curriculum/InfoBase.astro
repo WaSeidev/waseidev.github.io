@@ -9,6 +9,13 @@ interface Props {
   title: string;
 }
 const { info, title } = Astro.props;
+
+const { postalCode, city, countryCode } = info.location;
+// Se componía con expresiones sueltas en el marcado y salía "32005,Ourense,ES".
+const address = [postalCode, city, countryCode].filter(Boolean).join(", ");
+const mapsQuery = encodeURIComponent(`${postalCode} ${city} ${countryCode}`);
+// El esquema sobra en pantalla, pero en papel el dominio debe verse completo.
+const domain = (url: string) => url.replace(/^https?:\/\//, "");
 ---
 
 <article>
@@ -31,23 +38,19 @@ const { info, title } = Astro.props;
   </div>
   <ContactItem
     icon="location"
-    href={`https://www.google.com/maps/search/${info.location.postalCode}+${info.location.city}+${info.location.countryCode}`}
+    href={`https://www.google.com/maps/search/${mapsQuery}`}
   >
-    {info.location.postalCode},
-    {info.location.city},
-    {info.location.countryCode}
+    {address}
   </ContactItem>
   <ContactItem icon="email" href={`mailto:${info.email}`}
     >{info.email}</ContactItem
   >
-  <ContactItem icon="web" href={info.url}
-    >{info.url.split("https://")[1]}</ContactItem
-  >
+  <ContactItem icon="web" href={info.url}>{domain(info.url)}</ContactItem>
   {
-    info.profiles.map((profile) => (
+    info.profiles?.map((profile) => (
       <ContactItem icon={profile.network.toLowerCase()} href={profile.url}>
-        <p class="print:hidden">{profile.username}</p>
-        <p class="hidden print:block">{profile.url.split("https://")[1]}</p>
+        <span class="print:hidden">{profile.username}</span>
+        <span class="hidden print:inline">{domain(profile.url)}</span>
       </ContactItem>
     ))
   }

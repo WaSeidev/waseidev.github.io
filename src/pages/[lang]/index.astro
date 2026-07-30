@@ -1,7 +1,17 @@
 ---
 import IndexPage from "@/components/pages/IndexPage.astro";
-import cv from "@/data/cv.en.json";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { cvByLang } from "@/data/cv";
+import { getLocalePaths, type Lang } from "@/i18n/utils";
+
+export const getStaticPaths = getLocalePaths;
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const cv = cvByLang[lang];
 ---
 
 <BaseLayout

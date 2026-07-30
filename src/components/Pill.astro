@@ -2,13 +2,18 @@
 interface Props {
   classname?: string;
 }
+
 const { classname } = Astro.props;
 ---
 
+{
+  /* Antes era `{ classname: classname }`, que emite la clase literal
+    "classname" en vez del valor recibido. */
+}
 <li
   class:list={[
-    "border print:border-2 cursor-pointer rounded flex items-center px-1 gap-1",
-    { classname: classname },
+    "flex items-center gap-1 rounded-full border border-line px-2 py-0.5 text-xs text-muted print:border-black/30 print:px-1 print:py-0 print:text-[8px] print:text-black",
+    classname,
   ]}
 >
   <slot />

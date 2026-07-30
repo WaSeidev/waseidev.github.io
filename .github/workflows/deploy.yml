@@ -1,29 +1,60 @@
-name: Deploy Astro a SYFHome
+name: Deploy a SYFHome
+
 on:
-  push:
-    branches: [main] # Se activa cuando subes algo a la rama main
+  # Solo tras un push a main, y encadenado a que CI haya pasado: nunca se
+  # publica algo que no compila o que no pasa el formato.
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  # Permite relanzar el despliegue a mano sin tener que hacer un commit vacío,
+  # útil cuando el fallo fue del servidor y no del código.
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-produccion
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  actions: read
+
 jobs:
-  build-and-deploy:
+  deploy:
+    name: Publicar en waseidev.net
+    # En workflow_run hay que comprobar la conclusión a mano: el evento salta
+    # también cuando CI ha fallado.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
+    environment:
+      name: produccion
+      url: https://waseidev.net
     steps:
-      - name: Descargar código
-        uses: actions/checkout@v4
-      - name: Instalar Node.js
-        uses: actions/setup-node@v4
+      # El dist/ ya lo compiló y validó CI, así que aquí no se vuelve a
+      # compilar: se despliega exactamente el artefacto comprobado.
+      - name: Descargar el build validado
+        uses: actions/download-artifact@v8
         with:
-          node-version: 24
-          cache: 'npm'
-      - name: Instalar dependencias y Compilar
-        run: |
-          npm install
-          npm run build
-      - name: Enviar archivos al servidor (SCP)
-        uses: appleboy/scp-action@master
+          name: dist
+          path: dist
+          run-id: ${{ github.event.workflow_run.id || github.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comprobar que el build no viene vacío
+        run: test -f dist/index.html
+
+      - name: Enviar al servidor por SCP
+        uses: appleboy/scp-action@v1
         with:
           host: ${{ secrets.SERVER_IP }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22 # OJO: Usa el puerto que tengas abierto para SSH o tu VPN
+          port: ${{ vars.SSH_PORT || 22 }}
           source: "dist/*"
           target: "/home/waseidel/Docker/sitio-web/html"
           strip_components: 1
+          # Borra en destino lo que ya no existe en el build; sin esto, las
+          # páginas eliminadas seguirían sirviéndose para siempre.
+          rm: true

@@ -2,13 +2,17 @@
 import { getCollection } from "astro:content";
 import TitleSection from "@/components/TitleSection.astro";
 import Card from "@/components/Card.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const allPosts = await getCollection("blog");
-const posts = allPosts
-  .filter((post) => post.data.lang === lang)
+const posts = (
+  await getCollection(
+    "blog",
+    (post) => post.data.lang === lang && !post.data.draft,
+  )
+)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
 
@@ -25,17 +29,15 @@ const quantity = posts.length;
     ]}
   >
     {
-      posts.map(
-        ({ data: { title, description, pubDate, heroImage }, slug }) => (
-          <Card
-            href={`blog/${slug}`}
-            image={heroImage}
-            title={title}
-            date={pubDate}
-            description={description}
-          />
-        ),
-      )
+      posts.map(({ data: { title, description, pubDate, heroImage }, id }) => (
+        <Card
+          href={getRelativeLocaleUrl(lang, `blog/${id}`)}
+          image={heroImage}
+          title={title}
+          date={pubDate}
+          description={description}
+        />
+      ))
     }
   </div>
 </section>

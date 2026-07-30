@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import PostCard from "@/components/PostCard.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getLocalePaths, useTranslations, type Lang } from "@/i18n/utils";
+
+export const getStaticPaths = getLocalePaths;
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const projects = (
+  await getCollection(
+    "project",
+    (entry) => entry.data.lang === lang && !entry.data.draft,
+  )
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title={t("content.projects")} description={t("content.projects")}>
+  <h1 class="mb-8 text-3xl sm:text-4xl">{t("content.projects")}</h1>
+  {
+    projects.length > 0 ? (
+      <section class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {projects.map((entry) => (
+          <PostCard
+            post={entry.data}
+            slug={getRelativeLocaleUrl(lang, `projects/${entry.id}`)}
+          />
+        ))}
+      </section>
+    ) : (
+      <p class="text-muted">{t("content.empty")}</p>
+    )
+  }
+</BaseLayout>

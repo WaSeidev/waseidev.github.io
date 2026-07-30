@@ -1,28 +1,33 @@
 ---
-import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import type { Projects } from "@/types/cv";
 import Card from "@/components/Card.astro";
 import TitleSection from "@/components/TitleSection.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+interface Props {
+  projects?: Projects[] | null;
+}
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const { projects } = Astro.props;
-const quantity = projects.length;
+const projects = Astro.props.projects ?? [];
 ---
 
 <section>
   <TitleSection title={t("content.projects")} />
   <div
     class:list={[
-      "grid grid-cols-1 gap-2",
-      { "sm:grid-cols-2": quantity === 2 },
-      { "sm:grid-cols-2 lg:grid-cols-3": quantity >= 3 },
+      "grid grid-cols-1 gap-4",
+      { "sm:grid-cols-2": projects.length === 2 },
+      { "sm:grid-cols-2 lg:grid-cols-3": projects.length >= 3 },
     ]}
   >
     {
-      projects.map(({ url, name, startDate, description, image }) => (
+      projects.map(({ url, name, startDate, description }) => (
         <Card
           href={url}
-          image={image}
           title={name}
           date={startDate}
           description={description}
@@ -31,9 +36,14 @@ const quantity = projects.length;
     }
   </div>
   {
-    quantity > 3 && (
-      <a href="/projects" class="flex justify-center">
-        view all projects
+    projects.length > 3 && (
+      /* Antes era href="/projects" sin prefijo de idioma y con el texto
+         "view all projects" incrustado en inglés. */
+      <a
+        href={getRelativeLocaleUrl(lang, "projects")}
+        class="mt-6 flex justify-center text-sm font-extrabold text-brand"
+      >
+        {t("content.projects")}
       </a>
     )
   }

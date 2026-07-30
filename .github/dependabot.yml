@@ -1,0 +1,31 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      # Astro y sus integraciones se publican coordinadas: agruparlas evita
+      # cinco PRs que solo pasan juntas.
+      astro:
+        patterns:
+          - "astro"
+          - "@astrojs/*"
+          - "astro-icon"
+      tailwind:
+        patterns:
+          - "tailwindcss"
+          - "@tailwindcss/*"
+          - "prettier-plugin-tailwindcss"
+      linting:
+        patterns:
+          - "eslint*"
+          - "@typescript-eslint/*"
+          - "prettier"
+          - "prettier-plugin-astro"
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

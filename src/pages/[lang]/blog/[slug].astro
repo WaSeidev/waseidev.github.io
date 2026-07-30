@@ -1,0 +1,32 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import BlogPostLayout from "@/layouts/BlogPostLayout.astro";
+import { getLocalePaths, type Lang } from "@/i18n/utils";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", (post) => !post.data.draft);
+
+  // Cada post existe en un solo idioma. Antes se emitían todos bajo ambos
+  // prefijos, así que /es/blog/ servía también los posts en inglés.
+  return getLocalePaths().flatMap(({ params, props }) =>
+    posts
+      .filter((post) => post.data.lang === props.lang)
+      .map((post) => ({
+        params: { ...params, slug: post.id },
+        props: { ...props, post },
+      })),
+  );
+}
+
+interface Props {
+  lang: Lang;
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BlogPostLayout post={post.data}>
+  <Content />
+</BlogPostLayout>

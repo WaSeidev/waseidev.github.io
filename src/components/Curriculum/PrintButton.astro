@@ -1,0 +1,30 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const t = useTranslations(getLangFromUrl(Astro.url));
+---
+
+{
+  /*
+  No genera un PDF por su cuenta: abre el diálogo de impresión del navegador,
+  donde "Guardar como PDF" produce exactamente la misma A4 que saldría por la
+  impresora. Así no hace falta ninguna librería ni mantener un PDF aparte.
+*/
+}
+<div class="mb-6 flex items-center justify-end gap-3 print:hidden">
+  <p class="text-xs text-muted">{t("cv.printHint")}</p>
+  <button
+    id="printCv"
+    type="button"
+    class="cursor-pointer rounded-md bg-brand px-4 py-2 text-sm font-extrabold text-brand-ink transition-opacity hover:opacity-90"
+  >
+    {t("cv.print")}
+  </button>
+</div>
+
+<script>
+  document.addEventListener("click", (event) => {
+    const target = event.target as HTMLElement | null;
+    if (target?.closest("#printCv")) window.print();
+  });
+</script>
