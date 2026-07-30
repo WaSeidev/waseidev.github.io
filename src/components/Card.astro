@@ -1,5 +1,14 @@
 ---
 import { Image } from "astro:assets";
+import FormattedDate from "@/components/FormattedDate.astro";
+
+interface Props {
+  href: string;
+  title: string;
+  date: string | Date;
+  description: string;
+  image?: string;
+}
 
 const {
   href,
@@ -8,30 +17,33 @@ const {
   description,
   image = "/assets/images/blog/blog-placeholder-1.jpg",
 } = Astro.props;
+
+// Los proyectos del CV traen enlaces externos; el blog, rutas internas.
+const isExternal = /^https?:\/\//.test(href);
 ---
 
-<article class="border shadow-lg bg-gray-100 rounded-lg">
-  <a
-    href={href}
-    class="block max-w-full bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-  >
-    <Image
-      width={400}
-      height={400}
-      src={image}
-      alt={title}
-      class="w-full h-fit object-cover rounded-t-lg"
-    />
-    <div class="p-5">
-      <h3
-        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+<article
+  class="group relative flex flex-col overflow-hidden rounded-card border border-line bg-surface transition-colors hover:border-brand"
+>
+  <Image
+    width={400}
+    height={225}
+    src={image}
+    alt=""
+    class="aspect-video w-full object-cover"
+  />
+  <div class="flex flex-1 flex-col p-4">
+    <h3 class="text-lg">
+      <a
+        {href}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener" : undefined}
+        class="group-hover:text-brand after:absolute after:inset-0"
       >
         {title}
-      </h3>
-      <span class="font-light text-sm text-gray-700 dark:text-gray-400"
-        >{date}</span
-      >
-      <p class="font-normal text-gray-700 dark:text-gray-400">{description}</p>
-    </div>
-  </a>
+      </a>
+    </h3>
+    <p class="mt-1 text-sm text-muted"><FormattedDate {date} /></p>
+    <p class="mt-2 flex-1 text-muted">{description}</p>
+  </div>
 </article>

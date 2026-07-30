@@ -5,7 +5,7 @@
     "image": "/assets/images/WaSeidev.webp",
     "email": "waseidev@gmail.com",
     "phone": "+34 625 25 11 15",
-    "url": "https://waseidev.github.com",
+    "url": "https://waseidev.net",
     "summary": "Ingeniero de Sistemas graduado con conocimientos en desarrollo web (PHP, React.js, MongoDB). He desarrollado proyectos personales que me han permitido aplicar mis habilidades en laravel creando un sistema de gestión de incidencias. Estoy constantemente aprendiendo nuevas tecnologías y con deseos de poder aplicar mis conocimientos en un entorno profesional. Busco una oportunidad para crecer y contribuir a un equipo dinámico.",
     "location": {
       "address": "Doctor Marañon",
@@ -252,7 +252,7 @@
       "endDate": "2024-08-09",
       "description": "Primer proyecto llevado a la practica y ejecutado para compartirlo en la web, los que habia hecho anteriormente nunca los habia sacado del ordenador, a pesar de que estaban en github no los habia compartido ni terminado",
       "highlights": ["CV", "Curriculum"],
-      "url": "https://waseidel.github.io/es/projects/proyecto-cv/"
+      "url": "https://waseidev.net/es/projects/proyecto-cv/"
     }
   ],
   "softSkills": ["Trabajo en equipo", "Dinamismo", "Alegria"]

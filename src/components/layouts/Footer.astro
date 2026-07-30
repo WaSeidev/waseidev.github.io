@@ -1,15 +1,14 @@
 ---
 import SocialIcons from "@/components/layouts/SocialIcons.astro";
-import LanguagePicker from "./LanguagePicker.astro";
+
+const year = new Date().getFullYear();
 ---
 
-<footer
-  class="my-2 rounded-lg bg-gray-200 shadow dark:bg-gray-800 print:hidden"
->
+<footer class="mt-12 border-t border-line print:hidden">
   <div
-    class="mx-auto flex w-full max-w-screen-xl justify-center gap-2 py-2 md:items-center"
+    class="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 py-6 sm:flex-row sm:justify-between"
   >
+    <p class="text-sm text-muted">&copy; {year} Walther A. Seidel M.</p>
     <SocialIcons />
-    <LanguagePicker />
   </div>
 </footer>

@@ -5,7 +5,7 @@
     "image": "/assets/images/profile.webp",
     "email": "waseidev@gmail.com",
     "phone": "+34 625 25 11 15",
-    "url": "https://waseidev.github.com",
+    "url": "https://waseidev.net",
     "summary": "Hi everyone! I'm a Systems Engineer, graduated from the Cooperativa University of Colombia with a focus on web development. I have experience in technologies such as PHP, React.js, MongoDB, Laravel, Python, Pandas, and Linux. I'm a proactive, self-taught individual who loves learning new skills and technologies. During my university career, I was an active member of the free software dissemination group and contributed for several consecutive years to the Latin American Free Software Festival (FLISol). I'm passionate about development, especially FrontEnd with ReactJS and styling with TailwindCSS. I'm seeking an opportunity to apply my skills and strengthen my knowledge in the web development world. I'm committed to being a valuable asset to the company that gives me the opportunity to start my career. If you are interested in learning more about me or working together, please don't hesitate to contact me via email or WhatsApp. It would be a pleasure to meet for a coffee and discuss how I can contribute to your company..",
     "location": {
       "address": "Doctor Marañon 1",
@@ -217,7 +217,7 @@
       "endDate": "2024-08-09",
       "description": "Primer proyecto llevado a la practica y ejecutado para compartirlo en la web, los que habia hecho anteriormente nunca los habia sacado del ordenador, a pesar de que estaban en github no los habia compartido ni terminado",
       "highlights": ["CV", "Curriculum"],
-      "url": "proyectos/es/proyecto-cv/"
+      "url": "https://waseidev.net/es/projects/proyecto-cv/"
     }
   ],
   "softSkills": ["Teamwork", "Dinamic", "Joy"]

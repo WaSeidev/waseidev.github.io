@@ -1,0 +1,57 @@
+name: Preview en GitHub Pages
+
+# Copia de revisión. La producción es waseidev.net (ver deploy.yml); esta se
+# publica con noindex para no competir en buscadores con el dominio bueno.
+#
+# IMPORTANTE: requiere Settings > Pages > Source: "GitHub Actions". Mientras
+# esté en modo rama, GitHub lanza su constructor de Jekyll, que no sabe
+# compilar un proyecto Astro y falla en cada push.
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      # Se recompila en vez de reutilizar el artifact de CI porque esta copia
+      # necesita PUBLIC_NOINDEX. El repo es waseidev.github.io, que se sirve
+      # desde la raíz, así que `base` no cambia.
+      - name: Build de preview
+        run: npm run build
+        env:
+          PUBLIC_NOINDEX: "true"
+
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist/
+      - id: deployment
+        uses: actions/deploy-pages@v5

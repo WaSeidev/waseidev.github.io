@@ -7,34 +7,80 @@ import SoftSkills from "@/components/Curriculum/SoftSkills.astro";
 import Languages from "@/components/Curriculum/Languages.astro";
 import Resume from "@/components/Curriculum/Resume.astro";
 import Skills from "@/components/Curriculum/Skills.astro";
-import type { CV } from "@/types/cv";
 import Volunterships from "@/components/Curriculum/Volunterships.astro";
 import Certificates from "@/components/Curriculum/Certificates.astro";
+import PrintButton from "@/components/Curriculum/PrintButton.astro";
+import type { CV } from "@/types/cv";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
 interface Props {
   cv: CV;
 }
+
 const { cv } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section class="flex min-h-screen flex-row text-sm print:text-xs">
-  <section class="w-96 space-y-4 p-2 print:w-72">
+<PrintButton />
+
+{
+  /*
+  Dos columnas fijas: en pantalla se apilan por debajo de `md`, pero al
+  imprimir siempre van lado a lado, que es lo que permite meter todo en una
+  sola A4. La densidad global se ajusta con --print-scale en global.css.
+*/
+}
+<article
+  class="grid gap-6 md:grid-cols-[minmax(0,17rem)_1fr] print:grid-cols-[15rem_1fr] print:gap-3"
+>
+  <aside class="space-y-5 print:space-y-2.5">
     <InfoBase info={cv.basics} title={t("cv.contact")} />
-    <Skills skills={cv.skills} title={t("cv.skills")} />
-    <SoftSkills skills={cv.softSkills} title={t("cv.soft_skills")} />
-    <Languages languages={cv.languages} title={t("cv.languages")} />
-  </section>
-  <section class="w-full space-y-4 p-2">
+    {cv.skills && <Skills skills={cv.skills} title={t("cv.skills")} />}
+    {
+      cv.softSkills && (
+        <SoftSkills skills={cv.softSkills} title={t("cv.soft_skills")} />
+      )
+    }
+    {
+      cv.languages && (
+        <Languages languages={cv.languages} title={t("cv.languages")} />
+      )
+    }
+  </aside>
+
+  <div class="space-y-5 print:space-y-2.5">
     <HeroSection basics={cv.basics} />
     <Resume resume={cv.basics.summary} title={t("cv.summary")} />
-    <Experience experience={cv.work} title={t("cv.experience")} />
-    <Education studies={cv.education} title={t("cv.education")} />
-    <Certificates
-      certificates={cv.certificates}
-      title={t("cv.certifications")}
-    />
-    <Volunterships volunteerships={cv.volunteer} title={t("cv.volunteers")} />
-  </section>
-</section>
+    {
+      cv.work && (
+        <Experience
+          experience={cv.work}
+          title={t("cv.experience")}
+          printLimit={6}
+        />
+      )
+    }
+    {
+      cv.education && (
+        <Education studies={cv.education} title={t("cv.education")} />
+      )
+    }
+    {
+      cv.certificates && (
+        <Certificates
+          certificates={cv.certificates}
+          title={t("cv.certifications")}
+        />
+      )
+    }
+    {
+      cv.volunteer && (
+        <Volunterships
+          volunteerships={cv.volunteer}
+          title={t("cv.volunteers")}
+        />
+      )
+    }
+  </div>
+</article>

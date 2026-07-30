@@ -5,10 +5,15 @@ interface Props {
   resume: string;
   title: string;
 }
+
 const { resume, title } = Astro.props;
 ---
 
 <section>
   <TitleCV>{title}</TitleCV>
-  {resume}
+  <p
+    class="text-sm text-muted print:text-[9px] print:leading-snug print:text-black"
+  >
+    {resume}
+  </p>
 </section>

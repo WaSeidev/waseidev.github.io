@@ -2,30 +2,70 @@
 import FormattedDate from "@/components/FormattedDate.astro";
 import Pill from "@/components/Pill.astro";
 import Icon from "../Icon.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
-const { title, subtitle, startDate, endDate, summary, highlights } =
-  Astro.props;
+interface Props {
+  title: string;
+  subtitle?: string;
+  startDate?: string | null;
+  endDate?: string | null;
+  summary?: string;
+  highlights?: string[] | null;
+  class?: string;
+}
+
+const {
+  title,
+  subtitle,
+  startDate,
+  endDate,
+  summary,
+  highlights,
+  class: className,
+} = Astro.props;
+
+const t = useTranslations(getLangFromUrl(Astro.url));
 ---
 
-<li>
-  <header class="flex flex-row justify-between">
-    <div class="inline-flex items-baseline gap-2">
-      <h3 class="text-lg font-bold print:font-semibold print:text-sm">
-        {title}
-      </h3>
-      <span class="text-sm print:text-xs">{subtitle}</span>
+<li class:list={["print:mb-1.5", className]}>
+  <header class="flex flex-wrap items-baseline justify-between gap-x-2">
+    <div class="flex flex-wrap items-baseline gap-x-2">
+      <h3 class="text-sm font-extrabold print:text-[10px]">{title}</h3>
+      {
+        subtitle && (
+          <span class="text-sm text-muted print:text-[9px] print:text-black">
+            {subtitle}
+          </span>
+        )
+      }
     </div>
-    <div class="text-nowrap text-sm font-light print:text-xs">
+    <div
+      class="text-xs whitespace-nowrap text-muted print:text-[8px] print:text-black"
+    >
       {startDate && <FormattedDate date={startDate} />}
-      {startDate && endDate && " - "}
-      {endDate ? <FormattedDate date={endDate} /> : "- Present"}
+      {startDate && " – "}
+      {
+        endDate ? (
+          <FormattedDate date={endDate} />
+        ) : (
+          startDate && t("content.present")
+        )
+      }
     </div>
   </header>
-  {summary && <p class="text-sm print:text-xs">{summary}</p>}
+
   {
-    highlights && (
-      <ul class="mt-2 flex gap-2">
-        {highlights.map((highlight: string) => (
+    summary && (
+      <p class="mt-1 text-sm text-muted print:mt-0.5 print:text-[9px] print:leading-snug print:text-black">
+        {summary}
+      </p>
+    )
+  }
+
+  {
+    highlights && highlights.length > 0 && (
+      <ul class="mt-2 flex flex-wrap gap-1.5 print:mt-1 print:gap-1">
+        {highlights.map((highlight) => (
           <Pill>
             <Icon icon={highlight} />
             {highlight}

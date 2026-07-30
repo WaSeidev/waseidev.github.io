@@ -1,0 +1,79 @@
+---
+import { Font } from "astro:assets";
+import {
+  languages,
+  getLangFromUrl,
+  getLocalizedUrl,
+  type Lang,
+} from "@/i18n/utils";
+import "@/styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+}
+
+const { title, description, image } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// Las portadas del CV y del blog llegan como ruta de public/; las externas ya
+// son absolutas y `new URL` las respeta tal cual.
+const ogImage = new URL(image ?? "/assets/images/WaSeidev.webp", Astro.site);
+const noindex = import.meta.env.PUBLIC_NOINDEX === "true";
+
+const withBase = (path: string) =>
+  `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+<link rel="icon" type="image/svg+xml" href={withBase("favicon.svg")} />
+
+<Font cssVariable="--font-raleway" preload />
+
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+{
+  (Object.keys(languages) as Lang[]).map((l) => (
+    <link
+      rel="alternate"
+      hreflang={l}
+      href={new URL(getLocalizedUrl(Astro.url, l), Astro.site)}
+    />
+  ))
+}
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:locale" content={lang} />
+<meta property="og:image" content={ogImage} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@waseidev" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+{/* Corre antes del primer pintado para que no haya destello de tema claro. */}
+<script is:inline>
+  (() => {
+    const applyTheme = () => {
+      const stored = localStorage.getItem("theme");
+      const dark = stored
+        ? stored === "dark"
+        : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.classList.toggle("dark", dark);
+    };
+    applyTheme();
+    document.addEventListener("astro:after-swap", applyTheme);
+  })();
+</script>

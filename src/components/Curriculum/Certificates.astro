@@ -21,12 +21,12 @@ const { certificates, title } = Astro.props;
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <li class="flex flex-col justify-between rounded border print:border-2 p-2">
+          <li class="flex flex-col justify-between rounded border p-2 print:border-2">
             <div class="flex justify-between">
               <h3 class="text-sm font-bold print:text-xs">
                 {certificate.name}
               </h3>
-              <span class="text-nowrap text-xs font-light">
+              <span class="text-xs font-light text-nowrap">
                 <FormattedDate date={certificate.date} />
               </span>
             </div>

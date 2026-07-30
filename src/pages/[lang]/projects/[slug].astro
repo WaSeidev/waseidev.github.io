@@ -1,0 +1,30 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import BlogPostLayout from "@/layouts/BlogPostLayout.astro";
+import { getLocalePaths, type Lang } from "@/i18n/utils";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("project", (entry) => !entry.data.draft);
+
+  return getLocalePaths().flatMap(({ params, props }) =>
+    projects
+      .filter((entry) => entry.data.lang === props.lang)
+      .map((entry) => ({
+        params: { ...params, slug: entry.id },
+        props: { ...props, entry },
+      })),
+  );
+}
+
+interface Props {
+  lang: Lang;
+  entry: CollectionEntry<"project">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<BlogPostLayout post={entry.data}>
+  <Content />
+</BlogPostLayout>

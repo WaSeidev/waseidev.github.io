@@ -18,10 +18,10 @@ const { skills, title } = Astro.props;
       skills.map((skill) => (
         <li>
           <div class="flex items-baseline gap-1">
-            <h3 class="text-lg font-bold print:font-semibold print:text-lg">
+            <h3 class="text-lg font-bold print:text-lg print:font-semibold">
               {skill.name}
             </h3>
-            <h4 class="text-sm font-light print:text-md">{skill.level}</h4>
+            <h4 class="print:text-md text-sm font-light">{skill.level}</h4>
           </div>
           <ul class="flex flex-wrap gap-2 print:text-xs">
             {skill.keywords.map((keyword) => (

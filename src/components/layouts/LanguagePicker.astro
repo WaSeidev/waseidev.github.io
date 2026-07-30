@@ -1,24 +1,24 @@
 ---
-import { languages } from "@/i18n/ui";
 import {
+  languages,
   getLangFromUrl,
-  getRouteFromUrl,
-  useTranslatedPath,
+  getLocalizedUrl,
+  useTranslations,
+  type Lang,
 } from "@/i18n/utils";
 
-const route = getRouteFromUrl(Astro.url);
 const lang = getLangFromUrl(Astro.url);
-const translatePath = useTranslatedPath(lang);
+const t = useTranslations(lang);
+
+// Solo hay dos idiomas, así que el selector es un enlace directo al otro.
+const other = (Object.keys(languages) as Lang[]).find((l) => l !== lang)!;
 ---
 
-<ul>
-  {
-    Object.entries(languages)
-      .filter((language) => language[0] !== lang)
-      .map(([lang, label]) => (
-        <li>
-          <a href={translatePath(`/${route ? route : ""}`, lang)}>{label}</a>
-        </li>
-      ))
-  }
-</ul>
+<a
+  href={getLocalizedUrl(Astro.url, other)}
+  hreflang={other}
+  class="rounded-md border border-line px-2 py-1 text-sm text-muted transition-colors hover:border-brand hover:text-ink"
+>
+  <span class="sr-only">{t("lang.switchTo")}</span>
+  <span aria-hidden="true">{other.toUpperCase()}</span>
+</a>

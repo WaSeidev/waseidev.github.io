@@ -1,19 +1,42 @@
 ---
 import FormattedDate from "./FormattedDate.astro";
 
+interface Props {
+  post: {
+    title: string;
+    description: string;
+    pubDate: Date;
+    heroImage?: string;
+  };
+  slug: string;
+}
+
 const { post, slug } = Astro.props;
-const image = post.image || "/assets/images/blog/blog-placeholder-1.jpg";
+const image = post.heroImage ?? "/assets/images/blog/blog-placeholder-1.jpg";
 ---
 
 <article
-  class="w-full rounded-lg bg-gray-200 first:col-span-3 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700"
+  class="group relative flex flex-col overflow-hidden rounded-card border border-line bg-surface transition-colors hover:border-brand"
 >
-  <a class="mx-auto flex w-auto flex-col" href={slug}>
-    <img class="rounded-t-lg" src={image} alt={post.title} />
-    <div class="m-4">
-      <h1 class="text-4xl">{post.title}</h1>
-      <p class="text-sm font-light"><FormattedDate date={post.pubDate} /></p>
-      <p>{post.description}</p>
-    </div>
-  </a>
+  <img
+    class="aspect-video w-full object-cover"
+    src={image}
+    alt=""
+    loading="lazy"
+    decoding="async"
+  />
+  <div class="flex flex-1 flex-col p-4">
+    <h2 class="text-lg">
+      <a
+        href={slug}
+        class="group-hover:text-brand after:absolute after:inset-0"
+      >
+        {post.title}
+      </a>
+    </h2>
+    <p class="mt-1 text-sm text-muted">
+      <FormattedDate date={post.pubDate} />
+    </p>
+    <p class="mt-2 flex-1 text-muted">{post.description}</p>
+  </div>
 </article>

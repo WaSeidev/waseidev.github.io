@@ -6,20 +6,27 @@ import CardCV from "./CardCV.astro";
 interface Props {
   experience: Work[];
   title: string;
+  /** Cuántos empleos caben en la hoja A4; el resto solo se ve en la web. */
+  printLimit?: number;
 }
 
-const { experience, title } = Astro.props;
-const jobs = experience
-  .sort((a: any, b: any) => b.startDate - a.startDate)
-  .slice(0, 3);
+const { experience, title, printLimit = 4 } = Astro.props;
+
+// El orden anterior era `b.startDate - a.startDate` sobre strings ISO, que da
+// NaN: la lista quedaba en el orden del archivo. Además un `.slice(0, 3)` fijo
+// escondía 5 de los 8 empleos también en la web.
+const jobs = [...experience].sort(
+  (a, b) => Date.parse(b.startDate) - Date.parse(a.startDate),
+);
 ---
 
 <section>
   <TitleCV>{title}</TitleCV>
-  <ul class="space-y-2">
+  <ul class="space-y-3 print:space-y-0">
     {
-      jobs.map((job) => (
+      jobs.map((job, index) => (
         <CardCV
+          class={index >= printLimit ? "print:hidden" : undefined}
           title={job.name}
           subtitle={job.position}
           startDate={job.startDate}

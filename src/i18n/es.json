@@ -1,0 +1,42 @@
+{
+  "nav.home": "Inicio",
+  "nav.about": "Acerca",
+  "nav.blog": "Blog",
+  "nav.cv": "Currículum",
+  "nav.projects": "Proyectos",
+  "nav.openMenu": "Abrir menú",
+  "nav.primary": "Navegación principal",
+  "nav.skipToContent": "Saltar al contenido",
+
+  "content.about": "Acerca",
+  "content.projects": "Proyectos",
+  "content.blog": "Entradas de Blog",
+  "content.present": "Presente",
+  "content.visit_my_cv": "Visitar mi currículum",
+  "content.email_me": "Enviarme un correo",
+  "content.readMore": "Leer más",
+  "content.backToList": "Volver",
+  "content.empty": "Todavía no hay nada publicado en este idioma.",
+
+  "cv.contact": "Contacto",
+  "cv.skills": "Habilidades",
+  "cv.soft_skills": "Otras habilidades",
+  "cv.about": "Acerca",
+  "cv.summary": "Resumen",
+  "cv.experience": "Experiencia Laboral",
+  "cv.education": "Educación",
+  "cv.volunteers": "Voluntariado",
+  "cv.references": "Referencias",
+  "cv.interests": "Intereses",
+  "cv.languages": "Idiomas",
+  "cv.certifications": "Certificaciones",
+  "cv.print": "Descargar en PDF",
+  "cv.printHint": "Se imprime en una hoja A4",
+
+  "theme.toggle": "Cambiar tema",
+  "lang.switchTo": "Ver en inglés",
+
+  "notFound.title": "Página no encontrada",
+  "notFound.description": "La dirección que buscas no existe o cambió de lugar.",
+  "notFound.back": "Volver al inicio"
+}

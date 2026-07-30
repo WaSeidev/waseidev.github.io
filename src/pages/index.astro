@@ -1,1 +1,35 @@
-<meta http-equiv="refresh" content="0;url=/en/" />
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { defaultLang, languages, type Lang } from "@/i18n/utils";
+
+// La raíz no tiene contenido propio: ambos idiomas llevan prefijo, así que
+// solo redirige. Se usa getRelativeLocaleUrl en lugar de "/en/" literal para
+// que respete `base` en la copia de GitHub Pages.
+const targets = Object.fromEntries(
+  (Object.keys(languages) as Lang[]).map((lang) => [
+    lang,
+    getRelativeLocaleUrl(lang, ""),
+  ]),
+) as Record<Lang, string>;
+---
+
+<html lang={defaultLang}>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={new URL(targets[defaultLang], Astro.site)} />
+    <meta http-equiv="refresh" content={`0;url=${targets[defaultLang]}`} />
+    <script is:inline define:vars={{ targets, defaultLang }}>
+      // Si el navegador prefiere español, ahorrarle el salto a la versión
+      // inglesa. El meta-refresh de arriba cubre el caso sin JavaScript.
+      const preferred = (navigator.languages || [navigator.language || ""])
+        .map((tag) => tag.split("-")[0])
+        .find((code) => code in targets);
+      location.replace(targets[preferred || defaultLang]);
+    </script>
+  </head>
+  <body>
+    <a href={targets[defaultLang]}>Continue</a>
+  </body>
+</html>
