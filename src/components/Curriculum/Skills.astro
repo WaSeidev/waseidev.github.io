@@ -24,7 +24,7 @@ const { skills, title } = Astro.props;
             <h4 class="print:text-md text-sm font-light">{skill.level}</h4>
           </div>
           <ul class="flex flex-wrap gap-2 print:text-xs">
-            {skill.keywords.map((keyword) => (
+            {skill.keywords?.map((keyword) => (
               <Pill>
                 <Icon icon={keyword} />
                 {keyword}
