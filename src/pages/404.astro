@@ -1,23 +1,72 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { defaultLang, useTranslations } from "@/i18n/utils";
+import {
+  languages,
+  defaultLang,
+  useTranslations,
+  type Lang,
+} from "@/i18n/utils";
 
-// La 404 se sirve para cualquier ruta, así que no puede deducir el idioma de
-// la URL: se queda en el idioma por defecto.
-const t = useTranslations(defaultLang);
+// Un sitio estático sirve un único 404.html para CUALQUIER ruta que no exista,
+// y se genera en build, cuando todavía no se sabe qué URL pedirá el visitante.
+// Así que se emiten los dos idiomas y el script de abajo enseña el que toca
+// según la ruta. Sin JavaScript se ve el idioma por defecto, que es lo que
+// hacía antes en todos los casos.
+const langs = Object.keys(languages) as Lang[];
+
+const content = langs.map((lang) => {
+  const t = useTranslations(lang);
+  return {
+    lang,
+    title: t("notFound.title"),
+    description: t("notFound.description"),
+    back: t("notFound.back"),
+    home: getRelativeLocaleUrl(lang, ""),
+  };
+});
+
+const fallback = content.find((c) => c.lang === defaultLang)!;
 ---
 
-<BaseLayout title={t("notFound.title")} description={t("notFound.description")}>
+<BaseLayout title={fallback.title} description={fallback.description}>
   <div class="py-16 text-center">
     <p class="text-sm font-extrabold tracking-wide text-brand uppercase">404</p>
-    <h1 class="mt-3 text-3xl sm:text-4xl">{t("notFound.title")}</h1>
-    <p class="mx-auto mt-4 max-w-md text-muted">{t("notFound.description")}</p>
-    <a
-      href={getRelativeLocaleUrl(defaultLang, "")}
-      class="mt-8 inline-block rounded-md bg-brand px-5 py-2.5 font-extrabold text-brand-ink transition-opacity hover:opacity-90"
-    >
-      {t("notFound.back")}
-    </a>
+    {
+      content.map(({ lang, title, description, back, home }) => (
+        <div data-404-lang={lang} hidden={lang !== defaultLang}>
+          <h1 class="mt-3 text-3xl sm:text-4xl">{title}</h1>
+          <p class="mx-auto mt-4 max-w-md text-muted">{description}</p>
+          <a
+            href={home}
+            class="mt-8 inline-block rounded-md bg-brand px-5 py-2.5 font-extrabold text-brand-ink transition-opacity hover:opacity-90"
+          >
+            {back}
+          </a>
+        </div>
+      ))
+    }
   </div>
 </BaseLayout>
+
+{/* Los títulos vienen de los JSON de i18n, no se repiten aquí. */}
+<script
+  is:inline
+  define:vars={{
+    defaultLang,
+    titles: Object.fromEntries(content.map((c) => [c.lang, c.title])),
+  }}
+>
+  (() => {
+    // El primer segmento de la ruta es el idioma: /es/loquesea -> "es".
+    const [, segment] = location.pathname.split("/");
+    const lang = segment in titles ? segment : defaultLang;
+
+    document.documentElement.lang = lang;
+    document.title = titles[lang];
+
+    for (const el of document.querySelectorAll("[data-404-lang]")) {
+      el.toggleAttribute("hidden", el.getAttribute("data-404-lang") !== lang);
+    }
+  })();
+</script>
