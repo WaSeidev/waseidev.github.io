@@ -6,7 +6,7 @@
     "email": "waseidev@gmail.com",
     "phone": "+34 625 25 11 15",
     "url": "https://waseidev.net",
-    "summary": "Systems Engineer with a background in web development (PHP, React.js, MongoDB). I have built personal projects that let me apply my Laravel skills, including an incident management system. I'm constantly learning new technologies and eager to apply what I know in a professional setting. I'm looking for an opportunity to grow and contribute to a dynamic team.",
+    "summary": "Systems Engineer with a background in web development (PHP, React.js, MongoDB). I have shipped personal projects that let me put Laravel into practice, including an incident management system. I keep picking up new technologies and I am looking for an opportunity to grow and contribute to a dynamic team.",
     "location": {
       "address": "Doctor Marañon",
       "postalCode": "32005",
@@ -40,10 +40,10 @@
   "work": [
     {
       "name": "Claudio Express Castadon",
-      "position": "Retail Assistant",
+      "position": "Retail and stock assistant",
       "startDate": "2024-11-18",
       "endDate": "2024-12-23",
-      "summary": "Caritas España trainee on an employability skills programme. Over one month I handled customer service, stock management (shelf replenishment) and cash handling at the point of sale of the Claudio Express supermarket, as well as supporting the vehicle refuelling area.",
+      "summary": "Caritas España grant under an employability skills programme. For a month I served customers, kept the shelves stocked and handled cash at the checkout of the Claudio Express supermarket, as well as helping out at the vehicle refuelling area.",
       "highlights": [
         "Retail",
         "Restocking",
@@ -59,83 +59,83 @@
     },
     {
       "name": "ETM",
-      "position": "Service Scheduling Coordinator",
+      "position": "Service scheduling coordinator",
       "url": "https://etm-cali.com",
       "startDate": "2019-04-22",
       "endDate": "2024-04-05",
-      "summary": "Planning SITM-MIO routes, analysing running times and optimising tasks.",
+      "summary": "I scheduled the SITM-MIO routes, analysed journey times and optimised how tasks were assigned.",
       "highlights": ["Python", "Pandas", "Microsoft Excel", "Docker"]
     },
     {
       "name": "ACAR",
-      "position": "IT Coordinator",
+      "position": "Technology coordinator",
       "url": "https://acarsa.com",
       "startDate": "2018-04-22",
       "endDate": "2019-04-21",
-      "summary": "Coordinate the day-to-day operations of the IT department and manage relationships with external technology providers.",
+      "summary": "I ran the organisation’s IT area and managed the relationship with its technology suppliers.",
       "highlights": ["Asterisk", "Database", "Firewall", "Odoo", "ClearOS"]
     },
     {
       "name": "Blanco y Negro Masivo",
-      "position": "Rotational Scheduling Specialist",
+      "position": "Staff scheduling and rota specialist",
       "url": "https://bynmasivo.com",
       "startDate": "2016-01-16",
       "endDate": "2018-04-21",
-      "summary": "Driver scheduling and rotation, and settlement of the hours they worked.",
+      "summary": "I planned the drivers’ rota and calculated the settlement of the hours they worked.",
       "highlights": ["Microsoft Excel", "Macros"]
     },
     {
       "name": "Blanco y Negro Masivo",
-      "position": "Kilometer Verification Specialist",
+      "position": "Operations analyst – Mileage",
       "url": "https://bynmasivo.com",
       "startDate": "2012-06-01",
       "endDate": "2016-01-15",
-      "summary": "Comprehensive review, analysis, and monitoring of operations utilizing technological platforms embedded within vehicles and those supplied by the R&T company within the M.I.O. Mass Integrated Transit System. Verification of settlements based on daily route audits of all vehicles. Detailed review and analysis of SITM-MIO operational logs. In-depth analysis of QRSF (Complaints, Claims, Requests, and Compliments) submitted through the user service line, ensuring timely and appropriate responses. Verification and investigation of all reports issued by the system's managing entity to Operators (vehicle drivers), leveraging available information technology platforms.",
+      "summary": "I reviewed and analysed operations using the platforms fitted in the vehicles and those provided by the SITM-MIO fare collection company. I verified settlements from the daily route audit of the whole fleet, analysed the operational logs and studied the complaints and requests received through the customer line to make sure they were answered on time. I also looked into the reports the managing body issued to operators.",
       "highlights": ["Microsoft Excel", "Macros", "Customer service"]
     },
     {
       "name": "Union Temporal de Recaudo y Tecnología",
-      "position": "System Monitoring Technician",
+      "position": "Systems monitoring technician",
       "url": "https://utryt.com.co",
       "startDate": "2011-06-03",
       "endDate": "2012-05-31",
-      "summary": "Generation of daily operational data reports for reconciliation with MIO transport concessionaires, using Oracle database scripting and system-provided platforms. Data-driven analysis of vehicle logs to support decision-making and compliance with MIO service standards. Chairing bi-weekly meetings with key stakeholders, including the four COTs and the SITM-MIO management entity.",
+      "summary": "I produced the daily operations report used to reconcile figures with the SITM-MIO transport concession holders. I analysed vehicle log data through queries against the Oracle database and the system platforms, and chaired the fortnightly meeting with the four control centres and the managing body.",
       "highlights": ["Microsoft Excel", "Macros"]
     },
     {
       "name": "Servientrega",
-      "position": "Shipping and Receiving Assistant",
+      "position": "General assistant",
       "url": "https://servientrega.com.co",
       "startDate": "2009-06-03",
       "endDate": "2010-06-14",
-      "summary": "Customer service handling inbound and outbound shipments, including domestic and international packages, documents and merchandise. Processing domestic money orders, photocopying and cash transactions.",
+      "summary": "I received parcels, documents and goods for domestic and international dispatch, and handled domestic money orders, the photocopying service and the till.",
       "highlights": ["Sales", "Administration"]
     },
     {
-      "name": "Hospital San Ándres E.S.E.",
-      "position": "Computer Systems Technician",
+      "name": "Hospital San Andrés E.S.E.",
+      "position": "Systems technician",
       "url": "https://hsandres.gov.co",
       "startDate": "2007-03-15",
       "endDate": "2009-01-15",
-      "summary": "A wide range of IT support tasks, including end-user support, installation of specialised software (SIIGO and InfoSalud), and configuration, reinstallation and setup of workstations, servers and networks.",
-      "highlights": ["Operating Systems", "Technical Support"]
+      "summary": "I supported users at their workstations, installed specialised software such as SIIGO and InfoSalud, and set up workstations, servers and networks.",
+      "highlights": ["Operating systems", "Technical support"]
     }
   ],
   "volunteer": [
     {
       "organization": "Caritas España",
-      "position": "Kitchen Assistant",
+      "position": "Kitchen assistant",
       "startDate": "2024-06-15",
-      "summary": "Helping wash the pots and serve meals in the Caritas dining hall in Ourense.",
+      "summary": "I helped wash the pots and serve meals at the Caritas dining hall in Ourense.",
       "highlights": ["Science", "Technology"],
       "endDate": "2024-08-15"
     },
     {
       "organization": "BarCamp Cali",
-      "position": "Attendance Clerk",
+      "position": "Attendance desk",
       "startDate": "2011-11-01",
       "endDate": "2011-11-01",
-      "summary": "Technology 'unconferences' held in Cali, aimed at sharing knowledge and meeting new people in the field.",
+      "summary": "Technology unconferences held in Cali to share knowledge and meet people working in the field.",
       "highlights": ["Science", "Technology"]
     },
     {
@@ -143,7 +143,7 @@
       "position": "Installer",
       "startDate": "2011-11-01",
       "endDate": "2011-11-01",
-      "summary": "Helping with installations and outreach for free software in Santiago de Cali.",
+      "summary": "I helped with installations and with spreading free software in Santiago de Cali.",
       "highlights": ["Science", "Technology", "Linux", "Ubuntu"]
     }
   ],
@@ -241,7 +241,7 @@
       "company": "Company X"
     },
     {
-      "name": "Andrey Lopéz",
+      "name": "Andrey López",
       "reference": "Reference available on request",
       "company": "Company Y"
     }
@@ -251,7 +251,7 @@
       "name": "Web-based CV project",
       "startDate": "2024-07-31",
       "endDate": "2024-08-09",
-      "description": "The first project I actually finished and put online. Everything I had built before never left my computer: it was on GitHub, but unshared and unfinished.",
+      "description": "The first project I finished and actually put online. The earlier ones never left my computer: they were on GitHub, but unshared and unfinished.",
       "highlights": ["CV", "Resume"],
       "url": "https://waseidev.net/es/projects/proyecto-cv/"
     }

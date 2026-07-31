@@ -2,17 +2,27 @@
 import fs from "fs";
 import path from "path";
 import { Icon as AstroIcon } from "astro-icon/components";
+
 interface Props {
   icon: string;
   className?: string;
 }
+
 const { icon, className } = Astro.props;
+
+// Los nombres de archivo en src/icons/ no llevan tildes, así que hay que
+// quitarlas antes de buscar: sin esto, escribir "Tablas dinámicas" bien
+// acentuado dejaba la etiqueta sin icono. NFD separa la letra del acento y
+// el rango ̀-ͯ borra los diacríticos sueltos.
 const name = icon
   .toString()
   .trim()
   .toLowerCase()
+  .normalize("NFD")
+  .replace(/[̀-ͯ]/g, "")
   .replaceAll(" ", "-")
   .replaceAll(".", "");
+
 if (!fs.existsSync(path.join("./src/icons/", name + ".svg"))) return;
 ---
 

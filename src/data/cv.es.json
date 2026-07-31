@@ -6,7 +6,7 @@
     "email": "waseidev@gmail.com",
     "phone": "+34 625 25 11 15",
     "url": "https://waseidev.net",
-    "summary": "Ingeniero de Sistemas graduado con conocimientos en desarrollo web (PHP, React.js, MongoDB). He desarrollado proyectos personales que me han permitido aplicar mis habilidades en laravel creando un sistema de gestión de incidencias. Estoy constantemente aprendiendo nuevas tecnologías y con deseos de poder aplicar mis conocimientos en un entorno profesional. Busco una oportunidad para crecer y contribuir a un equipo dinámico.",
+    "summary": "Ingeniero de Sistemas con formación en desarrollo web (PHP, React.js, MongoDB). He llevado a la práctica proyectos personales que me han permitido aplicar Laravel, entre ellos un sistema de gestión de incidencias. Aprendo tecnologías nuevas de forma continua y busco una oportunidad para crecer y aportar en un equipo dinámico.",
     "location": {
       "address": "Doctor Marañon",
       "postalCode": "32005",
@@ -40,10 +40,10 @@
   "work": [
     {
       "name": "Claudio Express Castadon",
-      "position": "Expendedor/Reponedor",
+      "position": "Expendedor y reponedor",
       "startDate": "2024-11-18",
       "endDate": "2024-12-23",
-      "summary": "Becario/a de Caritas España en un programa de desarrollo de habilidades para la empleabilidad. A lo largo de un mes, desempeñé funciones de atención al cliente, gestión de inventario (reposición de estanterías) y manejo de efectivo en el punto de venta del supermercado Claudio Express, además de brindar apoyo en el área de repostaje de vehículos.",
+      "summary": "Beca de Caritas España dentro de un programa de desarrollo de habilidades para la empleabilidad. Durante un mes atendí a clientes, gestioné el inventario reponiendo estanterías y manejé el efectivo en el punto de venta del supermercado Claudio Express, además de apoyar en el área de repostaje de vehículos.",
       "highlights": [
         "Expendedor",
         "Reponedor",
@@ -63,16 +63,16 @@
       "url": "https://etm-cali.com",
       "startDate": "2019-04-22",
       "endDate": "2024-04-05",
-      "summary": "Programar las rutas del SITM-MIO, analizar tiempos y optimizar tareas",
+      "summary": "Programé las rutas del SITM-MIO, analicé los tiempos de recorrido y optimicé la asignación de tareas.",
       "highlights": ["Python", "Pandas", "Microsoft Excel", "Docker"]
     },
     {
       "name": "ACAR",
-      "position": "Coordinador de Tecnología",
+      "position": "Coordinador de tecnología",
       "url": "https://acarsa.com",
       "startDate": "2018-04-22",
       "endDate": "2019-04-21",
-      "summary": "Coordinar el area de TI de la organización, así como gestionar proveedores.",
+      "summary": "Coordiné el área de TI de la organización y gestioné la relación con los proveedores tecnológicos.",
       "highlights": ["Asterisk", "Database", "Firewall", "Odoo", "ClearOS"]
     },
     {
@@ -81,7 +81,7 @@
       "url": "https://bynmasivo.com",
       "startDate": "2016-01-16",
       "endDate": "2018-04-21",
-      "summary": "Programación y rotación del personal de conductores y generación de la liquidación de las horas laboradas por los mismos.",
+      "summary": "Programé la rotación del personal de conductores y calculé la liquidación de las horas trabajadas.",
       "highlights": ["Microsoft Excel", "Macros"]
     },
     {
@@ -90,7 +90,7 @@
       "url": "https://bynmasivo.com",
       "startDate": "2012-06-01",
       "endDate": "2016-01-15",
-      "summary": "Revisión, análisis y seguimiento de la operación con las plataformas tecnológicas embarcadas en los vehículos y las suministradas por la empresa de Recaudo y Tecnología del SITM-MIO. Verificación de liquidaciones a partir de la auditoría diaria de rutas de toda la flota, análisis de los logs operativos y estudio de las PQRSF recibidas por la línea de atención al usuario, garantizando respuestas oportunas. Verificación e investigación de los informes emitidos por el ente gestor a los operadores.",
+      "summary": "Revisé y analicé la operación con las plataformas tecnológicas embarcadas en los vehículos y las que aportaba la empresa de recaudo del SITM-MIO. Verifiqué las liquidaciones a partir de la auditoría diaria de rutas de toda la flota, analicé los registros operativos y estudié las PQRSF recibidas por la línea de atención al usuario para asegurar respuestas a tiempo. También investigué los informes que el ente gestor emitía a los operadores.",
       "highlights": ["Microsoft Excel", "Macros", "Atención al cliente"]
     },
     {
@@ -99,7 +99,7 @@
       "url": "https://utryt.com.co",
       "startDate": "2011-06-03",
       "endDate": "2012-05-31",
-      "summary": "Generación del reporte diario de operación para su revisión y posterior conciliación con los concesionarios de transporte del Sistema Integrado de Transporte Masivo M.I.O. Análisis de la información de los logs de los vehículos mediante consultas sobre la base de datos Oracle y las plataformas del sistema. Conducción de la reunión quincenal con los cuatro COT y el ente gestor del SITM-MIO.",
+      "summary": "Elaboré el reporte diario de operación para conciliarlo con los concesionarios de transporte del SITM-MIO. Analicé la información de los registros de los vehículos con consultas sobre la base de datos Oracle y las plataformas del sistema, y conduje la reunión quincenal con los cuatro COT y el ente gestor.",
       "highlights": ["Microsoft Excel", "Macros"]
     },
     {
@@ -108,43 +108,43 @@
       "url": "https://servientrega.com.co",
       "startDate": "2009-06-03",
       "endDate": "2010-06-14",
-      "summary": "Recepción de paquetes, documentos y mercancía para despacho nacional e internacional. Recepción y pago de giros nacionales, fotocopias y manejo de caja.",
+      "summary": "Recibí paquetes, documentos y mercancía para despacho nacional e internacional. Gestioné el pago de giros nacionales, el servicio de fotocopias y el manejo de caja.",
       "highlights": ["Ventas", "Gestión"]
     },
     {
-      "name": "Hospital San Ándres E.S.E.",
+      "name": "Hospital San Andrés E.S.E.",
       "position": "Técnico en sistemas",
       "url": "https://hsandres.gov.co",
       "startDate": "2007-03-15",
       "endDate": "2009-01-15",
-      "summary": "Soporte a usuarios finales en sus estaciones de trabajo, instalación de aplicativos especializados (SIIGO e InfoSalud) y configuración, reinstalación y adecuación de estaciones de trabajo, servidores y redes.",
-      "highlights": ["Sistemas Operativos", "Soporte técnico"]
+      "summary": "Di soporte a los usuarios en sus estaciones de trabajo, instalé aplicativos especializados como SIIGO e InfoSalud, y configuré estaciones, servidores y redes.",
+      "highlights": ["Sistemas operativos", "Soporte técnico"]
     }
   ],
   "volunteer": [
     {
       "organization": "Caritas España",
-      "position": "Auxiliar de Cocina",
+      "position": "Auxiliar de cocina",
       "startDate": "2024-06-15",
-      "summary": "Ayudar en el fregado de ollas, sirviendo la comida en el comedor de Caritas en Ourense",
-      "highlights": ["Ciencia", "Técnología"],
+      "summary": "Ayudé en el fregado de ollas y en el servicio de comidas en el comedor de Caritas en Ourense.",
+      "highlights": ["Ciencia", "Tecnología"],
       "endDate": "2024-08-15"
     },
     {
       "organization": "BarCamp Cali",
-      "position": "Registro de Asistencia",
+      "position": "Registro de asistencia",
       "startDate": "2011-11-01",
       "endDate": "2011-11-01",
-      "summary": "'Desconferencias' tecnologicas realizadas en la ciudad de cali, con el animo de compartir conocimientos y conocer gente nueva del medio",
-      "highlights": ["Ciencia", "Técnología"]
+      "summary": "Desconferencias de tecnología celebradas en Cali para compartir conocimiento y conocer gente del sector.",
+      "highlights": ["Ciencia", "Tecnología"]
     },
     {
       "organization": "FLISoL Cali",
       "position": "Instalador",
       "startDate": "2011-11-01",
       "endDate": "2011-11-01",
-      "summary": "Ayuda en las instalaciones y difusión de software libre en la ciudad de santiago de cali",
-      "highlights": ["Ciencia", "Técnología", "Linux", "Ubuntu"]
+      "summary": "Apoyé las instalaciones y la difusión de software libre en Santiago de Cali.",
+      "highlights": ["Ciencia", "Tecnología", "Linux", "Ubuntu"]
     }
   ],
   "education": [
@@ -159,7 +159,7 @@
     {
       "institution": "I. E. Liceo Nacional Max Seidel",
       "url": "https://co.institucioneducativa.info/tumaco/institucion-educativa-liceo-nacional-max-seidel-9068/",
-      "area": "Academico",
+      "area": "Académico",
       "studyType": "Bachillerato",
       "endDate": "2001-06-03"
     }
@@ -172,7 +172,7 @@
       "date": "2024-12-26"
     },
     {
-      "name": "Cientifico de datos",
+      "name": "Científico de datos",
       "url": "https://www.credential.net/d5564cfd-d34c-4f9f-bff4-4504402c6af6",
       "issuer": "Correlation One",
       "date": "2022-06-16"
@@ -207,17 +207,17 @@
       "keywords": [
         "Macros",
         "Funciones",
-        "Formulas",
-        "Tablas dinamicas",
-        "Analisis de datos",
-        "Hojas de calculo"
+        "Fórmulas",
+        "Tablas dinámicas",
+        "Análisis de datos",
+        "Hojas de cálculo"
       ]
     }
   ],
   "languages": [
     {
       "language": "Español",
-      "fluency": "Hablante Nativo"
+      "fluency": "Hablante nativo"
     },
     {
       "language": "Inglés",
@@ -231,19 +231,19 @@
     },
     {
       "name": "Música",
-      "keywords": ["Guitarra", "Bateria", "Rock", "Salsa"]
+      "keywords": ["Guitarra", "Batería", "Rock", "Salsa"]
     }
   ],
   "references": [
     {
       "name": "Matthew Seidel",
-      "reference": "Pronto una publicación de la referencia",
-      "company": "Una Compañia X"
+      "reference": "Referencia disponible a petición",
+      "company": "Compañía X"
     },
     {
-      "name": "Andrey Lopéz",
-      "reference": "Pronto una publicación de la referencia",
-      "company": "Una Compañia Y"
+      "name": "Andrey López",
+      "reference": "Referencia disponible a petición",
+      "company": "Compañía Y"
     }
   ],
   "projects": [
@@ -251,10 +251,10 @@
       "name": "Proyecto Hoja de vida en la WEB",
       "startDate": "2024-07-31",
       "endDate": "2024-08-09",
-      "description": "Primer proyecto llevado a la practica y ejecutado para compartirlo en la web, los que habia hecho anteriormente nunca los habia sacado del ordenador, a pesar de que estaban en github no los habia compartido ni terminado",
+      "description": "El primer proyecto que terminé y publiqué en la web. Los anteriores nunca salieron de mi ordenador: estaban en GitHub, pero sin compartir ni acabar.",
       "highlights": ["CV", "Curriculum"],
       "url": "https://waseidev.net/es/projects/proyecto-cv/"
     }
   ],
-  "softSkills": ["Trabajo en equipo", "Dinamismo", "Alegria"]
+  "softSkills": ["Trabajo en equipo", "Dinamismo", "Alegría"]
 }

@@ -93,10 +93,11 @@
   }
 
   :root {
-    /* Bajar este valor comprime todo el documento proporcionalmente. Si
+    /* Escala del documento impreso. A 1 cabe una A4 mostrando las 3
+       experiencias mas recientes (printLimit en CurriculumLayout). Si
        añades experiencia y se desborda a una segunda hoja, redúcelo antes de
        tocar nada más. */
-    --print-scale: 0.88;
+    --print-scale: 1;
     color-scheme: light !important;
   }
 
