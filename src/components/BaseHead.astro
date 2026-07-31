@@ -20,7 +20,9 @@ const lang = getLangFromUrl(Astro.url);
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // Las portadas del CV y del blog llegan como ruta de public/; las externas ya
 // son absolutas y `new URL` las respeta tal cual.
-const ogImage = new URL(image ?? "/assets/images/WaSeidev.webp", Astro.site);
+// Banner de marca en 1200x630, la proporción que esperan las redes. Las
+// entradas con portada propia la pasan por props y esta queda de reserva.
+const ogImage = new URL(image ?? "/assets/images/waseidev-og.webp", Astro.site);
 const noindex = import.meta.env.PUBLIC_NOINDEX === "true";
 
 const withBase = (path: string) =>
@@ -32,7 +34,13 @@ const withBase = (path: string) =>
 <meta name="generator" content={Astro.generator} />
 <link rel="icon" type="image/svg+xml" href={withBase("favicon.svg")} />
 
+{
+  /* Cada familia necesita su propio <Font>: es quien inyecta los @font-face.
+    Solo se precarga Raleway, que es la del cuerpo y entra en el primer
+    pintado; Coda es de titulares y puede llegar un instante después. */
+}
 <Font cssVariable="--font-raleway" preload />
+<Font cssVariable="--font-coda" />
 
 <title>{title}</title>
 <meta name="title" content={title} />

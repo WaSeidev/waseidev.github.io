@@ -7,7 +7,6 @@
   "nav.openMenu": "Abrir menú",
   "nav.primary": "Navegación principal",
   "nav.skipToContent": "Saltar al contenido",
-
   "content.about": "Acerca",
   "content.projects": "Proyectos",
   "content.blog": "Entradas de Blog",
@@ -17,7 +16,6 @@
   "content.readMore": "Leer más",
   "content.backToList": "Volver",
   "content.empty": "Todavía no hay nada publicado en este idioma.",
-
   "cv.contact": "Contacto",
   "cv.skills": "Habilidades",
   "cv.soft_skills": "Otras habilidades",
@@ -32,11 +30,12 @@
   "cv.certifications": "Certificaciones",
   "cv.print": "Descargar en PDF",
   "cv.printHint": "Se imprime en una hoja A4",
-
   "theme.toggle": "Cambiar tema",
   "lang.switchTo": "Ver en inglés",
-
   "notFound.title": "Página no encontrada",
   "notFound.description": "La dirección que buscas no existe o cambió de lugar.",
-  "notFound.back": "Volver al inicio"
+  "notFound.back": "Volver al inicio",
+  "nav.setup": "Mi Setup",
+  "setup.description": "El hardware, el sistema y las herramientas con las que trabajo a diario.",
+  "content.stack": "Con lo que trabajo"
 }

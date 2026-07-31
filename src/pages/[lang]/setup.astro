@@ -1,0 +1,43 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import { setupByLang } from "@/data/setup";
+import { getLocalePaths, useTranslations, type Lang } from "@/i18n/utils";
+
+export const getStaticPaths = getLocalePaths;
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+// Una sección sin items se omite: así se puede dejar a medias en el JSON sin
+// que salga un hueco vacío en la web.
+const sections = setupByLang[lang].sections.filter(
+  (section) => section.items.length > 0,
+);
+---
+
+<PageLayout title={t("nav.setup")} description={t("setup.description")}>
+  <div class="space-y-12">
+    {
+      sections.map((section) => (
+        <section>
+          <h2 class="text-2xl">{section.title}</h2>
+          {section.description && (
+            <p class="mt-3 max-w-2xl text-muted">{section.description}</p>
+          )}
+          <ul class="mt-6 grid gap-4 sm:grid-cols-2">
+            {section.items.map((item) => (
+              <li class="rounded-card border border-line bg-surface p-4">
+                <h3 class="font-extrabold">{item.name}</h3>
+                <p class="mt-1 text-sm text-muted">{item.description}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
+</PageLayout>

@@ -58,5 +58,16 @@ export default defineConfig({
       styles: ["normal"],
       subsets: ["latin", "latin-ext"],
     },
+    // Coda solo se usa en titulares. Es una tipografía de display: da
+    // personalidad en tamaños grandes, pero solo tiene dos pesos y cansa en
+    // párrafos largos, así que el cuerpo se queda en Raleway.
+    {
+      provider: fontProviders.google(),
+      name: "Coda",
+      cssVariable: "--font-coda",
+      weights: [400, 800],
+      styles: ["normal"],
+      subsets: ["latin", "latin-ext"],
+    },
   ],
 });

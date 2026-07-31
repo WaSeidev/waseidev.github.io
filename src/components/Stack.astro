@@ -1,0 +1,38 @@
+---
+import type { Basics } from "@/types/cv";
+import Pill from "@/components/Pill.astro";
+import Icon from "@/components/Icon.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+interface Props {
+  basics: Basics;
+}
+
+const { basics } = Astro.props;
+const t = useTranslations(getLangFromUrl(Astro.url));
+
+// El primer elemento del label es el puesto y ya sale como antetítulo del
+// hero, así que aquí solo van las tecnologías.
+const [, ...technologies] = basics.label
+  .split("|")
+  .map((label) => label.trim())
+  .filter(Boolean);
+---
+
+{
+  technologies.length > 0 && (
+    <section>
+      <h2 class="text-sm font-extrabold tracking-wide text-muted uppercase">
+        {t("content.stack")}
+      </h2>
+      <ul class="mt-4 flex flex-wrap gap-2">
+        {technologies.map((technology) => (
+          <Pill>
+            <Icon icon={technology} />
+            {technology}
+          </Pill>
+        ))}
+      </ul>
+    </section>
+  )
+}

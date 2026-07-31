@@ -1,6 +1,5 @@
 ---
 import type { Basics } from "@/types/cv";
-import { Image } from "astro:assets";
 import Pill from "../Pill.astro";
 import Icon from "../Icon.astro";
 
@@ -17,26 +16,23 @@ const labels = basics.label
   .filter(Boolean);
 ---
 
-<section class="flex items-start gap-5 print:gap-3">
-  <div class="min-w-0 flex-1">
-    <h1 class="text-3xl leading-tight print:text-lg">{basics.name}</h1>
-    <ul class="mt-3 flex flex-wrap gap-1.5 print:mt-1.5 print:gap-1">
-      {
-        labels.map((label) => (
-          <Pill>
-            <Icon icon={label} />
-            {label}
-          </Pill>
-        ))
-      }
-    </ul>
-  </div>
-
-  <Image
-    src={basics.image}
-    class="size-28 shrink-0 rounded-card object-cover print:size-20"
-    alt={basics.name}
-    width={224}
-    height={224}
-  />
+{
+  /*
+  Sin fotografía a propósito. En buena parte de Europa el currículum se envía
+  sin foto para reducir sesgos en la selección, y varias empresas la descartan
+  de oficio. El espacio que libera se lo queda la experiencia.
+*/
+}
+<section>
+  <h1 class="text-3xl leading-tight print:text-lg">{basics.name}</h1>
+  <ul class="mt-3 flex flex-wrap gap-1.5 print:mt-1.5 print:gap-1">
+    {
+      labels.map((label) => (
+        <Pill>
+          <Icon icon={label} />
+          {label}
+        </Pill>
+      ))
+    }
+  </ul>
 </section>

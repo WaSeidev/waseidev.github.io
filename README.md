@@ -36,6 +36,10 @@ página sirva a ambos idiomas. Las rutas antiguas siguen funcionando mediante
 - **Datos del CV**: `src/data/cv.en.json` y `cv.es.json`, en formato
   [JSON Resume](https://jsonresume.org/). Es la única fuente del currículum,
   la home y las metaetiquetas.
+- **Página «Mi Setup»**: `src/data/setup.en.json` y `setup.es.json`. Una
+  sección **sin `items` no se renderiza**, así que se puede dejar a medias sin
+  que salga un hueco vacío. La sección `workstation` está así a propósito:
+  rellénala con tu equipo real.
 - **Blog y proyectos**: Markdown en `src/content/blog/` y `src/content/projects/`.
   El idioma se indica con `lang: en|es` en el frontmatter, y `draft: true`
   excluye la entrada del build.

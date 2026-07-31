@@ -1,0 +1,61 @@
+{
+  "sections": [
+    {
+      "id": "homelab",
+      "title": "SYFHome-Hub, my home server",
+      "description": "A NixOS box whose configuration lives in Git: the whole system rebuilds from a single file, so reinstalling it is reproducible rather than an exercise in memory. Everything is published through a Cloudflare Tunnel, without opening a single port on the router.",
+      "items": [
+        {
+          "name": "NixOS",
+          "description": "Declarative operating system. The configuration lives in a repo and is applied with one command."
+        },
+        {
+          "name": "Cloudflare Tunnel",
+          "description": "Publishes services to the internet with no open ports and no need for a static IP."
+        },
+        {
+          "name": "Nginx Proxy Manager",
+          "description": "Reverse proxy sitting in front of every internal service."
+        },
+        {
+          "name": "AdGuard Home",
+          "description": "Ad-blocking DNS and DHCP server for the whole home network."
+        },
+        {
+          "name": "Vaultwarden",
+          "description": "Self-hosted password manager, Bitwarden compatible."
+        },
+        {
+          "name": "Nextcloud",
+          "description": "File sync and collaboration."
+        },
+        {
+          "name": "Paperless-NGX",
+          "description": "Document management: every piece of paper scanned, indexed and searchable."
+        },
+        {
+          "name": "Samba",
+          "description": "Shared folders for the family."
+        },
+        {
+          "name": "Navidrome",
+          "description": "Self-hosted music server."
+        },
+        {
+          "name": "wg-easy",
+          "description": "WireGuard VPN with a web UI to reach the network from outside."
+        },
+        {
+          "name": "Docker",
+          "description": "Services that aren't NixOS modules run in containers."
+        }
+      ]
+    },
+    {
+      "id": "workstation",
+      "title": "My working setup",
+      "description": "",
+      "items": []
+    }
+  ]
+}
