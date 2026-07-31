@@ -1,25 +1,34 @@
 ---
 import TitleCV from "./TitleCV.astro";
-import Pill from "@/components/Pill.astro";
-import Icon from "../Icon.astro";
 
 interface Props {
   skills: string[];
   title: string;
 }
+
 const { skills, title } = Astro.props;
 ---
 
+{
+  /*
+  Una por línea, sin pastillas. Las de "Habilidades" llevan icono porque son
+  tecnologías; estas no tienen icono posible, salían como pastillas vacías y
+  competían visualmente con las que sí pesan. El registro es el de Idiomas,
+  que está justo debajo y también es cualitativo.
+
+  Se descartó ponerlas en una línea con separadores: en una columna estrecha
+  el elemento que salta de línea arrastra su separador al principio y parece
+  una sangría.
+
+  Además, la versión anterior combinaba `flex-wrap` con `space-y-4`, que
+  aplica margen superior a todos los hijos menos el primero: al saltar de
+  línea, el último quedaba descolgado del resto. Ese era el pill que se veía
+  distinto.
+*/
+}
 <section>
   <TitleCV>{title}</TitleCV>
-  <ul class="my-2 flex flex-wrap gap-1 space-y-4">
-    {
-      skills.map((keyword: string) => (
-        <Pill>
-          <Icon icon={keyword} />
-          <span class="text-nowrap">{keyword}</span>
-        </Pill>
-      ))
-    }
+  <ul class="text-sm text-muted print:text-[9px] print:text-black">
+    {skills.map((skill) => <li>{skill}</li>)}
   </ul>
 </section>

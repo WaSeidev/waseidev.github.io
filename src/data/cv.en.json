@@ -6,7 +6,7 @@
     "email": "waseidev@gmail.com",
     "phone": "+34 625 25 11 15",
     "url": "https://waseidev.net",
-    "summary": "Systems Engineer with a background in web development (PHP, React.js, MongoDB). I joined the Pérez Rumbao group on the production side, at Bétula CARS, and today I work in its IT department supporting every company in the group. Alongside that I build personal projects with Laravel, including an incident management system: the same ground I cover day to day. I am looking for an opportunity to keep growing and contribute to a dynamic team.",
+    "summary": "Systems Engineer with a background in web development (PHP, React.js, MongoDB). I spent thirteen years in the operation of the SITM-MIO transit system in Cali — scheduling routes, analysing data and coordinating technology — before settling in Spain. Here I joined the Pérez Rumbao group on the production side, at Bétula CARS, and today I work in its IT department supporting every company in the group. Alongside that I build personal projects with Laravel, including an incident management system: the same ground I cover day to day. I am looking for an opportunity to keep growing and contribute to a dynamic team.",
     "location": {
       "address": "",
       "postalCode": "32005",
@@ -88,7 +88,7 @@
       "url": "https://etm-cali.com",
       "startDate": "2019-04-22",
       "endDate": "2024-04-05",
-      "summary": "I scheduled the SITM-MIO routes, analysed journey times and optimised how tasks were assigned.",
+      "summary": "I scheduled the routes of the SITM-MIO in Cali, the mass transit system shared between the concession holders GIT Masivo, Blanco y Negro Masivo, ETM and Unimetro. I analysed journey times with Python and Pandas to find where the operation was losing time and adjusted the scheduling from that data. I ran the Python environment in Docker so I could work without installing it on the corporate Windows machine. ETM operated with a workforce of around 350 people.",
       "highlights": ["Python", "Pandas", "Microsoft Excel", "Docker"],
       "printable": true
     },
@@ -98,7 +98,7 @@
       "url": "https://acarsa.com",
       "startDate": "2018-04-22",
       "endDate": "2019-04-21",
-      "summary": "I ran the organisation’s IT area and managed the relationship with its technology suppliers.",
+      "summary": "I was the organisation’s entire IT department on my own, with the help of a SENA trainee for six months. I looked after the Asterisk phone system, the server and internet gateway running ClearOS with its firewall, and the databases. I evaluated and piloted Odoo as an ERP, which in the end was not adopted. I registered on the internal platform the drivers hired by the owners of the vehicles, in a structure of around 30 people across administration and dispatch.",
       "highlights": ["Asterisk", "Database", "Firewall", "Odoo", "ClearOS"],
       "printable": true
     },
@@ -108,8 +108,9 @@
       "url": "https://bynmasivo.com",
       "startDate": "2016-01-16",
       "endDate": "2018-04-21",
-      "summary": "I planned the drivers’ rota and calculated the settlement of the hours they worked.",
-      "highlights": ["Microsoft Excel", "Macros"]
+      "summary": "I planned the drivers’ rota and settled their hours at Blanco y Negro Masivo, the second largest company in the SITM-MIO, with around 500 people in operations.",
+      "highlights": ["Microsoft Excel", "Macros"],
+      "printable": true
     },
     {
       "name": "Blanco y Negro Masivo",
@@ -117,8 +118,9 @@
       "url": "https://bynmasivo.com",
       "startDate": "2012-06-01",
       "endDate": "2016-01-15",
-      "summary": "I reviewed and analysed operations using the platforms fitted in the vehicles and those provided by the SITM-MIO fare collection company. I verified settlements from the daily route audit of the whole fleet, analysed the operational logs and studied the complaints and requests received through the customer line to make sure they were answered on time. I also looked into the reports the managing body issued to operators.",
-      "highlights": ["Microsoft Excel", "Macros", "Customer service"]
+      "summary": "I analysed fleet operations using the on-board platforms and those of the SITM-MIO fare collection company: daily route audits, settlement checks and follow-up of user complaints and requests.",
+      "highlights": ["Microsoft Excel", "Macros", "Customer service"],
+      "printable": true
     },
     {
       "name": "Union Temporal de Recaudo y Tecnología",
@@ -126,8 +128,9 @@
       "url": "https://utryt.com.co",
       "startDate": "2011-06-03",
       "endDate": "2012-05-31",
-      "summary": "I produced the daily operations report used to reconcile figures with the SITM-MIO transport concession holders. I analysed vehicle log data through queries against the Oracle database and the system platforms, and chaired the fortnightly meeting with the four control centres and the managing body.",
-      "highlights": ["Microsoft Excel", "Macros"]
+      "summary": "I produced the daily operations report to reconcile with the SITM-MIO concession holders, querying Oracle, and chaired the fortnightly meeting with the four control centres and the managing body.",
+      "highlights": ["Microsoft Excel", "Macros"],
+      "printable": true
     },
     {
       "name": "Servientrega",
@@ -144,8 +147,9 @@
       "url": "https://hsandres.gov.co",
       "startDate": "2007-03-15",
       "endDate": "2009-01-15",
-      "summary": "I supported users at their workstations, installed specialised software such as SIIGO and InfoSalud, and set up workstations, servers and networks.",
-      "highlights": ["Operating systems", "Technical support"]
+      "summary": "I supported users, installed specialised software such as SIIGO and InfoSalud, and set up workstations, servers and networks.",
+      "highlights": ["Operating systems", "Technical support"],
+      "printable": true
     }
   ],
   "volunteer": [
@@ -154,8 +158,8 @@
       "position": "Kitchen assistant",
       "startDate": "2024-06-15",
       "summary": "I helped wash the pots and serve meals at the Caritas dining hall in Ourense.",
-      "highlights": ["Science", "Technology"],
-      "endDate": "2024-08-15"
+      "highlights": ["Cooking"],
+      "endDate": "2024-07-30"
     },
     {
       "organization": "BarCamp Cali",

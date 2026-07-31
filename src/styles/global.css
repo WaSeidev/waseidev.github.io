@@ -97,7 +97,7 @@
        experiencias mas recientes (printLimit en CurriculumLayout). Si
        añades experiencia y se desborda a una segunda hoja, redúcelo antes de
        tocar nada más. */
-    --print-scale: 1;
+    --print-scale: 1 0.9 0.9 0.85;
     color-scheme: light !important;
   }
 

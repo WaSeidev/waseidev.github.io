@@ -7,12 +7,29 @@ const { classname } = Astro.props;
 ---
 
 {
-  /* Antes era `{ classname: classname }`, que emite la clase literal
-    "classname" en vez del valor recibido. */
+  /*
+  El texto manda, el icono acompaña.
+
+  Los logotipos vienen a todo color y a 12px eran lo más brillante de la
+  pastilla, mientras la etiqueta —que es el dato— iba en el color secundario:
+  jerarquía invertida. Además, las etiquetas sin icono posible (NestJS,
+  Fórmulas, Helpdesk) convivían con otras muy saturadas y la fila no cerraba.
+
+  Se desaturan y se les fija una caja de tamaño constante, así ninguna
+  combinación de iconos altera la altura de la pastilla ni el ritmo de la fila.
+  Siguen sirviendo para reconocer la tecnología de un vistazo, que es lo único
+  que aportan.
+
+  `classname` era `{ classname: classname }`, que emitía la clase literal
+  "classname" en vez del valor recibido.
+*/
 }
 <li
   class:list={[
-    "flex items-center gap-1 rounded-full border border-line px-2 py-0.5 text-xs text-muted print:border-black/30 print:px-1 print:py-0 print:text-[8px] print:text-black",
+    "inline-flex items-center gap-1.5 rounded-full border border-line px-2.5 py-0.5 text-xs leading-5 text-ink/85",
+    "[&>svg]:size-3.5 [&>svg]:shrink-0 [&>svg]:opacity-60 [&>svg]:grayscale",
+    "print:gap-1 print:border-black/30 print:px-1.5 print:py-0 print:text-[9px] print:leading-4 print:text-black",
+    "print:[&>svg]:size-2.5",
     classname,
   ]}
 >

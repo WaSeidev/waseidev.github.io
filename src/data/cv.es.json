@@ -6,7 +6,7 @@
     "email": "waseidev@gmail.com",
     "phone": "+34 625 25 11 15",
     "url": "https://waseidev.net",
-    "summary": "Ingeniero de Sistemas con formación en desarrollo web (PHP, React.js, MongoDB). Entré en el grupo Pérez Rumbao desde producción, en Bétula CARS, y hoy trabajo en su departamento de IT dando soporte a todas las empresas del grupo. En paralelo desarrollo proyectos personales con Laravel, entre ellos un sistema de gestión de incidencias: el mismo terreno que piso cada día. Busco una oportunidad para seguir creciendo y aportar en un equipo dinámico.",
+    "summary": "Ingeniero de Sistemas con formación en desarrollo web (PHP, React.js, MongoDB). Pasé trece años en la operación del SITM-MIO de Cali —programando rutas, analizando datos y coordinando tecnología— antes de establecerme en España. Aquí entré en el grupo Pérez Rumbao desde producción, en Bétula CARS, y hoy trabajo en su departamento de IT dando soporte a todas sus empresas. En paralelo desarrollo proyectos personales con Laravel, entre ellos un sistema de gestión de incidencias: el mismo terreno que piso cada día. Busco una oportunidad para seguir creciendo y aportar en un equipo dinámico.",
     "location": {
       "address": "",
       "postalCode": "32005",
@@ -49,7 +49,7 @@
     },
     {
       "name": "Bétula CARS",
-      "position": "Preparador",
+      "position": "Técnico de preparación de pintura",
       "url": "https://www.betulacars.com",
       "startDate": "2025-05-23",
       "endDate": "2025-12-31",
@@ -88,7 +88,7 @@
       "url": "https://etm-cali.com",
       "startDate": "2019-04-22",
       "endDate": "2024-04-05",
-      "summary": "Programé las rutas del SITM-MIO, analicé los tiempos de recorrido y optimicé la asignación de tareas.",
+      "summary": "Programé las rutas del SITM-MIO de Cali, el sistema de transporte masivo que se reparten los concesionarios GIT Masivo, Blanco y Negro Masivo, ETM y Unimetro. Analicé los tiempos de recorrido con Python y Pandas para localizar dónde perdía tiempo la operación y ajustar la programación a partir de esos datos. Corría el entorno de Python en Docker para trabajar sin instalarlo sobre el Windows corporativo. ETM operaba con una plantilla de unas 350 personas.",
       "highlights": ["Python", "Pandas", "Microsoft Excel", "Docker"],
       "printable": true
     },
@@ -98,7 +98,7 @@
       "url": "https://acarsa.com",
       "startDate": "2018-04-22",
       "endDate": "2019-04-21",
-      "summary": "Coordiné el área de TI de la organización y gestioné la relación con los proveedores tecnológicos.",
+      "summary": "Fui el área de TI de la organización yo solo, con el apoyo de un aprendiz del SENA durante seis meses. Me ocupé de la centralita telefónica sobre Asterisk, del servidor y la salida a internet con ClearOS y su cortafuegos, y de las bases de datos. Evalué e implanté una prueba de Odoo como ERP que finalmente no se adoptó. Daba de alta en la plataforma interna a los conductores contratados por los propietarios de los vehículos, en una estructura de unas 30 personas entre administración y despacho.",
       "highlights": ["Asterisk", "Database", "Firewall", "Odoo", "ClearOS"],
       "printable": true
     },
@@ -108,8 +108,9 @@
       "url": "https://bynmasivo.com",
       "startDate": "2016-01-16",
       "endDate": "2018-04-21",
-      "summary": "Programé la rotación del personal de conductores y calculé la liquidación de las horas trabajadas.",
-      "highlights": ["Microsoft Excel", "Macros"]
+      "summary": "Programé la rotación de los conductores y liquidé sus horas trabajadas en Blanco y Negro Masivo, la segunda empresa del SITM-MIO por tamaño, con unas 500 personas en operación.",
+      "highlights": ["Microsoft Excel", "Macros"],
+      "printable": true
     },
     {
       "name": "Blanco y Negro Masivo",
@@ -117,8 +118,9 @@
       "url": "https://bynmasivo.com",
       "startDate": "2012-06-01",
       "endDate": "2016-01-15",
-      "summary": "Revisé y analicé la operación con las plataformas tecnológicas embarcadas en los vehículos y las que aportaba la empresa de recaudo del SITM-MIO. Verifiqué las liquidaciones a partir de la auditoría diaria de rutas de toda la flota, analicé los registros operativos y estudié las PQRSF recibidas por la línea de atención al usuario para asegurar respuestas a tiempo. También investigué los informes que el ente gestor emitía a los operadores.",
-      "highlights": ["Microsoft Excel", "Macros", "Atención al cliente"]
+      "summary": "Analicé la operación de la flota con las plataformas embarcadas y las del recaudo del SITM-MIO: auditoría diaria de rutas, verificación de liquidaciones y seguimiento de las PQRSF de los usuarios.",
+      "highlights": ["Microsoft Excel", "Macros", "Atención al cliente"],
+      "printable": true
     },
     {
       "name": "Union Temporal de Recaudo y Tecnología",
@@ -126,8 +128,9 @@
       "url": "https://utryt.com.co",
       "startDate": "2011-06-03",
       "endDate": "2012-05-31",
-      "summary": "Elaboré el reporte diario de operación para conciliarlo con los concesionarios de transporte del SITM-MIO. Analicé la información de los registros de los vehículos con consultas sobre la base de datos Oracle y las plataformas del sistema, y conduje la reunión quincenal con los cuatro COT y el ente gestor.",
-      "highlights": ["Microsoft Excel", "Macros"]
+      "summary": "Elaboré el reporte diario de operación para conciliarlo con los concesionarios del SITM-MIO, con consultas sobre Oracle, y conduje la reunión quincenal con los cuatro COT y el ente gestor.",
+      "highlights": ["Microsoft Excel", "Macros"],
+      "printable": true
     },
     {
       "name": "Servientrega",
@@ -144,8 +147,9 @@
       "url": "https://hsandres.gov.co",
       "startDate": "2007-03-15",
       "endDate": "2009-01-15",
-      "summary": "Di soporte a los usuarios en sus estaciones de trabajo, instalé aplicativos especializados como SIIGO e InfoSalud, y configuré estaciones, servidores y redes.",
-      "highlights": ["Sistemas operativos", "Soporte técnico"]
+      "summary": "Di soporte a los usuarios, instalé aplicativos especializados como SIIGO e InfoSalud y configuré estaciones, servidores y redes.",
+      "highlights": ["Sistemas operativos", "Soporte técnico"],
+      "printable": true
     }
   ],
   "volunteer": [
@@ -154,8 +158,8 @@
       "position": "Auxiliar de cocina",
       "startDate": "2024-06-15",
       "summary": "Ayudé en el fregado de ollas y en el servicio de comidas en el comedor de Caritas en Ourense.",
-      "highlights": ["Ciencia", "Tecnología"],
-      "endDate": "2024-08-15"
+      "highlights": ["Cocina"],
+      "endDate": "2024-07-30"
     },
     {
       "organization": "BarCamp Cali",
