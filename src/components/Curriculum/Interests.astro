@@ -13,12 +13,18 @@ const { interests, title } = Astro.props;
 
 <section>
   <TitleCV>{title}</TitleCV>
-  <ul class="space-y-2">
+  {
+    /* En dos columnas al imprimir: son entradas cortas y llenan mejor el ancho
+      completo de la hoja que apiladas una debajo de otra. */
+  }
+  <ul
+    class="space-y-3 print:grid print:grid-cols-2 print:gap-3 print:space-y-0"
+  >
     {
       interests.map(({ name, keywords }) => (
         <li>
-          <h4 class="text-lg">{name}</h4>
-          <ul class="flex flex-wrap gap-2">
+          <h3 class="text-sm font-extrabold print:text-[10px]">{name}</h3>
+          <ul class="mt-1.5 flex flex-wrap gap-1.5 print:mt-1 print:gap-1">
             {keywords?.map((keyword) => (
               <Pill>{keyword}</Pill>
             ))}

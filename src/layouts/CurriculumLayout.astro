@@ -5,6 +5,7 @@ import HeroSection from "@/components/Curriculum/HeroSection.astro";
 import InfoBase from "@/components/Curriculum/InfoBase.astro";
 import SoftSkills from "@/components/Curriculum/SoftSkills.astro";
 import Languages from "@/components/Curriculum/Languages.astro";
+import Interests from "@/components/Curriculum/Interests.astro";
 import Resume from "@/components/Curriculum/Resume.astro";
 import Skills from "@/components/Curriculum/Skills.astro";
 import Volunterships from "@/components/Curriculum/Volunterships.astro";
@@ -26,13 +27,12 @@ const t = useTranslations(lang);
 
 {
   /*
-  Dos columnas fijas: en pantalla se apilan por debajo de `md`, pero al
-  imprimir siempre van lado a lado, que es lo que permite meter todo en una
-  sola A4. La densidad global se ajusta con --print-scale en global.css.
+  Dos columnas: barra lateral con los datos de contacto y las habilidades, y
+  columna principal con el recorrido. En pantalla se apilan por debajo de `md`.
 */
 }
 <article
-  class="grid gap-6 md:grid-cols-[minmax(0,17rem)_1fr] print:grid-cols-[15rem_1fr] print:gap-3"
+  class="grid gap-6 md:grid-cols-[minmax(0,17rem)_1fr] print:grid-cols-[15rem_1fr] print:gap-x-4 print:gap-y-3"
 >
   <aside class="space-y-5 print:space-y-2.5">
     <InfoBase info={cv.basics} title={t("cv.contact")} />
@@ -52,20 +52,27 @@ const t = useTranslations(lang);
   <div class="space-y-5 print:space-y-2.5">
     <HeroSection basics={cv.basics} />
     <Resume resume={cv.basics.summary} title={t("cv.summary")} />
-    {
-      cv.work && (
-        <Experience
-          experience={cv.work}
-          title={t("cv.experience")}
-          printLimit={3}
-        />
-      )
-    }
+    {cv.work && <Experience experience={cv.work} title={t("cv.experience")} />}
+    {/* La educación son dos líneas: cabe en la primera hoja y la equilibra. */}
     {
       cv.education && (
         <Education studies={cv.education} title={t("cv.education")} />
       )
     }
+  </div>
+
+  {
+    /*
+    Cola del documento. En pantalla continúa la columna derecha, pero al
+    imprimir empieza en hoja nueva y ocupa el ancho completo: si se quedara en
+    la segunda columna, la página 2 saldría con la mitad izquierda en blanco,
+    que es lo que hacía que pareciera un error de maquetación en vez de un CV
+    de dos hojas.
+  */
+  }
+  <div
+    class="space-y-5 md:col-start-2 print:col-span-2 print:col-start-1 print:break-before-page print:space-y-3"
+  >
     {
       cv.certificates && (
         <Certificates
@@ -80,6 +87,11 @@ const t = useTranslations(lang);
           volunteerships={cv.volunteer}
           title={t("cv.volunteers")}
         />
+      )
+    }
+    {
+      cv.interests && (
+        <Interests interests={cv.interests} title={t("cv.interests")} />
       )
     }
   </div>
