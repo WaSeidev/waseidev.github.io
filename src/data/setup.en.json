@@ -54,8 +54,41 @@
     {
       "id": "workstation",
       "title": "My working setup",
-      "description": "",
-      "items": []
+      "description": "A modest laptop pushed as far as it goes: no heavy desktop environment, only the window I need on screen, and nearly everything a keystroke away. None of this is for looks — it is what lets a 15 GB machine run containers, a dev server and an editor at the same time.",
+      "items": [
+        {
+          "name": "HP 15s",
+          "description": "Intel Core i7-1255U with 15 GB of RAM. The machine I work on every day, at home and away."
+        },
+        {
+          "name": "Three screens",
+          "description": "The laptop display plus an Acer EK321Q and an AOC 27B3HM turned to portrait, which is where documentation and logs live."
+        },
+        {
+          "name": "CachyOS",
+          "description": "Arch tuned for performance. Up-to-date packages without having to assemble the system from scratch."
+        },
+        {
+          "name": "Hyprland",
+          "description": "A tiling compositor on Wayland. No mouse needed to place windows: each one lands where it belongs."
+        },
+        {
+          "name": "kitty and fish",
+          "description": "A GPU-accelerated terminal and a shell that completes from history without needing to be configured."
+        },
+        {
+          "name": "tmux",
+          "description": "Sessions that survive closing the terminal and reconnecting over SSH to the server."
+        },
+        {
+          "name": "Neovim",
+          "description": "My own configuration, no third-party distribution: LSP through Mason, formatting with conform and navigation with fzf. It shares movement keys with tmux, so jumping between pane and editor is the same gesture."
+        },
+        {
+          "name": "Docker",
+          "description": "Every project with its services isolated, so the system does not fill up with dependencies nobody remembers the reason for."
+        }
+      ]
     }
   ]
 }

@@ -34,6 +34,10 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
+      // La raíz solo redirige al idioma y se sirve con noindex: anunciarla en
+      // el sitemap sería pedirle a Google que rastree algo que le decimos que
+      // no indexe.
+      filter: (page) => new URL(page).pathname !== "/",
       i18n: {
         defaultLocale: "en",
         locales: { en: "en-US", es: "es-ES" },

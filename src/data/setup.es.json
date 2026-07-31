@@ -53,9 +53,42 @@
     },
     {
       "id": "workstation",
-      "title": "Mi equipo de trabajo",
-      "description": "",
-      "items": []
+      "title": "Mi puesto de trabajo",
+      "description": "Un portátil modesto llevado al límite: sin entorno de escritorio pesado, con la ventana justa en pantalla y casi todo a un atajo de teclado. Nada de esto es por estética; es lo que hace que una máquina de 15 GB aguante contenedores, servidor de desarrollo y editor a la vez.",
+      "items": [
+        {
+          "name": "HP 15s",
+          "description": "Intel Core i7-1255U y 15 GB de RAM. El equipo con el que trabajo a diario, en casa y fuera."
+        },
+        {
+          "name": "Tres pantallas",
+          "description": "La del portátil más una Acer EK321Q y una AOC 27B3HM puesta en vertical, que es donde viven la documentación y los logs."
+        },
+        {
+          "name": "CachyOS",
+          "description": "Arch optimizado para rendimiento. Paquetes al día sin tener que montar el sistema desde cero."
+        },
+        {
+          "name": "Hyprland",
+          "description": "Compositor con ventanas en mosaico sobre Wayland. Sin ratón para colocar ventanas: cada una cae donde le toca."
+        },
+        {
+          "name": "kitty y fish",
+          "description": "Terminal acelerada por GPU y una shell que autocompleta con el historial sin tener que configurarle nada."
+        },
+        {
+          "name": "tmux",
+          "description": "Sesiones que sobreviven al cierre de la terminal y a la reconexión por SSH al servidor."
+        },
+        {
+          "name": "Neovim",
+          "description": "Configuración propia, sin distribución de terceros: LSP con Mason, formateo con conform y navegación con fzf. Comparte atajos de movimiento con tmux, así que saltar entre panel y editor es el mismo gesto."
+        },
+        {
+          "name": "Docker",
+          "description": "Cada proyecto con sus servicios aislados, para no llenar el sistema de dependencias que luego nadie recuerda por qué están."
+        }
+      ]
     }
   ]
 }

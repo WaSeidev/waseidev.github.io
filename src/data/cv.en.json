@@ -1,14 +1,14 @@
 {
   "basics": {
     "name": "Walther A. Seidel M.",
-    "label": "JR Developer | ReactJS | Astro | Node.js | PHP | Laravel | Linux | HTML | CSS | JavaScript",
+    "label": "Jr Developer | Astro | JavaScript | TypeScript | PHP | HTML | CSS | Laravel | Python | Linux",
     "image": "/assets/images/waseidev-avatar.webp",
     "email": "waseidev@gmail.com",
     "phone": "+34 625 25 11 15",
     "url": "https://waseidev.net",
-    "summary": "Systems Engineer with a background in web development (PHP, React.js, MongoDB). I have shipped personal projects that let me put Laravel into practice, including an incident management system. I keep picking up new technologies and I am looking for an opportunity to grow and contribute to a dynamic team.",
+    "summary": "Systems Engineer with a background in web development (PHP, React.js, MongoDB). I joined the Pérez Rumbao group on the production side, at Bétula CARS, and today I work in its IT department supporting every company in the group. Alongside that I build personal projects with Laravel, including an incident management system: the same ground I cover day to day. I am looking for an opportunity to keep growing and contribute to a dynamic team.",
     "location": {
-      "address": "Doctor Marañon",
+      "address": "",
       "postalCode": "32005",
       "city": "Ourense",
       "countryCode": "ES",
@@ -39,6 +39,31 @@
   },
   "work": [
     {
+      "name": "Pérez Rumbao",
+      "position": "IT Support",
+      "url": "https://www.perezrumbao.com",
+      "startDate": "2026-01-01",
+      "summary": "Pérez Rumbao is the holding company that runs the group’s head office, and the IT resources of all its businesses are managed from there. I support users across the group’s companies — Apersa, Bepersa, Bétula CARS and Zinamóvil, among others — whose IT incidents all come through our department. I pick up each report through the ticketing system, resolve it or pass it on depending on what it needs, and follow it through to closure while keeping the user informed.",
+      "highlights": ["IT Support", "Incidents", "Tickets", "Helpdesk"],
+      "printable": true
+    },
+    {
+      "name": "Bétula CARS",
+      "position": "Paint preparation technician",
+      "url": "https://www.betulacars.com",
+      "startDate": "2025-05-23",
+      "endDate": "2025-12-31",
+      "summary": "I prepared individual vehicle parts for the painting process: cleaning and sanding the surfaces, filling where it was needed and masking the areas that had to stay unpainted. The aim was to leave every part ready for the finish to take evenly. As a recent joiner my work focused on individual parts rather than whole vehicles, and I did not get to work inside the paint booth.",
+      "highlights": [
+        "Cars",
+        "Painting",
+        "Sanding",
+        "Filler",
+        "Masking",
+        "Cleaning"
+      ]
+    },
+    {
       "name": "Claudio Express Castadon",
       "position": "Retail and stock assistant",
       "startDate": "2024-11-18",
@@ -64,7 +89,8 @@
       "startDate": "2019-04-22",
       "endDate": "2024-04-05",
       "summary": "I scheduled the SITM-MIO routes, analysed journey times and optimised how tasks were assigned.",
-      "highlights": ["Python", "Pandas", "Microsoft Excel", "Docker"]
+      "highlights": ["Python", "Pandas", "Microsoft Excel", "Docker"],
+      "printable": true
     },
     {
       "name": "ACAR",
@@ -73,7 +99,8 @@
       "startDate": "2018-04-22",
       "endDate": "2019-04-21",
       "summary": "I ran the organisation’s IT area and managed the relationship with its technology suppliers.",
-      "highlights": ["Asterisk", "Database", "Firewall", "Odoo", "ClearOS"]
+      "highlights": ["Asterisk", "Database", "Firewall", "Odoo", "ClearOS"],
+      "printable": true
     },
     {
       "name": "Blanco y Negro Masivo",

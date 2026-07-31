@@ -38,10 +38,16 @@ export interface Work {
   name: string;
   position: string;
   startDate: string;
-  endDate: string;
+  /** Ausente en el empleo actual; CardCV lo pinta entonces como "Presente". */
+  endDate?: string | null;
   summary: string;
   highlights?: string[] | null;
   url?: string | null;
+  /**
+   * Marca el empleo para que salga en el CV impreso. Si ningún empleo la
+   * lleva, se imprimen los más recientes según `printLimit`.
+   */
+  printable?: boolean;
 }
 export interface Volunteer {
   organization: string;

@@ -15,10 +15,6 @@ const t = useTranslations(lang);
 const cv = cvByLang[lang];
 ---
 
-<BaseLayout
-  title={`${t("nav.cv")} | ${cv.basics.name}`}
-  description={cv.basics.summary}
-  wide
->
+<BaseLayout title={t("nav.cv")} description={cv.basics.summary} wide>
   <CurriculumLayout {cv} />
 </BaseLayout>
