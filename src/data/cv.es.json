@@ -77,7 +77,7 @@
     },
     {
       "name": "Blanco y Negro Masivo",
-      "position": "Rotational Scheduling Specialist",
+      "position": "Especialista en programación y rotación de personal",
       "url": "https://bynmasivo.com",
       "startDate": "2016-01-16",
       "endDate": "2018-04-21",
@@ -86,48 +86,49 @@
     },
     {
       "name": "Blanco y Negro Masivo",
-      "position": "Kilometer Verification Specialist",
+      "position": "Analista de operaciones – Kilómetros",
       "url": "https://bynmasivo.com",
       "startDate": "2012-06-01",
       "endDate": "2016-01-15",
-      "summary": "The MIO Technology Platform Analyst is responsible for reviewing and analyzing data from vehicle and platform technologies to ensure optimal system performance and compliance with service standards.",
+      "summary": "Revisión, análisis y seguimiento de la operación con las plataformas tecnológicas embarcadas en los vehículos y las suministradas por la empresa de Recaudo y Tecnología del SITM-MIO. Verificación de liquidaciones a partir de la auditoría diaria de rutas de toda la flota, análisis de los logs operativos y estudio de las PQRSF recibidas por la línea de atención al usuario, garantizando respuestas oportunas. Verificación e investigación de los informes emitidos por el ente gestor a los operadores.",
       "highlights": ["Microsoft Excel", "Macros", "Atención al cliente"]
     },
     {
       "name": "Union Temporal de Recaudo y Tecnología",
-      "position": "System Monitoring Technician",
+      "position": "Técnico de monitorización",
       "url": "https://utryt.com.co",
       "startDate": "2011-06-03",
       "endDate": "2012-05-31",
-      "summary": "Generation of daily operational data reports for reconciliation with MIO transport concessionaires, utilizing Oracle database scripting and system-provided platforms. Data-driven analysis of vehicle logs to support decision-making and compliance with MIO service standards. Facilitating bi-weekly meetings with key stakeholders, including the four COTs and the SITM-MIO management entity.",
+      "summary": "Generación del reporte diario de operación para su revisión y posterior conciliación con los concesionarios de transporte del Sistema Integrado de Transporte Masivo M.I.O. Análisis de la información de los logs de los vehículos mediante consultas sobre la base de datos Oracle y las plataformas del sistema. Conducción de la reunión quincenal con los cuatro COT y el ente gestor del SITM-MIO.",
       "highlights": ["Microsoft Excel", "Macros"]
     },
     {
       "name": "Servientrega",
-      "position": "Shipping and Receiving Assistant",
+      "position": "Auxiliar general",
       "url": "https://servientrega.com.co",
       "startDate": "2009-06-03",
       "endDate": "2010-06-14",
-      "summary": "Customer service representative handling inbound and outbound shipments, including domestic and international packages, documents, and merchandise. Processes domestic money orders, photocopying, and cash transactions.",
+      "summary": "Recepción de paquetes, documentos y mercancía para despacho nacional e internacional. Recepción y pago de giros nacionales, fotocopias y manejo de caja.",
       "highlights": ["Ventas", "Gestión"]
     },
     {
       "name": "Hospital San Ándres E.S.E.",
-      "position": "Computer Systems Technician",
+      "position": "Técnico en sistemas",
       "url": "https://hsandres.gov.co",
       "startDate": "2007-03-15",
       "endDate": "2009-01-15",
-      "summary": "Performs a wide range of IT support tasks, including end-user support, installation of specialized software (SIIGO, InfoSalud), and configuration of workstations, servers, and networks.",
-      "highlights": ["Operative Systems", "Technical Support"]
+      "summary": "Soporte a usuarios finales en sus estaciones de trabajo, instalación de aplicativos especializados (SIIGO e InfoSalud) y configuración, reinstalación y adecuación de estaciones de trabajo, servidores y redes.",
+      "highlights": ["Sistemas Operativos", "Soporte técnico"]
     }
   ],
   "volunteer": [
     {
       "organization": "Caritas España",
       "position": "Auxiliar de Cocina",
-      "startDate": "2025-06-15",
+      "startDate": "2024-06-15",
       "summary": "Ayudar en el fregado de ollas, sirviendo la comida en el comedor de Caritas en Ourense",
-      "highlights": ["Ciencia", "Técnología"]
+      "highlights": ["Ciencia", "Técnología"],
+      "endDate": "2024-08-15"
     },
     {
       "organization": "BarCamp Cali",

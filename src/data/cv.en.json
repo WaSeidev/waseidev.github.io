@@ -6,9 +6,9 @@
     "email": "waseidev@gmail.com",
     "phone": "+34 625 25 11 15",
     "url": "https://waseidev.net",
-    "summary": "Hi everyone! I'm a Systems Engineer, graduated from the Cooperativa University of Colombia with a focus on web development. I have experience in technologies such as PHP, React.js, MongoDB, Laravel, Python, Pandas, and Linux. I'm a proactive, self-taught individual who loves learning new skills and technologies. During my university career, I was an active member of the free software dissemination group and contributed for several consecutive years to the Latin American Free Software Festival (FLISol). I'm passionate about development, especially FrontEnd with ReactJS and styling with TailwindCSS. I'm seeking an opportunity to apply my skills and strengthen my knowledge in the web development world. I'm committed to being a valuable asset to the company that gives me the opportunity to start my career. If you are interested in learning more about me or working together, please don't hesitate to contact me via email or WhatsApp. It would be a pleasure to meet for a coffee and discuss how I can contribute to your company..",
+    "summary": "Systems Engineer with a background in web development (PHP, React.js, MongoDB). I have built personal projects that let me apply my Laravel skills, including an incident management system. I'm constantly learning new technologies and eager to apply what I know in a professional setting. I'm looking for an opportunity to grow and contribute to a dynamic team.",
     "location": {
-      "address": "Doctor Marañon 1",
+      "address": "Doctor Marañon",
       "postalCode": "32005",
       "city": "Ourense",
       "countryCode": "ES",
@@ -29,17 +29,41 @@
         "network": "Github",
         "username": "WaSeidev",
         "url": "https://github.com/waseidev"
+      },
+      {
+        "network": "Instagram",
+        "username": "waseidev",
+        "url": "https://instagram.com/waseidev"
       }
     ]
   },
   "work": [
+    {
+      "name": "Claudio Express Castadon",
+      "position": "Retail Assistant",
+      "startDate": "2024-11-18",
+      "endDate": "2024-12-23",
+      "summary": "Caritas España trainee on an employability skills programme. Over one month I handled customer service, stock management (shelf replenishment) and cash handling at the point of sale of the Claudio Express supermarket, as well as supporting the vehicle refuelling area.",
+      "highlights": [
+        "Retail",
+        "Restocking",
+        "Fuel",
+        "Supermarket",
+        "Checkout",
+        "Inventory",
+        "Cash",
+        "PoS",
+        "Caritas",
+        "TPV"
+      ]
+    },
     {
       "name": "ETM",
       "position": "Service Scheduling Coordinator",
       "url": "https://etm-cali.com",
       "startDate": "2019-04-22",
       "endDate": "2024-04-05",
-      "summary": " Route planning and scheduling for the SITM-MIO system,",
+      "summary": "Planning SITM-MIO routes, analysing running times and optimising tasks.",
       "highlights": ["Python", "Pandas", "Microsoft Excel", "Docker"]
     },
     {
@@ -53,80 +77,81 @@
     },
     {
       "name": "Blanco y Negro Masivo",
-      "position": "Programming Professional",
+      "position": "Rotational Scheduling Specialist",
       "url": "https://bynmasivo.com",
       "startDate": "2016-01-16",
       "endDate": "2018-04-21",
-      "summary": "Driver scheduling and rotation, and generation of payroll for hours worked..",
+      "summary": "Driver scheduling and rotation, and settlement of the hours they worked.",
       "highlights": ["Microsoft Excel", "Macros"]
     },
     {
       "name": "Blanco y Negro Masivo",
-      "position": "Analista de operaciones - Kílometros",
+      "position": "Kilometer Verification Specialist",
       "url": "https://bynmasivo.com",
       "startDate": "2012-06-01",
       "endDate": "2016-01-15",
       "summary": "Comprehensive review, analysis, and monitoring of operations utilizing technological platforms embedded within vehicles and those supplied by the R&T company within the M.I.O. Mass Integrated Transit System. Verification of settlements based on daily route audits of all vehicles. Detailed review and analysis of SITM-MIO operational logs. In-depth analysis of QRSF (Complaints, Claims, Requests, and Compliments) submitted through the user service line, ensuring timely and appropriate responses. Verification and investigation of all reports issued by the system's managing entity to Operators (vehicle drivers), leveraging available information technology platforms.",
-      "highlights": ["Microsoft Excel", "Macros", "Atención al cliente"]
+      "highlights": ["Microsoft Excel", "Macros", "Customer service"]
     },
     {
       "name": "Union Temporal de Recaudo y Tecnología",
-      "position": "Técnico de monitorización",
+      "position": "System Monitoring Technician",
       "url": "https://utryt.com.co",
       "startDate": "2011-06-03",
       "endDate": "2012-05-31",
-      "summary": "Generación de reporte diario de operación para la su revisión y posterior conciliación con los concesionarios de transporte del Sistema Integrado de Transporte Masivo M.I.O. (Masivo Integrado de Occidente) Análisis de información proveniente de los logs de los vehículos por medio de consultas generadas en la base de datos Oracle utilizando scripts directamente sobre esta o usando las plataformas proporcionadas por el sistema Precidir la reunión quincenal con los 4 COT y el ente gestor del SITM-MIO.",
+      "summary": "Generation of daily operational data reports for reconciliation with MIO transport concessionaires, using Oracle database scripting and system-provided platforms. Data-driven analysis of vehicle logs to support decision-making and compliance with MIO service standards. Chairing bi-weekly meetings with key stakeholders, including the four COTs and the SITM-MIO management entity.",
       "highlights": ["Microsoft Excel", "Macros"]
     },
     {
       "name": "Servientrega",
-      "position": "Auxiliar Géneral",
+      "position": "Shipping and Receiving Assistant",
       "url": "https://servientrega.com.co",
       "startDate": "2009-06-03",
       "endDate": "2010-06-14",
-      "summary": "Recepción de paquetes, documentos y mercancía para el despacho a nivel nacional e internacional Recepción y pago de giros a nivel nacional Fotocopias Manejo de caja.",
-      "highlights": ["Ventas", "Gestión"]
+      "summary": "Customer service handling inbound and outbound shipments, including domestic and international packages, documents and merchandise. Processing domestic money orders, photocopying and cash transactions.",
+      "highlights": ["Sales", "Administration"]
     },
     {
       "name": "Hospital San Ándres E.S.E.",
-      "position": "Técnico en Sistemas",
+      "position": "Computer Systems Technician",
       "url": "https://hsandres.gov.co",
       "startDate": "2007-03-15",
       "endDate": "2009-01-15",
-      "summary": "Soporte en las estaciones de trabajo a los usuarios finales Instalación de aplicativos especializados Instalación de SIIGO y InfoSalud, Configuración, reinstalación y adecuación de las estaciones de trabajo, servidores y redes.",
-      "highlights": ["Sistemas Operativos", "Soporte técnico"]
+      "summary": "A wide range of IT support tasks, including end-user support, installation of specialised software (SIIGO and InfoSalud), and configuration, reinstallation and setup of workstations, servers and networks.",
+      "highlights": ["Operating Systems", "Technical Support"]
     }
   ],
   "volunteer": [
     {
       "organization": "Caritas España",
       "position": "Kitchen Assistant",
-      "startDate": "2025-06-15",
-      "summary": "Providing support in the kitchen by washing dishes and serving food to diners at the Caritas center in Ourense.",
-      "highlights": ["Caritas"]
+      "startDate": "2024-06-15",
+      "summary": "Helping wash the pots and serve meals in the Caritas dining hall in Ourense.",
+      "highlights": ["Science", "Technology"],
+      "endDate": "2024-08-15"
     },
     {
       "organization": "BarCamp Cali",
       "position": "Attendance Clerk",
       "startDate": "2011-11-01",
       "endDate": "2011-11-01",
-      "summary": "Informal tech gatherings in Cali, where attendees can share knowledge and connect with peers.",
-      "highlights": ["Ciencia", "Técnología"]
+      "summary": "Technology 'unconferences' held in Cali, aimed at sharing knowledge and meeting new people in the field.",
+      "highlights": ["Science", "Technology"]
     },
     {
       "organization": "FLISoL Cali",
       "position": "Installer",
       "startDate": "2011-11-01",
       "endDate": "2011-11-01",
-      "summary": "Contributing to the installation and dissemination of free software within the Santiago de Cali community.",
-      "highlights": ["Ciencia", "Técnología", "Linux", "Ubuntu"]
+      "summary": "Helping with installations and outreach for free software in Santiago de Cali.",
+      "highlights": ["Science", "Technology", "Linux", "Ubuntu"]
     }
   ],
   "education": [
     {
       "institution": "Universidad Cooperativa de Colombia",
       "url": "https://ucc.edu.co/",
-      "area": "Computer Systems Engineer",
+      "area": "Computer Systems Engineering",
       "studyType": "Bachelor's Degree",
       "startDate": "2009-02-02",
       "endDate": "2015-12-15"
@@ -141,8 +166,14 @@
   ],
   "certificates": [
     {
-      "name": "Bachelor's degree, Data Scientist",
-      "url": "https://correlationone.com/",
+      "name": "Nest: scalable backend development with Node",
+      "url": "https://www.udemy.com/certificate/UC-8bda74c9-b412-4596-b666-3a6b67140157/",
+      "issuer": "Udemy",
+      "date": "2024-12-26"
+    },
+    {
+      "name": "Data Scientist",
+      "url": "https://www.credential.net/d5564cfd-d34c-4f9f-bff4-4504402c6af6",
       "issuer": "Correlation One",
       "date": "2022-06-16"
     },
@@ -150,10 +181,10 @@
       "name": "Software Developer",
       "url": "https://unal.edu.co/",
       "issuer": "Universidad Nacional de Colombia",
-      "date": "2021-12-23"
+      "date": "2022-12-23"
     },
     {
-      "name": "ISO 27001 Information Security Management Systems (ISMS)",
+      "name": "ISO 27001 Information Security Management Systems",
       "url": "https://icontec.com.co/",
       "issuer": "ICONTEC",
       "date": "2015-07-25"
@@ -161,64 +192,69 @@
   ],
   "skills": [
     {
-      "name": "Web Development",
-      "level": "Junior Developer",
-      "keywords": ["HTML", "CSS", "JavaScript", "React", "Node.js", "Astro"]
+      "name": "FrontEnd",
+      "level": "Junior",
+      "keywords": ["HTML", "CSS", "JavaScript", "ReactJS", "Node.js", "Astro"]
+    },
+    {
+      "name": "Backend",
+      "level": "Junior",
+      "keywords": ["Python", "PHP", "Laravel", "NodeJS", "NestJS"]
     },
     {
       "name": "Microsoft Excel",
-      "level": "Master",
+      "level": "Senior",
       "keywords": [
         "Macros",
-        "functions",
+        "Functions",
         "Formulas",
         "Pivot Tables",
         "Data Analysis",
-        "Spreadsheet"
+        "Spreadsheets"
       ]
     }
   ],
   "languages": [
     {
       "language": "Spanish",
-      "fluency": "Native Speacker"
+      "fluency": "Native speaker"
     },
     {
       "language": "English",
-      "fluency": "Fluency speaking and writing"
+      "fluency": "Fluent, spoken and written"
     }
   ],
   "interests": [
     {
-      "name": "Motorbiking",
-      "keywords": ["Trail", "Ridding", "Trip", "Tourism"]
+      "name": "Motorcycles",
+      "keywords": ["Trail", "Riding", "Travel", "Tourism"]
     },
     {
       "name": "Music",
-      "keywords": ["Guitar", "Battery", "Rock", "Salsa"]
+      "keywords": ["Guitar", "Drums", "Rock", "Salsa"]
     }
   ],
   "references": [
     {
       "name": "Matthew Seidel",
-      "reference": "Pronto una publicación de la referencia",
-      "company": "Una Compañia X"
+      "reference": "Reference available on request",
+      "company": "Company X"
     },
     {
       "name": "Andrey Lopéz",
-      "reference": "Pronto una publicación de la referencia",
-      "company": "Una Compañia Y"
+      "reference": "Reference available on request",
+      "company": "Company Y"
     }
   ],
   "projects": [
     {
-      "name": "Proyecto Hoja de vida en la WEB",
+      "name": "Web-based CV project",
       "startDate": "2024-07-31",
       "endDate": "2024-08-09",
-      "description": "Primer proyecto llevado a la practica y ejecutado para compartirlo en la web, los que habia hecho anteriormente nunca los habia sacado del ordenador, a pesar de que estaban en github no los habia compartido ni terminado",
-      "highlights": ["CV", "Curriculum"],
+      "description": "The first project I actually finished and put online. Everything I had built before never left my computer: it was on GitHub, but unshared and unfinished.",
+      "highlights": ["CV", "Resume"],
       "url": "https://waseidev.net/es/projects/proyecto-cv/"
     }
   ],
-  "softSkills": ["Teamwork", "Dinamic", "Joy"]
+  "softSkills": ["Teamwork", "Drive", "Positivity"]
 }
