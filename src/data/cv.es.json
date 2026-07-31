@@ -8,7 +8,7 @@
     "url": "https://waseidev.net",
     "summary": "Ingeniero de Sistemas con formación en desarrollo web (PHP, React.js, MongoDB). He llevado a la práctica proyectos personales que me han permitido aplicar Laravel, entre ellos un sistema de gestión de incidencias. Aprendo tecnologías nuevas de forma continua y busco una oportunidad para crecer y aportar en un equipo dinámico.",
     "location": {
-      "address": "Doctor Marañon",
+      "address": "",
       "postalCode": "32005",
       "city": "Ourense",
       "countryCode": "ES",
@@ -17,12 +17,12 @@
     "profiles": [
       {
         "network": "Twitter",
-        "username": "waseidel",
-        "url": "https://twitter.com/waseidel"
+        "username": "WaSeidev",
+        "url": "https://twitter.com/waseidev"
       },
       {
         "network": "Linkedin",
-        "username": "waseidel",
+        "username": "WaSeidel",
         "url": "https://linkedin.com/in/waseidel"
       },
       {
@@ -32,12 +32,37 @@
       },
       {
         "network": "Instagram",
-        "username": "waseidev",
+        "username": "WaSeidev",
         "url": "https://instagram.com/waseidev"
       }
     ]
   },
   "work": [
+    {
+      "name": "Pérez Rumbao",
+      "position": "Soporte IT",
+      "url": "https://www.perezrumbao.com",
+      "startDate": "2026-01-01",
+      "summary": "Pérez Rumbao es el holding que administra la central del grupo, y desde ahí se gestionan los recursos informáticos de todas sus empresas. Doy soporte a los usuarios de las compañías del grupo —Apersa, Bepersa, Bétula CARS o Zinamóvil, entre otras—, cuyas incidencias informáticas pasan todas por nuestro departamento. Atiendo cada aviso a través del sistema de tickets, lo resuelvo o lo derivo según lo que requiera, y hago seguimiento hasta el cierre manteniendo informado al usuario.",
+      "highlights": ["Soporte IT", "Incidencias", "Tickets", "Helpdesk"],
+      "printable": true
+    },
+    {
+      "name": "Bétula CARS",
+      "position": "Preparador",
+      "url": "https://www.betulacars.com",
+      "startDate": "2025-05-23",
+      "endDate": "2025-12-31",
+      "summary": "Preparé piezas sueltas de vehículos para el proceso de pintura: limpieza y lijado de las superficies, aplicación de masilla donde hacía falta y enmascarado de las zonas que debían quedar sin pintar. El objetivo era dejar cada pieza en condiciones para que el acabado agarrara de forma uniforme. Por ser una incorporación reciente, mi trabajo se centró en piezas y no en vehículos completos, y no llegué a entrar en cabina de pintura.",
+      "highlights": [
+        "Coches",
+        "Pintura",
+        "Lijado",
+        "Masilla",
+        "Enmascarado",
+        "Limpieza"
+      ]
+    },
     {
       "name": "Claudio Express Castadon",
       "position": "Expendedor y reponedor",
@@ -64,7 +89,8 @@
       "startDate": "2019-04-22",
       "endDate": "2024-04-05",
       "summary": "Programé las rutas del SITM-MIO, analicé los tiempos de recorrido y optimicé la asignación de tareas.",
-      "highlights": ["Python", "Pandas", "Microsoft Excel", "Docker"]
+      "highlights": ["Python", "Pandas", "Microsoft Excel", "Docker"],
+      "printable": true
     },
     {
       "name": "ACAR",
@@ -73,7 +99,8 @@
       "startDate": "2018-04-22",
       "endDate": "2019-04-21",
       "summary": "Coordiné el área de TI de la organización y gestioné la relación con los proveedores tecnológicos.",
-      "highlights": ["Asterisk", "Database", "Firewall", "Odoo", "ClearOS"]
+      "highlights": ["Asterisk", "Database", "Firewall", "Odoo", "ClearOS"],
+      "printable": true
     },
     {
       "name": "Blanco y Negro Masivo",
