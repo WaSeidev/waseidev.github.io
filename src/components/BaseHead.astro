@@ -20,7 +20,9 @@ const lang = getLangFromUrl(Astro.url);
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // Las portadas del CV y del blog llegan como ruta de public/; las externas ya
 // son absolutas y `new URL` las respeta tal cual.
-const ogImage = new URL(image ?? "/assets/images/WaSeidev.webp", Astro.site);
+// Banner de marca en 1200x630, la proporción que esperan las redes. Las
+// entradas con portada propia la pasan por props y esta queda de reserva.
+const ogImage = new URL(image ?? "/assets/images/waseidev-og.webp", Astro.site);
 const noindex = import.meta.env.PUBLIC_NOINDEX === "true";
 
 const withBase = (path: string) =>

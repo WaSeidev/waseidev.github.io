@@ -96,7 +96,7 @@
     /* Bajar este valor comprime todo el documento proporcionalmente. Si
        añades experiencia y se desborda a una segunda hoja, redúcelo antes de
        tocar nada más. */
-    --print-scale: 0.86;
+    --print-scale: 0.88;
     color-scheme: light !important;
   }
 
