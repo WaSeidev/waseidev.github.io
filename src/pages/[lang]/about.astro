@@ -1,6 +1,5 @@
 ---
-import AboutPage from "@/components/pages/AboutPage.astro";
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
 import { cvByLang } from "@/data/cv";
 import { getLocalePaths, useTranslations, type Lang } from "@/i18n/utils";
 
@@ -15,10 +14,18 @@ const t = useTranslations(lang);
 const cv = cvByLang[lang];
 ---
 
-<BaseLayout
-  title={`${t("content.about")} | ${cv.basics.name}`}
+{
+  /*
+  El texto es el `summary` del CV, así que hay una sola fuente para esa
+  descripción: la que se ve aquí es la misma que se imprime en el currículum.
+*/
+}
+<PageLayout
+  title={t("content.about")}
   description={cv.basics.summary}
-  image={cv.basics.image}
+  lead={cv.basics.label.split("|")[0]?.trim()}
 >
-  <AboutPage summary={cv.basics.summary} />
-</BaseLayout>
+  <div class="max-w-2xl space-y-4 text-lg text-muted">
+    <p>{cv.basics.summary}</p>
+  </div>
+</PageLayout>

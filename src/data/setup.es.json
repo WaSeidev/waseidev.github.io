@@ -1,0 +1,61 @@
+{
+  "sections": [
+    {
+      "id": "homelab",
+      "title": "SYFHome-Hub, mi servidor de casa",
+      "description": "Un servidor NixOS con la configuración declarada en Git: el sistema entero se reconstruye desde un archivo, así que reinstalarlo es reproducible en vez de un ejercicio de memoria. Todo se expone hacia fuera por un túnel de Cloudflare, sin abrir un solo puerto en el router.",
+      "items": [
+        {
+          "name": "NixOS",
+          "description": "Sistema operativo declarativo. La configuración vive en un repo y se aplica con un comando."
+        },
+        {
+          "name": "Cloudflare Tunnel",
+          "description": "Publica los servicios en internet sin abrir puertos ni depender de una IP fija."
+        },
+        {
+          "name": "Nginx Proxy Manager",
+          "description": "Proxy inverso delante de todos los servicios internos."
+        },
+        {
+          "name": "AdGuard Home",
+          "description": "DNS con bloqueo de publicidad y servidor DHCP para toda la red de casa."
+        },
+        {
+          "name": "Vaultwarden",
+          "description": "Gestor de contraseñas autoalojado, compatible con Bitwarden."
+        },
+        {
+          "name": "Nextcloud",
+          "description": "Sincronización de archivos y trabajo compartido."
+        },
+        {
+          "name": "Paperless-NGX",
+          "description": "Gestión documental: todo el papel escaneado, indexado y buscable."
+        },
+        {
+          "name": "Samba",
+          "description": "Carpetas compartidas para la familia."
+        },
+        {
+          "name": "Navidrome",
+          "description": "Servidor de música propio."
+        },
+        {
+          "name": "wg-easy",
+          "description": "VPN WireGuard con interfaz web para entrar a la red desde fuera."
+        },
+        {
+          "name": "Docker",
+          "description": "Los servicios que no son módulos de NixOS corren en contenedores."
+        }
+      ]
+    },
+    {
+      "id": "workstation",
+      "title": "Mi equipo de trabajo",
+      "description": "",
+      "items": []
+    }
+  ]
+}
