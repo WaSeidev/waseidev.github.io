@@ -14,9 +14,6 @@ const { lang } = Astro.props;
 const cv = cvByLang[lang];
 ---
 
-<BaseLayout
-  title={`Portfolio | ${cv.basics.name}`}
-  description={cv.basics.label}
->
+<BaseLayout title="Portfolio" description={cv.basics.label}>
   <IndexPage {cv} />
 </BaseLayout>

@@ -2,10 +2,12 @@
 import { Font } from "astro:assets";
 import {
   languages,
+  defaultLang,
   getLangFromUrl,
   getLocalizedUrl,
   type Lang,
 } from "@/i18n/utils";
+import { cvByLang } from "@/data/cv";
 import "@/styles/global.css";
 
 interface Props {
@@ -16,6 +18,12 @@ interface Props {
 
 const { title, description, image } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
+
+// El sufijo se añade aquí y no en cada página: componerlo en el sitio de la
+// llamada hacía que /about, /setup, /blog y /projects salieran sin el nombre
+// mientras / y /cv sí lo llevaban.
+const author = cvByLang[lang].basics.name;
+const fullTitle = title.includes(author) ? title : `${title} | ${author}`;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // Las portadas del CV y del blog llegan como ruta de public/; las externas ya
@@ -42,8 +50,8 @@ const withBase = (path: string) =>
 <Font cssVariable="--font-raleway" preload />
 <Font cssVariable="--font-coda" />
 
-<title>{title}</title>
-<meta name="title" content={title} />
+<title>{fullTitle}</title>
+<meta name="title" content={fullTitle} />
 <meta name="description" content={description} />
 <link rel="canonical" href={canonicalURL} />
 {noindex && <meta name="robots" content="noindex, nofollow" />}
@@ -57,9 +65,18 @@ const withBase = (path: string) =>
     />
   ))
 }
+{
+  /* x-default: qué versión servir a quien no coincide con ningún idioma
+    declarado. Sin esto Google decide por su cuenta. */
+}
+<link
+  rel="alternate"
+  hreflang="x-default"
+  href={new URL(getLocalizedUrl(Astro.url, defaultLang), Astro.site)}
+/>
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content={title} />
+<meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:locale" content={lang} />
@@ -67,7 +84,7 @@ const withBase = (path: string) =>
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@waseidev" />
-<meta name="twitter:title" content={title} />
+<meta name="twitter:title" content={fullTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
 
