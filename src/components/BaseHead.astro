@@ -25,6 +25,19 @@ const lang = getLangFromUrl(Astro.url);
 const author = cvByLang[lang].basics.name;
 const fullTitle = title.includes(author) ? title : `${title} | ${author}`;
 
+// Google recorta la descripción sobre los 160 caracteres. Varias páginas
+// reutilizan el resumen del CV, que pasa de 400, así que se acorta AQUÍ y solo
+// para la metaetiqueta: el texto que se ve en la página sigue completo. Se
+// corta por final de frase si cae cerca, y si no por palabra.
+const shorten = (text: string, max = 158) => {
+  if (text.length <= max) return text;
+  const head = text.slice(0, max);
+  const sentence = head.lastIndexOf(". ");
+  if (sentence > max * 0.5) return head.slice(0, sentence + 1);
+  return `${head.slice(0, head.lastIndexOf(" "))}…`;
+};
+const metaDescription = shorten(description);
+
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // Las portadas del CV y del blog llegan como ruta de public/; las externas ya
 // son absolutas y `new URL` las respeta tal cual.
@@ -52,7 +65,7 @@ const withBase = (path: string) =>
 
 <title>{fullTitle}</title>
 <meta name="title" content={fullTitle} />
-<meta name="description" content={description} />
+<meta name="description" content={metaDescription} />
 <link rel="canonical" href={canonicalURL} />
 {noindex && <meta name="robots" content="noindex, nofollow" />}
 
@@ -77,7 +90,7 @@ const withBase = (path: string) =>
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content={fullTitle} />
-<meta property="og:description" content={description} />
+<meta property="og:description" content={metaDescription} />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:locale" content={lang} />
 <meta property="og:image" content={ogImage} />
@@ -85,7 +98,7 @@ const withBase = (path: string) =>
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@waseidev" />
 <meta name="twitter:title" content={fullTitle} />
-<meta name="twitter:description" content={description} />
+<meta name="twitter:description" content={metaDescription} />
 <meta name="twitter:image" content={ogImage} />
 
 {/* Corre antes del primer pintado para que no haya destello de tema claro. */}
