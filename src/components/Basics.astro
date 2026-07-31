@@ -2,8 +2,6 @@
 import { Image } from "astro:assets";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import type { Basics } from "@/types/cv";
-import Pill from "@/components/Pill.astro";
-import Icon from "@/components/Icon.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 interface Props {
@@ -14,53 +12,42 @@ const { basics } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const labels = basics.label
-  .split("|")
-  .map((label) => label.trim())
-  .filter(Boolean);
+// El label es una lista separada por "|": el primero es el puesto y hace de
+// antetítulo; el resto son tecnologías y viven en su propia sección.
+const [role] = basics.label.split("|").map((label) => label.trim());
 ---
 
 <section
-  class="flex flex-col items-center gap-8 py-6 md:flex-row-reverse md:justify-between"
+  class="flex flex-col-reverse items-center gap-8 py-6 md:flex-row md:justify-between md:py-10"
 >
-  <Image
-    src={basics.image}
-    width={400}
-    height={400}
-    class="size-44 shrink-0 rounded-full object-cover sm:size-56"
-    alt={basics.name}
-  />
-
   <div class="min-w-0 text-center md:text-left">
-    <h1 class="text-3xl sm:text-4xl">{basics.name}</h1>
+    <p class="text-sm font-extrabold tracking-wide text-brand uppercase">
+      {role}
+    </p>
 
-    <ul class="mt-4 flex flex-wrap justify-center gap-1.5 md:justify-start">
-      {
-        labels.map((label) => (
-          <Pill>
-            <Icon icon={label} />
-            {label}
-          </Pill>
-        ))
-      }
-    </ul>
+    <h1 class="mt-3 text-4xl sm:text-5xl">{basics.name}</h1>
 
-    <div class="mt-6 flex flex-wrap justify-center gap-3 md:justify-start">
-      {
-        /* Antes era href="/cv" sin prefijo de idioma, que daba 404 desde /es/. */
-      }
+    <div class="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
       <a
         href={getRelativeLocaleUrl(lang, "cv")}
-        class="rounded-md bg-brand px-4 py-2 font-extrabold text-brand-ink transition-opacity hover:opacity-90"
+        class="rounded-md bg-brand px-5 py-2.5 font-extrabold text-brand-ink transition-opacity hover:opacity-90"
       >
         {t("content.visit_my_cv")}
       </a>
       <a
         href={`mailto:${basics.email}`}
-        class="rounded-md border border-line px-4 py-2 font-extrabold transition-colors hover:border-brand"
+        class="rounded-md border border-line px-5 py-2.5 font-extrabold transition-colors hover:border-brand"
       >
         {t("content.email_me")}
       </a>
     </div>
   </div>
+
+  <Image
+    src={basics.image}
+    width={400}
+    height={400}
+    class="size-40 shrink-0 rounded-full object-cover sm:size-52"
+    alt={basics.name}
+  />
 </section>

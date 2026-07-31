@@ -36,5 +36,6 @@
   "notFound.description": "The address you're looking for doesn't exist or has moved.",
   "notFound.back": "Back to home",
   "nav.setup": "My Setup",
-  "setup.description": "The hardware, system and tools I work with every day."
+  "setup.description": "The hardware, system and tools I work with every day.",
+  "content.stack": "What I work with"
 }

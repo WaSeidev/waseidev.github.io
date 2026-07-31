@@ -32,7 +32,13 @@ const withBase = (path: string) =>
 <meta name="generator" content={Astro.generator} />
 <link rel="icon" type="image/svg+xml" href={withBase("favicon.svg")} />
 
+{
+  /* Cada familia necesita su propio <Font>: es quien inyecta los @font-face.
+    Solo se precarga Raleway, que es la del cuerpo y entra en el primer
+    pintado; Coda es de titulares y puede llegar un instante después. */
+}
 <Font cssVariable="--font-raleway" preload />
+<Font cssVariable="--font-coda" />
 
 <title>{title}</title>
 <meta name="title" content={title} />

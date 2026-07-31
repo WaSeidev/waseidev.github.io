@@ -10,6 +10,9 @@
  */
 @theme {
   --font-sans: var(--font-raleway), ui-sans-serif, system-ui, sans-serif;
+  /* Coda cae de vuelta en Raleway: si la fuente no carga, el titular sigue
+     teniendo un peso 800 con el que sostenerse. */
+  --font-display: var(--font-coda), var(--font-raleway), sans-serif;
 
   --color-canvas: light-dark(oklch(99% 0.003 250), oklch(17% 0.012 260));
   --color-surface: light-dark(oklch(97% 0.005 250), oklch(21% 0.015 260));
@@ -52,6 +55,7 @@
   h1,
   h2,
   h3 {
+    font-family: var(--font-display);
     font-weight: 800;
     text-wrap: balance;
   }
@@ -109,6 +113,14 @@
   /* Forzar el tema claro aunque el visitante navegue en oscuro. */
   :root.dark {
     color-scheme: light !important;
+  }
+
+  /* En papel, Coda se queda solo en el nombre. Los rótulos de sección y los
+     puestos bajan a 9-10px, y ahí una display compacta se lee peor que la
+     tipografía de cuerpo. */
+  h2,
+  h3 {
+    font-family: var(--font-sans);
   }
 
   /* Evitar que una sección se parta entre páginas si llega a haber una
