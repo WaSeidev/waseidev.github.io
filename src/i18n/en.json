@@ -38,5 +38,6 @@
   "nav.setup": "My Setup",
   "setup.description": "The hardware, system and tools I work with every day.",
   "content.stack": "What I work with",
-  "about.outsideCode": "Outside of code"
+  "about.outsideCode": "Outside of code",
+  "setup.localNetwork": "DNS and DHCP for the local network, outside the tunnel"
 }

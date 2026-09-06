@@ -1,0 +1,106 @@
+---
+import type { SetupItem } from "@/data/setup";
+
+interface Props {
+  items: SetupItem[];
+  /** Nombres tal cual vienen en el JSON, para ubicar cada item en el diagrama
+      sin duplicar sus textos aquí. */
+  tunnel: string;
+  proxy: string;
+  dns: string;
+  os: string;
+  containers: string;
+  localNetworkLabel: string;
+}
+
+const { items, tunnel, proxy, dns, os, containers, localNetworkLabel } =
+  Astro.props;
+
+const byName = (name: string) => items.find((item) => item.name === name);
+
+const tunnelItem = byName(tunnel);
+const proxyItem = byName(proxy);
+const dnsItem = byName(dns);
+const osItem = byName(os);
+const containersItem = byName(containers);
+const exposedServices = items.filter(
+  (item) => ![tunnel, proxy, dns, os, containers].includes(item.name),
+);
+---
+
+<div class="rounded-card border border-line bg-surface p-6 sm:p-8">
+  <div class="mx-auto flex max-w-md flex-col items-center text-center">
+    <div class="rounded-md border border-line px-4 py-2 text-sm text-muted">
+      Internet
+    </div>
+    <div class="h-6 w-px bg-line"></div>
+    {
+      tunnelItem && (
+        <div
+          class="w-full rounded-md border border-brand/40 bg-canvas px-4 py-2"
+          title={tunnelItem.description}
+        >
+          <p class="font-extrabold">{tunnelItem.name}</p>
+        </div>
+      )
+    }
+    <div class="h-6 w-px bg-line"></div>
+    {
+      proxyItem && (
+        <div
+          class="w-full rounded-md border border-brand/40 bg-canvas px-4 py-2"
+          title={proxyItem.description}
+        >
+          <p class="font-extrabold">{proxyItem.name}</p>
+        </div>
+      )
+    }
+    <div class="h-6 w-px bg-line"></div>
+  </div>
+
+  <ul class="mx-auto grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-3">
+    {
+      exposedServices.map((item) => (
+        <li
+          class="rounded-md border border-line bg-canvas px-3 py-2 text-center text-sm"
+          title={item.description}
+        >
+          {item.name}
+        </li>
+      ))
+    }
+  </ul>
+
+  <div
+    class="mt-8 flex flex-col items-center gap-3 border-t border-line pt-6 text-center sm:flex-row sm:justify-between sm:text-left"
+  >
+    {
+      osItem && (
+        <p class="text-sm text-muted">
+          <span class="font-extrabold text-ink">{osItem.name}</span> ·{" "}
+          {osItem.description}
+          {containersItem && (
+            <>
+              {" "}
+              <span class="font-extrabold text-ink">
+                {containersItem.name}
+              </span>{" "}
+              para lo que no es un módulo NixOS.
+            </>
+          )}
+        </p>
+      )
+    }
+    {
+      dnsItem && (
+        <div
+          class="shrink-0 rounded-md border border-line px-4 py-2 text-center text-sm"
+          title={dnsItem.description}
+        >
+          <p class="font-extrabold">{dnsItem.name}</p>
+          <p class="text-muted">{localNetworkLabel}</p>
+        </div>
+      )
+    }
+  </div>
+</div>

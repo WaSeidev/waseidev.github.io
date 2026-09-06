@@ -1,5 +1,6 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
+import HomelabDiagram from "@/components/HomelabDiagram.astro";
 import { setupByLang } from "@/data/setup";
 import { getLocalePaths, useTranslations, type Lang } from "@/i18n/utils";
 
@@ -28,14 +29,28 @@ const sections = setupByLang[lang].sections.filter(
           {section.description && (
             <p class="mt-3 max-w-2xl text-muted">{section.description}</p>
           )}
-          <ul class="mt-6 grid gap-4 sm:grid-cols-2">
-            {section.items.map((item) => (
-              <li class="rounded-card border border-line bg-surface p-4">
-                <h3 class="font-extrabold">{item.name}</h3>
-                <p class="mt-1 text-sm text-muted">{item.description}</p>
-              </li>
-            ))}
-          </ul>
+          {section.id === "homelab" ? (
+            <div class="mt-6">
+              <HomelabDiagram
+                items={section.items}
+                tunnel="Cloudflare Tunnel"
+                proxy="Nginx Proxy Manager"
+                dns="AdGuard Home"
+                os="NixOS"
+                containers="Docker"
+                localNetworkLabel={t("setup.localNetwork")}
+              />
+            </div>
+          ) : (
+            <ul class="mt-6 grid gap-4 sm:grid-cols-2">
+              {section.items.map((item) => (
+                <li class="rounded-card border border-line bg-surface p-4">
+                  <h3 class="font-extrabold">{item.name}</h3>
+                  <p class="mt-1 text-sm text-muted">{item.description}</p>
+                </li>
+              ))}
+            </ul>
+          )}
         </section>
       ))
     }
