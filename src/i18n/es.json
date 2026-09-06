@@ -37,5 +37,6 @@
   "notFound.back": "Volver al inicio",
   "nav.setup": "Mi Setup",
   "setup.description": "El hardware, el sistema y las herramientas con las que trabajo a diario.",
-  "content.stack": "Con lo que trabajo"
+  "content.stack": "Con lo que trabajo",
+  "about.outsideCode": "Fuera del código"
 }

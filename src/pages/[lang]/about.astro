@@ -1,5 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import PageLayout from "@/layouts/PageLayout.astro";
+import TitleSection from "@/components/TitleSection.astro";
+import Pill from "@/components/Pill.astro";
 import { cvByLang } from "@/data/cv";
 import { getLocalePaths, useTranslations, type Lang } from "@/i18n/utils";
 
@@ -25,7 +28,38 @@ const cv = cvByLang[lang];
   description={cv.basics.summary}
   lead={cv.basics.label.split("|")[0]?.trim()}
 >
-  <div class="max-w-2xl space-y-4 text-lg text-muted">
-    <p>{cv.basics.summary}</p>
+  <div
+    class="flex flex-col-reverse items-start gap-8 sm:flex-row sm:items-center"
+  >
+    <div class="max-w-2xl space-y-4 text-lg text-muted">
+      <p>{cv.basics.summary}</p>
+    </div>
+    <Image
+      src={cv.basics.image}
+      width={200}
+      height={200}
+      class="size-32 shrink-0 rounded-full object-cover sm:size-40"
+      alt={cv.basics.name}
+    />
   </div>
+
+  {
+    cv.interests && (
+      <div class="mt-10 max-w-2xl">
+        <TitleSection title={t("about.outsideCode")} />
+        <ul class="space-y-3">
+          {cv.interests.map(({ name, keywords }) => (
+            <li>
+              <h3 class="font-extrabold">{name}</h3>
+              <ul class="mt-1.5 flex flex-wrap gap-1.5">
+                {keywords?.map((keyword) => (
+                  <Pill>{keyword}</Pill>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
 </PageLayout>
