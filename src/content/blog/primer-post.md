@@ -3,7 +3,7 @@ title: "Demosle la bienvenida al sitio de WaSeidel"
 description: "Primer post en mi nuevo sitio creado con astro"
 pubDate: "Aug 08 2024"
 lang: es
-heroImage: "/assets/images/blog/blog-placeholder-1.jpg"
+heroImage: "/assets/images/waseidev-og.webp"
 ---
 
 ## Historia

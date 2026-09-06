@@ -3,7 +3,7 @@ title: "Say Hi, to WaSeidev's site"
 description: "First post at my new site created with astro"
 pubDate: "Aug 24 2024"
 lang: en
-heroImage: "/assets/images/blog/blog-placeholder-1.jpg"
+heroImage: "/assets/images/waseidev-og.webp"
 ---
 
 ## Historia

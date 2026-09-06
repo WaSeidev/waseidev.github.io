@@ -25,12 +25,13 @@ const projects = Astro.props.projects ?? [];
     ]}
   >
     {
-      projects.map(({ url, name, startDate, description }) => (
+      projects.map(({ url, name, startDate, description, image }) => (
         <Card
           href={url}
           title={name}
           date={startDate}
           description={description}
+          image={image ?? undefined}
         />
       ))
     }

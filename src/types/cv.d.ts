@@ -96,4 +96,5 @@ export interface Projects {
   description: string;
   highlights?: string[] | null;
   url: string;
+  image?: string | null;
 }
