@@ -277,16 +277,5 @@
       "company": "Compañía Y"
     }
   ],
-  "projects": [
-    {
-      "name": "Proyecto Hoja de vida en la WEB",
-      "startDate": "2024-07-31",
-      "endDate": "2024-08-09",
-      "description": "El primer proyecto que terminé y publiqué en la web. Los anteriores nunca salieron de mi ordenador: estaban en GitHub, pero sin compartir ni acabar.",
-      "highlights": ["CV", "Curriculum"],
-      "url": "https://waseidev.net/es/projects/proyecto-cv/",
-      "image": "/assets/images/projects/proyecto-cv.webp"
-    }
-  ],
   "softSkills": ["Trabajo en equipo", "Dinamismo", "Alegría"]
 }

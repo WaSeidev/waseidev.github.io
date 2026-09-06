@@ -1,18 +1,22 @@
 ---
+import { getCollection } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
-import type { Projects } from "@/types/cv";
 import Card from "@/components/Card.astro";
 import TitleSection from "@/components/TitleSection.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
-interface Props {
-  projects?: Projects[] | null;
-}
-
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const projects = Astro.props.projects ?? [];
+const allProjects = await getCollection(
+  "project",
+  (entry) => entry.data.lang === lang && !entry.data.draft,
+);
+const projects = allProjects
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+const quantity = projects.length;
 ---
 
 <section>
@@ -20,26 +24,26 @@ const projects = Astro.props.projects ?? [];
   <div
     class:list={[
       "grid grid-cols-1 gap-4",
-      { "sm:grid-cols-2": projects.length === 2 },
-      { "sm:grid-cols-2 lg:grid-cols-3": projects.length >= 3 },
+      { "sm:grid-cols-2": quantity === 2 },
+      { "sm:grid-cols-2 lg:grid-cols-3": quantity >= 3 },
     ]}
   >
     {
-      projects.map(({ url, name, startDate, description, image }) => (
-        <Card
-          href={url}
-          title={name}
-          date={startDate}
-          description={description}
-          image={image ?? undefined}
-        />
-      ))
+      projects.map(
+        ({ data: { title, description, pubDate, heroImage }, id }) => (
+          <Card
+            href={getRelativeLocaleUrl(lang, `projects/${id}`)}
+            image={heroImage}
+            title={title}
+            date={pubDate}
+            description={description}
+          />
+        ),
+      )
     }
   </div>
   {
-    projects.length > 3 && (
-      /* Antes era href="/projects" sin prefijo de idioma y con el texto
-         "view all projects" incrustado en inglés. */
+    allProjects.length > 3 && (
       <a
         href={getRelativeLocaleUrl(lang, "projects")}
         class="mt-6 flex justify-center text-sm font-extrabold text-brand"

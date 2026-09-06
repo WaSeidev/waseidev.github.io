@@ -8,7 +8,6 @@ export interface CV {
   languages?: Languages[] | null;
   interests?: Interests[] | null;
   references?: References[] | null;
-  projects?: Projects[] | null;
   softSkills?: string[] | null;
 }
 export interface Basics {
@@ -88,13 +87,4 @@ export interface References {
   name: string;
   reference: string;
   company: string;
-}
-export interface Projects {
-  name: string;
-  startDate: string;
-  endDate: string;
-  description: string;
-  highlights?: string[] | null;
-  url: string;
-  image?: string | null;
 }
